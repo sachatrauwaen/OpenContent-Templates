@@ -1,0 +1,37 @@
+{
+  "ModuleTitle": "Bootstrap Columns",
+  "Columns": [
+    {
+      "Image": "http://placehold.it/242x200",
+      "Caption": true,
+      "Title": "Title",
+      "Description": "<p>Description</p>",
+      "LinkText": "Read more",
+      "LinkUrl": "/",
+      "LinkNewWindow": false
+    },
+    {
+      "Caption": true,
+      "Title": "Title",
+      "Description": "<p>Description</p>",
+      "LinkText": "Read more",
+      "LinkUrl": "http://www.google.be",
+      "LinkNewWindow": true
+    },
+    {
+      "Image": "http://placehold.it/242x200",
+      "Caption": false
+    },
+    {
+      "Caption": true,
+      "Title": "Title",
+      "Description": "<p>Description</p>",
+      "LinkNewWindow": false
+    },
+    {
+      "Caption": true,
+      "Description": "<p>Description</p>",
+      "LinkNewWindow": false
+    }
+  ]
+}

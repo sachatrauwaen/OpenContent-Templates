@@ -1,0 +1,30 @@
+{
+    "fields": {
+        "Columns": {
+            "fields": {
+                "item": {
+                    "fields": {
+                        "Description": {
+                            "type": "wysihtml"
+                        },
+                        "Image": {
+                            "type": "image",
+                            "helper": "Url of the image",
+                            "typeahead": {
+                                "Folder": "Images"
+                            }
+                        },
+                        "LinkUrl": {
+                            "type": "url",
+                            "label": "Link on the image"
+                        },
+                        "LinkNewWindow": {
+                        
+                            "type": "checkbox"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+<div class="row">
+    {{#each Columns}}
+  	<div class="col-md-{{divide "12" ../Settings.Columns}} col-sm-{{divide "24" ../Settings.Columns}}">
+        <div class="thumbnail">
+            {{#if Image}}
+            <img src="{{Image}}" alt="{{Title}}">
+            {{/if}}
+          	{{#if Caption}}
+            <div class="caption">
+                {{#if Title}}
+                <h3>{{Title}}</h3>
+                {{/if}}
+                {{Description}}
+                {{#if LinkUrl}}
+                <p><a href="{{LinkUrl}}" {{#if LinkNewWindow}}target="_blank"{{/if}} class="btn btn-primary" role="button">{{LinkText}}</a></p>
+                {{/if}}
+            </div>
+          	{{/if}}
+        </div>
+    </div>
+    {{/each}}
+</div>
