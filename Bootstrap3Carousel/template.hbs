@@ -1,0 +1,28 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="{{Settings.Interval}}">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        {{#each Slides}}
+        <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" {{#if @first}} class="active" {{/if}}></li>
+        {{/each}}
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        {{#each Slides}}
+        <div class="item {{#if @first}}active{{/if}}">
+            <img src="{{Image}}" />
+            <div class="carousel-caption">
+                <h1>{{Title}}</h1>
+                {{Description}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
