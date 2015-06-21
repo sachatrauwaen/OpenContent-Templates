@@ -1,5 +1,14 @@
-﻿$(document).ready(function () {
-    $(".fraction-slider").each(function () {
+﻿//$(document).ready(function () {
+$(document).on("opencontent.ready", function (event, element) {
+
+    $(".fraction-slider", element).each(function () {
+        
+        //alert($(this).closest("div[class*='DnnModule-']").attr('class'));
+        //var myString = $(this).closest("div[class*='DnnModule-']").attr('class');
+        //var myRegexp = /DnnModule-(\d+)/g;
+        //var match = myRegexp.exec(myString);
+        //alert(match[1]);  // abc
+
         $(this).fractionSlider({
             'fullWidth': $(this).attr("data-fullWidth") ? $(this).data("fullWidth") : false,
             'controls': $(this).attr("data-controls") ? $(this).data("controls") : false,
