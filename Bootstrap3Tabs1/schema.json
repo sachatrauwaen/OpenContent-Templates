@@ -1,0 +1,26 @@
+﻿{
+    "type": "object",
+    "properties": {
+        "ModuleTitle": {
+            "title": "Module Title",
+            "type": "string"
+        },
+        "Tabs": {
+            "type": "array",
+            "items": {
+                "title": "Tab",
+                "type": "object",
+                "properties": {
+                    "Title": {
+                        "title": "Title",
+                        "type": "string"
+                    },
+                    "Description": {
+                        "title": "Description",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

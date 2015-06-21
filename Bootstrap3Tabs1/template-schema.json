@@ -1,0 +1,10 @@
+﻿{
+    "type": "object",
+    "properties": {
+        "Layout": {
+            "title": "Layout",
+            "type": "string",
+            "enum": [ "tab", "pill" ]
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<div role="tabpanel">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-{{Settings.Layout}}s" role="tablist">
+        {{#each Tabs}}
+      <li role="presentation" {{#if @first}}class="active"{{/if}} ><a href="#tab{{@index}}" aria-controls="tab{{@index}}" role="tab" data-toggle="{{../Settings.Layout}}">{{Title}}</a></li>        
+        {{/each}}
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        {{#each Tabs}}
+        <div role="tabpanel" class="tab-pane {{#if @first}}active{{/if}}" id="tab{{@index}}">{{Description}}</div>
+        {{/each}}
+    </div>
+
+</div>

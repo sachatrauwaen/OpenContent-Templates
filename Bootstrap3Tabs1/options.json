@@ -1,0 +1,15 @@
+{
+    "fields": {
+        "Tabs": {
+            "fields": {
+                "item": {
+                    "fields": {
+                        "Description": {
+                            "type": "wysihtml"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
