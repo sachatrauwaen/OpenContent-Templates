@@ -1,7 +1,9 @@
+{{#if Settings.EqualHeight}}{{registerscript "jquery.matchHeight-min.js"}}{{/if}}
+
 <div class="row">
     {{#each Columns}}
-  	<div class="col-md-{{divide "12" ../Settings.Columns}} col-sm-{{divide "24" ../Settings.Columns}}">
-        <div class="thumbnail">
+  	<div class="col-md-{{divide "12" ../Settings.Columns}} col-sm-{{divide "24" ../Settings.Columns}}" >
+        <div class="thumbnail" data-mh="my-group">
             {{#if Image}}
             <img src="{{Image}}" alt="{{Title}}">
             {{/if}}
