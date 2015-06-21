@@ -1,0 +1,15 @@
+{
+    "fields": {
+		"Columns" : {
+				"fields": {
+				"item": {
+					"fields": {
+						"Description": {
+							"type": "wysihtml"
+						}
+					}
+				}
+			}
+		}
+    }
+}

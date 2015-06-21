@@ -1,0 +1,8 @@
+<div class="row">
+    {{#each Columns}}
+  <div class="col-md-{{divide "12" ../Settings.Columns}} col-sm-{{divide "24" ../Settings.Columns}}">
+        <h3>{{Title}}</h3>
+        {{Description}}
+    </div>
+    {{/each}}
+</div>
