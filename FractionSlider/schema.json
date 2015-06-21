@@ -1,0 +1,88 @@
+{
+    "type": "object",
+    "properties": {
+        "Slides": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "title": "Slide",
+                "properties": {
+                    "Elements": {
+                        "type": "array",
+                        "items": {
+                            "title": "Element",
+                            "type": "object",
+                            "properties": {
+                                "Tag": {
+                                    "title": "Tag",
+                                    "type": "string",
+                                    "enum": [ "Text", "Image"]  
+                                },
+                                "Title": {
+                                    "title": "Title",
+                                    "type": "string",
+                                    "dependencies": "Tag"
+                                },
+                                "Image": {
+                                    "title": "Image",
+                                    "type": "string",
+                                    "dependencies": "Tag"
+                                },
+                                "In": {
+                                    "title": "In",
+                                    "type": "string",
+                                    "enum": [ "fade","left", "topLeft", "bottomLeft", "right", "topRight", "bottomRight", "top", "bottom" ]
+                                },
+                                "Out": {
+                                    "title": "Out",
+                                    "type": "string",
+                                    "enum": [ "fade","left", "topLeft", "bottomLeft", "right", "topRight", "bottomRight", "top", "bottom" ]
+                                },
+                                "PositionTop": {
+                                    "title": "PositionTop",
+                                    "type": "number"
+                                },
+                                "PositionLeft": {
+                                    "title": "PositionLeft",
+                                    "type": "number"
+                                },
+                                "Step": {
+                                    "title": "Step",
+                                    "type": "number",
+                                    "default": 1
+                                },
+                                "EaseIn": {
+                                    "title": "EaseIn",
+                                    "type": "string",
+                                    "enum": [ "linear", "swing", "easeInQuad","easeOutQuad","easeInOutQuad","easeInCubic","easeOutCubic","easeInOutCubic","easeInQuart","easeOutQuart","easeInOutQuart","easeInQuint","easeOutQuint","easeInOutQuint","easeInExpo" ]
+                                },
+                                "EaseOut": {
+                                    "title": "EaseOut",
+                                    "type": "string",
+                                    "enum": [ "linear", "swing", "easeInQuad","easeOutQuad","easeInOutQuad","easeInCubic","easeOutCubic","easeInOutCubic","easeInQuart","easeOutQuart","easeInOutQuart","easeInQuint","easeOutQuint","easeInOutQuint","easeInExpo" ]
+                                },
+                                "Time": {
+                                    "title": "Time",
+                                    "type": "number"
+                                },
+                                "Delay": {
+                                    "title": "Delay",
+                                    "type": "number"
+                                },
+                                "Special": {
+                                    "title": "Special",
+                                    "enum": [ "cycle" ]
+                                }
+                                ,
+                                "Fixed": {
+                                    "title": "Fixed",
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

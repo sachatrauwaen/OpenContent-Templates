@@ -1,0 +1,78 @@
+{
+  "Slides": [
+    {
+      "Elements": [
+        {
+          "Tag": "img",
+          "Image": "/Portals/0/Images/logo.png",
+          "In": "right",
+          "Out": "right",
+          "PositionTop": 50,
+          "PositionLeft": 200,
+          "Step": null,
+          "EaseIn": "swing",
+          "Time": null,
+          "Delay": null,
+          "Fixed": false
+        },
+        {
+          "Tag": "img",
+          "Image": "/Portals/0/Images/logo2.png",
+          "In": "topLeft",
+          "Out": "bottomRight",
+          "PositionTop": 100,
+          "PositionLeft": 300,
+          "Step": null,
+          "Time": null,
+          "Delay": null,
+          "Fixed": false
+        }
+      ]
+    },
+    {
+      "Elements": [
+        {
+          "Tag": "p",
+          "Title": "This a first text",
+          "In": "fade",
+          "Out": "fade",
+          "PositionTop": 100,
+          "PositionLeft": 100,
+          "Step": null,
+          "Time": null,
+          "Delay": null,
+          "Fixed": false
+        },
+        {
+          "Tag": "p",
+          "Title": "This a second text",
+          "In": "top",
+          "Out": "top",
+          "PositionTop": 200,
+          "PositionLeft": 50,
+          "Step": null,
+          "EaseIn": "swing",
+          "Time": 2000,
+          "Delay": 1000,
+          "Fixed": false
+        }
+      ]
+    },
+    {
+      "Elements": [
+        {
+          "Tag": "p",
+          "Title": "Hello my name is Jeff",
+          "In": "fade",
+          "Out": "fade",
+          "PositionTop": 200,
+          "PositionLeft": 500,
+          "Step": null,
+          "Time": null,
+          "Delay": null,
+          "Fixed": false
+        }
+      ]
+    }
+  ]
+}

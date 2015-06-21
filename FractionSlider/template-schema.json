@@ -1,0 +1,41 @@
+﻿{
+    "type": "object",
+    "properties": {
+        "FullWidth": {
+            "title": "FullWidth",
+            "type": "boolean"
+        },
+        "Controls": {
+            "title": "Controls",
+            "type": "boolean"
+        },
+        "Pager": {
+            "title": "Pager",
+            "type": "boolean"
+        },
+        "AutoChange": {
+            "title": "AutoChange",
+            "type": "boolean"
+        },
+        "PauseOnHover": {
+            "title": "PauseOnHover",
+            "type": "boolean"
+        },
+        "Responsive": {
+            "title": "Responsive",
+            "type": "boolean"
+        },
+        "Increase": {
+            "title": "Increase",
+            "type": "boolean"
+        },
+        "Width": {
+            "title": "Width",
+            "type": "number"
+        },
+        "Height": {
+            "title": "Height",
+            "type": "number"
+        }
+    }
+}

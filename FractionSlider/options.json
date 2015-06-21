@@ -1,0 +1,42 @@
+{
+    "fields": {
+        "Slides": {
+            "fields": {
+                "item": {
+                    "fields": {
+                        "Elements": {
+                            "fields": {
+                                "item": {
+                                    "fields": {
+                                        "Tag": {
+                                            "removeDefaultNone": true,
+                                            "emptySelectFirst": true
+                                        },
+                                        "Image": {
+                                            "type": "image",
+                                            "helper": "Url of the image",
+                                            "typeahead": {
+                                                "Folder": "Images"
+                                            },
+                                            "dependencies": {
+                                                "Tag": "Image"
+                                            }
+                                        },
+                                        "Title": { 
+                                            "dependencies": {
+                                                "Tag": "Text"
+                                            }
+                                        },
+                                        "Special": {
+                                            "type": "select"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
