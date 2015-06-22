@@ -1,0 +1,46 @@
+{{registerstylesheet "flexslider.css"}}
+{{registerscript "jquery.flexslider-min.js"}}
+{{#if Settings.slider.show}}
+<div id="flexslider-slider-{{Context.ModuleId}}" class="flexslider slider"
+     data-animationloop="{{#if Settings.animationLoop}}true{{else}}false{{/if}}"
+     data-slideshow="{{#if Settings.slideshow}}true{{else}}false{{/if}}"
+     data-animation="{{Settings.slider.animation}}"
+     data-touch="{{#if Settings.slider.touch}}true{{else}}false{{/if}}"
+     data-controlnav="{{#if Settings.slider.controlNav}}true{{else}}false{{/if}}"
+     data-directionnav="{{#if Settings.slider.directionNav}}true{{else}}false{{/if}}"
+     {{#if Settings.carousel.show}} data-sync="#flexslider-carousel-{{Context.ModuleId}}" {{/if}}>
+    <ul class="slides">
+        {{#each Slides}}
+        <li>
+            <img src="{{Image}}" />
+            {{#if Title}}<div class="flex-title">{{Title}}</div>{{/if}}
+            {{#if Description}}<div class="flex-description">{{Description}}</div>{{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
+{{#if Settings.carousel.show}}
+<div id="flexslider-carousel-{{Context.ModuleId}}" class="flexslider carousel"
+     data-animationloop="{{#if Settings.animationLoop}}true{{else}}false{{/if}}"
+     {{#unless Settings.slider.show}}data-slideshow="{{#if Settings.slideshow}}true{{else}}false{{/if}}"{{/unless}}     
+     data-touch="{{#if Settings.carousel.touch}}true{{else}}false{{/if}}"
+     data-controlnav="{{#if Settings.carousel.controlNav}}true{{else}}false{{/if}}"
+     data-directionnav="{{#if Settings.carousel.directionNav}}true{{else}}false{{/if}}"
+     data-itemwidth="{{Settings.carousel.itemWidth}}"
+     data-itemmargin="{{Settings.carousel.itemMargin}}"
+     data-minitems="{{Settings.carousel.minItems}}"
+     data-maxitems="{{Settings.carousel.maxItems}}"
+     data-move="{{Settings.carousel.move}}"
+     {{#if Settings.slider.show}} data-asnavfor="#flexslider-slider-{{Context.ModuleId}}" {{/if}}>
+    <ul class="slides">
+        {{#each Slides}}
+        <li>
+            <img src="{{#if thumb}}{{Thumb}}{{else}}{{Image}}{{/if}}" />
+            {{#if Title}}<div class="flex-title">{{Title}}</div>{{/if}}
+            {{#if Description}}<div class="flex-description">{{Description}}</div>{{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
