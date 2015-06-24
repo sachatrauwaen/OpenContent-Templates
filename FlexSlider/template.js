@@ -11,7 +11,7 @@
             $(this).flexslider({
                 'animationLoop': $(this).attr("data-animationloop") ? $(this).data("animationloop") : false,
                 'slideshow': $(this).attr("data-slideshow") ? $(this).data("slideshow") : false,
-                'animation': $(this).attr("data-animation") ? $(this).data("animation") : "slide",
+                'animation': "slide",
                 'touch': $(this).attr("data-touch") ? $(this).data("touch") : false,
                 'controlNav': $(this).attr("data-controlnav") ? $(this).data("controlnav") : false,
                 'directionNav': $(this).attr("data-directionnav") ? $(this).data("directionnav") : false,
@@ -27,7 +27,8 @@
             $(this).flexslider({
                 'animationLoop': $(this).attr("data-animationloop") ? $(this).data("animationloop") : false,
                 'slideshow': $(this).attr("data-slideshow") ? $(this).data("slideshow") : false,
-                'animation': "slide",
+                
+                'animation': $(this).attr("data-animation") ? $(this).data("animation") : "slide",
                 'touch': $(this).attr("data-touch") ? $(this).data("touch") : false,
                 'controlNav': $(this).attr("data-controlnav") ? $(this).data("controlnav") : false,
                 'directionNav': $(this).attr("data-directionnav") ? $(this).data("directionnav") : false,

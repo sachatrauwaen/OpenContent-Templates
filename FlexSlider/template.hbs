@@ -37,8 +37,10 @@
         {{#each Slides}}
         <li>
             <img src="{{#if thumb}}{{Thumb}}{{else}}{{Image}}{{/if}}" />
+            {{#unless ../Settings.slider.show}}
             {{#if Title}}<div class="flex-title">{{Title}}</div>{{/if}}
             {{#if Description}}<div class="flex-description">{{Description}}</div>{{/if}}
+            {{/unless}}
         </li>
         {{/each}}
     </ul>
