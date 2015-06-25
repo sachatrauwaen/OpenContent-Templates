@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "ModuleTitle": {
+            "title": "Module Title",
+            "type": "string"
+        },
+        "Elements": {
+            "type": "array",
+            "items": {
+                "title": "Element",
+                "type": "object",
+                "properties": {
+                    "Title": {
+                        "title": "Title",
+                        "type": "string"
+                    },
+                    "Description": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "Image": {
+                        "title": "Image",
+                        "type": "string"
+                    },
+                    "ItemWidth": {
+                        "title": "Item Width",
+                        "type": "string",
+						"enum" : ["grid-item-1", "grid-item-2", "grid-item-3", "grid-item-4","grid-item-5"]
+                    }
+                }
+            }
+        }
+    }
+}

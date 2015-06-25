@@ -1,0 +1,29 @@
+
+.grid-sizer,
+.grid-item {
+  width: 19%;
+}
+.gutter-sizer { width: 1%; }
+
+.grid-item {
+  float: left;
+  margin-bottom: 1%;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+.grid-item-1 {  }
+.grid-item-2 { width: 39%; }
+.grid-item-3 { width: 59%; }
+.grid-item-4 { width: 79%; }
+.grid-item-5 { width: 100%; }
+
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}

@@ -1,0 +1,14 @@
+{{registerscript "masonry.pkgd.min.js"}}
+{{registerscript "imagesloaded.pkgd.min.js"}}
+
+<div class="masonry grid">
+	 <div class="grid-sizer"></div>
+	 <div class="gutter-sizer"></div>
+  	{{#each Elements}}  
+  		<div class="grid-item {{ItemWidth}}">
+          	{{#if Image}}<img src="{{Image}}" />{{/if}}
+            {{#if Title}}<div class="masonry-title">{{Title}}</div>{{/if}}
+            {{#if Description}}<div class="masonry-description">{{Description}}</div>{{/if}}
+  		</div>  
+  	{{/each}}
+</div>

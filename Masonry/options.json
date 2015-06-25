@@ -1,0 +1,26 @@
+{
+    "fields": {
+        "Elements": {
+            "fields": {
+                "item": {
+                    "fields": {
+                        "Description": {
+                            "type": "wysihtml"
+                        },
+                        "Image": {
+                            "type": "image",
+                            "helper": "Url of the image",
+                            "typeahead": {
+                                "Folder": "Images"
+                            }
+                        },
+                      	"ItemWidth": {
+                            "optionLabels" : ["20%", "40%", "60%", "80%","100%"],
+							"removeDefaultNone":true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
