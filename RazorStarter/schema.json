@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {       
+        "Columns": {
+            "type": "array",
+            "items": {
+                "title": "Column",
+                "type": "object",
+                "properties": {
+                    "Image": {
+                        "title": "Image",
+                        "type": "string"
+                    },
+                    "Caption": {
+                        "title": "Caption ?",
+                        "type": "boolean"
+                    },                  
+                    "Title": {
+                        "title": "Title",
+                        "type": "string",
+                      	"dependencies":"Caption"
+                    },
+                    "Description": {
+                        "title": "Description",
+                        "type": "string",
+                      	"dependencies":"Caption"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div class="row">
+    @foreach(var col in Model.Columns)
+  	{
+  <div class="col-md-@(12 / Model.Settings.Columns) col-sm-@(24 / Model.Settings.Columns)">
+        <div class="thumbnail">
+            @if (!string.IsNullOrEmpty(col.Image))
+          	{          
+            <img src="@col.Image" alt="@col.Title}}">
+            }
+          	@if (col.Caption)
+          	{
+            <div class="caption">
+                @if (!string.IsNullOrEmpty(col.Title))
+              	{
+                <h3>@col.Title</h3>
+                }
+                @col.Description            
+            </div>
+          	}
+        </div>
+    </div>
+  	}
+</div>

@@ -1,0 +1,10 @@
+﻿{
+    "type": "object",
+    "properties": {
+        "Columns": {
+            "title": "Columns",
+            "type": "number",
+            "enum": [ 2, 3, 4, 6 ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "fields": {
+        "Columns": {
+            "fields": {
+                "item": {
+                    "fields": {
+                        "Description": {
+                            "type": "wysihtml"
+                        },
+                        "Image": {
+                            "type": "image",
+                            "helper": "Url of the image",
+                            "typeahead": {
+                                "Folder": "Images"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
