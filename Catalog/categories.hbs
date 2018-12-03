@@ -1,0 +1,76 @@
+
+{{registerstylesheet "jplist.core.min.css"}}
+{{registerstylesheet "jplist.filter-toggle-bundle.min.css"}}
+{{registerstylesheet "jplist.textbox-filter.min.css"}}
+{{registerstylesheet "jplist.pagination-bundle.min.css"}}
+{{registerstylesheet "jplist.history-bundle.min.css"}}
+
+{{registerscript "jplist.core.min.js"}}
+{{registerscript "jplist.filter-toggle-bundle.min.js"}}
+{{registerscript "jplist.textbox-filter.min.js"}}
+{{registerscript "jplist.pagination-bundle.min.js"}}
+{{registerscript "jplist.history-bundle.min.js"}}
+
+{{registerstylesheet "jplist.filter-toggle-bundle.min.css"}}
+{{registerscript "jplist.filter-toggle-bundle.min.js"}}
+
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+<div class="box">
+    <div id="demo" class="box jplist" style="margin: 20px 0 50px 0">
+
+        <!-- ios button: show/hide panel -->
+        <div class="jplist-ios-button">
+            <i class="fa fa-sort"></i>
+            jPList Actions
+        </div>
+
+        <!-- panel -->
+        <div class="jplist-panel row panel-top">
+            <!-- checkbox filters -->
+            <div class="jplist-group col-md-6"
+                 data-control-type="checkbox-group-filter"
+                 data-control-action="filter"
+                 data-control-name="themes">
+
+                {{#each Schema.properties.Category.enum}}
+
+                <input data-path=".{{this}}"
+                       id="{{this}}"
+                       type="checkbox" />
+
+                <label for="{{this}}">{{arrayindex ../Options.fields.Category.optionLabels @index }}</label>
+
+                {{/each}}
+
+            </div>
+
+            <!-- filter by title -->
+            <div class="text-filter-box col-lg-4">
+                <i class="fa fa-search jplist-icon"></i>
+
+                <!--[if lt IE 10]>
+                <div class="jplist-label">Filter by Title:</div>
+                <![endif]-->
+
+                <input data-path=".title"
+                       type="text"
+                       value=""
+                       placeholder="Filter by Title"
+                       data-control-type="textbox"
+                       data-control-name="title-filter"
+                       data-control-action="filter" />
+            </div>
+
+        </div>
+
+     
+
+        <div class="row jplist-no-results text-shadow align-center">
+            <p>No results found</p>
+        </div>
+
+
+     
+
+    </div>
+</div>
