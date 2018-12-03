@@ -1,0 +1,8 @@
+﻿{
+    "fields": {
+		"Columns": {
+			"type": "select",				
+			"removeDefaultNone":true
+		}
+    }
+}
