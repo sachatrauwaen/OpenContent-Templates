@@ -1,0 +1,40 @@
+{
+  "Elements": [
+    {
+      "Image": "http://placehold.it/600x300/71B02F/FFFFFF&text=Opencontent+rocks!",
+      "ItemWidth": "grid-item-2"
+    },
+    {
+      "Image": "http://placehold.it/600x300/E8117F/FFFFFF&text=Alpaca forms+rocks!",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "http://placehold.it/600x300/71B02F/FFFFFF&text=Opencontent+rocks!",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "http://placehold.it/600x300/E8117F/FFFFFF&text=Alpaca forms+rocks!",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!",
+      "ItemWidth": "grid-item-2"
+    },
+     {
+      "Image": "http://placehold.it/600x300/E8117F/FFFFFF&text=Alpaca forms+rocks!",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!",
+      "ItemWidth": "grid-item-1"
+    }
+  ]
+}

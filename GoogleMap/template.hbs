@@ -1,0 +1,17 @@
+
+
+<div class="map-items"
+     data-google-api-key="{{Context.{{Context.GoogleApiKey}}"
+     data-mapid="map-canvas-{{Context.ModuleId}}"
+     data-lat="{{formatnumber Settings.MapCenter.latitude "" "invariant"}}" data-lng="{{formatnumber Settings.MapCenter.longitude "" "invariant"}}"
+     data-zoom="{{Settings.Zoom}}"
+     data-icon="{{Settings.MapIcon}}">
+    {{#each Elements}}
+    <div class="map-item" style="display:none;" data-title="{{Title}}" data-lat="{{formatnumber Address.latitude  "" "invariant"}}" data-lng="{{formatnumber Address.longitude  "" "invariant"}}">
+
+        {{#if Title}}<div class="map-title">{{Title}}</div>{{/if}}
+        {{#if Description}}<div class="map-description">{{Description}}</div>{{/if}}
+    </div>
+    {{/each}}
+</div>
+<div id="map-canvas-{{Context.ModuleId}}" class="map-canvas"></div>

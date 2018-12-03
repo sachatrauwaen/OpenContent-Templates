@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "MapIcon": {
+      "type": "string",
+      "title": "Map Icon"
+    },
+    "Zoom": {
+      "type": "string",
+      "title": "Zoom"
+    },
+    "MapCenter": {
+      "type": "object",
+      "title": "Map Center"
+    }
+  }
+}

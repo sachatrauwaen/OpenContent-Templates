@@ -1,0 +1,23 @@
+{
+  "fields": {
+    "ModuleTitle": {
+      "type": "text"
+    },
+    "Elements": {
+      "type": "array",
+      "items": {
+        "fields": {
+          "Title": {
+            "type": "text"
+          },
+          "Description": {
+            "type": "wysihtml"
+          },
+          "Address": {
+            "type": "address"
+          }
+        }
+      }
+    }
+  }
+}
