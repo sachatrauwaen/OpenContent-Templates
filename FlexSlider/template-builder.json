@@ -1,0 +1,235 @@
+{
+  "formfields": [
+    {
+      "fieldname": "animationLoop",
+      "title": "Animation Loop",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "slideshow",
+      "title": "Slideshow",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "slider",
+      "title": "Slider",
+      "fieldtype": "object",
+      "subfields": [
+        {
+          "fieldname": "show",
+          "title": "Show Slider",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "dependencies": []
+        },
+        {
+          "fieldname": "animation",
+          "title": "Animation",
+          "fieldtype": "select",
+          "fieldoptions": [
+            {
+              "value": "slide",
+              "text": "slide"
+            },
+            {
+              "value": "fade",
+              "text": "fade"
+            }
+          ],
+          "advanced": true,
+          "required": true,
+          "hidden": false,
+          "default": "slide",
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "touch",
+          "title": "Touch",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "true",
+          "helper": "Allow touch swipe navigation of the slider on touch-enabled devices",
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "controlNav",
+          "title": "Control Nav",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "helper": "Create navigation for paging control of each clide",
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "directionNav",
+          "title": "Direction Nav",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "true",
+          "helper": "Create navigation for previous/next navigation",
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        }
+      ],
+      "advanced": false
+    },
+    {
+      "fieldname": "carousel",
+      "title": "Carousel",
+      "fieldtype": "object",
+      "subfields": [
+        {
+          "fieldname": "show",
+          "title": "Show carousel",
+          "fieldtype": "checkbox",
+          "advanced": false
+        },
+        {
+          "fieldname": "touch",
+          "title": "Touch",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "true",
+          "helper": "Allow touch swipe navigation of the slider on touch-enabled devices",
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "controlNav",
+          "title": "Control Nav",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "helper": "Create navigation for paging control of each clide",
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "directionNav",
+          "title": "Direction Nav",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "true",
+          "helper": "Create navigation for previous/next navigation",
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "itemWidth",
+          "title": "Item Width",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "210",
+          "multilanguage": false,
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "itemMargin",
+          "title": "Item Margin",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "5",
+          "multilanguage": false,
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "minItems",
+          "title": "Min. Items",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "5",
+          "multilanguage": false,
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "maxItems",
+          "title": "Max. Items",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "5",
+          "multilanguage": false,
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        },
+        {
+          "fieldname": "move",
+          "title": "Move",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "default": "5",
+          "multilanguage": false,
+          "dependencies": [
+            {
+              "fieldname": "show"
+            }
+          ]
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}

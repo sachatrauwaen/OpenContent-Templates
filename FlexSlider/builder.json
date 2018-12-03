@@ -1,0 +1,40 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "ModuleTitle",
+      "fieldtype": "text",
+      "title": "Module Title"
+    },
+    {
+      "fieldname": "Slides",
+      "subfields": [
+        {
+          "fieldname": "Title",
+          "fieldtype": "text",
+          "title": "Title"
+        },
+        {
+          "fieldname": "Description",
+          "fieldtype": "wysihtml",
+          "title": "Description"
+        },
+        {
+          "fieldname": "Image",
+          "fieldtype": "image",
+          "title": "Image",
+          "helper": "Url of the image",
+          "advanced": true
+        },
+        {
+          "fieldname": "Thumb",
+          "fieldtype": "image",
+          "title": "Thumb",
+          "helper": "Url of the thumb",
+          "advanced": true
+        }
+      ],
+      "fieldtype": "array"
+    }
+  ]
+}
