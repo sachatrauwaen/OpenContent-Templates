@@ -1,0 +1,30 @@
+{
+  "formfields": [
+    {
+      "fieldname": "ModuleTitle",
+      "title": "Module Title",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Columns",
+      "fieldtype": "array",
+      "subfields": [
+        {
+          "fieldname": "Title",
+          "title": "Title",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "Description",
+          "title": "Description",
+          "fieldtype": "wysihtml",
+          "advanced": false
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}
