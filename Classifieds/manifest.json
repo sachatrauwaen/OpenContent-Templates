@@ -1,0 +1,44 @@
+{
+  	"title": "Classifieds",
+    "editWitoutPostback": true,
+    "editRole": "OpenContentEditor",
+    "templates": {
+        "template": {
+            "type": "multiple",
+            "title": "List",           
+            "main": {
+                "template": "template.hbs",
+                "partialTemplates": {
+                    "item": {
+                        "template": "item.hbs"
+                    }
+                },
+                "schemaInTemplate": true,
+                "optionsInTemplate": true
+            },
+            "detail": {
+                "template": "detail.hbs",
+                "partialTemplates": {
+
+                },
+                  "schemaInTemplate": true,
+                "optionsInTemplate": true
+            }
+        },
+        "categories": {
+            "type": "multiple",
+            "title": "Categories",
+            "main": {
+                "template": "categories.hbs",
+                "schemaInTemplate": true,
+                "optionsInTemplate": true
+            },
+            "detail": {
+                "template": "categories.hbs",
+                "partialTemplates": {
+
+                }
+            }
+        }
+    }
+}

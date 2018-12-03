@@ -1,0 +1,144 @@
+
+{{registerscript "jplist.core.min.js"}}
+{{registerscript "jplist.filter-toggle-bundle.min.js"}}
+{{registerscript "jplist.textbox-filter.min.js"}}
+{{registerscript "jplist.bootstrap-pagination-bundle.min.js"}}
+{{registerscript "jplist.filter-toggle-bundle.min.js"}}
+
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+<div class="">
+    <div id="demo" class="jplist">
+        <div class="row">
+            <div class="col-md-3 side-bar">
+                
+                {{#if Context.IsEditable}}
+                <p><a href="{{Context.AddUrl}}" title="Edit Item" class="btn btn-primary">Add</a></p>
+                {{/if}}
+
+                <!-- panel -->
+                <div class="jplist-panel">
+
+                    <!-- filter by title -->
+                    <div class="text-filter-box form-group">
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <!--[if lt IE 10]>
+                            <div class="jplist-label">Filter by Title:</div>
+                            <![endif]-->
+
+                            <input data-path=".title" class="form-control"
+                                   type="text"
+                                   value=""
+                                   placeholder="Filter by Title"
+                                   data-control-type="textbox"
+                                   data-control-name="title-filter"
+                                   data-control-action="filter" />
+                        </div>
+                    </div>
+                    <!-- checkbox filters -->
+                    <div class="jplist-group row"
+                         data-control-type="checkbox-group-filter"
+                         data-control-action="filter"
+                         data-control-name="categories">
+
+                        {{#each Schema.properties.Category.enum}}
+                        <div class="col-xs-4 col-sm-3 col-md-12">
+                            <div class="checkbox">
+                                <label for="{{this}}">
+                                    <input data-path=".{{this}}"
+                                           id="{{this}}"
+                                           type="checkbox" />
+
+                                    {{arrayindex ../Options.fields.Category.optionLabels @index }}
+                                </label>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <!-- data -->
+                <div class="list row text-shadow">
+                    {{#each Items}}
+                    <div class="list-item col-md-12">
+                        
+                        {{> item}}
+                    </div>
+                    {{/each}}
+
+                </div>
+                <div class="row jplist-no-results text-shadow align-center">
+                    <p>No results found</p>
+                </div>
+                <div class="jplist-panel row">
+				
+					<!-- pagination info label -->
+					<!--
+					<div 
+						class="pull-left jplist-pagination-info"
+						data-type="<strong>Page {current} of {pages}</strong><br/> <small>{start} - {end} of {all}</small>" 
+						data-control-type="pagination-info" 
+						data-control-name="paging" 
+						data-control-action="paging"></div>
+					-->
+					<div class="col-md-4">
+						<!-- items per page dropdown -->
+						<div 
+							class="dropdown pull-left jplist-items-per-page"
+							data-control-type="boot-items-per-page-dropdown" 
+							data-control-name="paging" 
+							data-control-action="paging">
+
+							<button 
+								class="btn btn-primary dropdown-toggle" 
+								type="button" 
+								data-toggle="dropdown" 
+								id="dropdown-menu-1"
+								aria-expanded="true">					
+								<span data-type="selected-text">Items per Page</span>
+								<span class="caret"></span>						
+							</button>
+
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-1">
+
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#" data-number="3">3 per page</a>
+								</li>
+
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#" data-number="5" data-default="true">5 per page</a>
+								</li>
+								
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#" data-number="10">10 per page</a>
+								</li>
+
+								<li role="presentation" class="divider"></li>
+
+								<li role="presentation">
+									<a role="menuitem" tabindex="-1" href="#" data-number="all">View All</a>
+								</li>
+							</ul>						  
+						</div>
+					</div>
+					<div class="col-md-8">
+						<!-- bootstrap pagination control -->
+						<ul 
+							 class="pagination pull-left jplist-pagination"
+							 data-control-type="boot-pagination" 
+							 data-control-name="paging" 
+							 data-control-action="paging"
+							 data-range="3"
+							 data-mode="google-like">
+						</ul>
+                    </div>
+
+
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
