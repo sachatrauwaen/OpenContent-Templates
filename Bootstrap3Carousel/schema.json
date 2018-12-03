@@ -1,30 +1,29 @@
-﻿{
-    "type": "object",
-    "properties": {
-        "ModuleTitle": {
-            "title": "Module Title",
-            "type": "string"
-        },
-        "Slides": {
-            "type": "array",
-            "items": {
-                "title": "Slide",
-                "type": "object",
-                "properties": {
-                    "Title": {
-                        "title": "Title",
-                        "type": "string"
-                    },
-                    "Description": {
-                        "title": "Description",
-                        "type": "string"
-                    },
-                    "Image": {
-                        "title": "Image",
-                        "type": "string"
-                    }
-                }
-            }
+{
+  "type": "object",
+  "properties": {
+    "ModuleTitle": {
+      "type": "string",
+      "title": "Module Title"
+    },
+    "Slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "Description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "Image": {
+            "type": "string",
+            "title": "Image"
+          }
         }
+      }
     }
+  }
 }

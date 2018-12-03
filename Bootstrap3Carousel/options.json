@@ -1,22 +1,23 @@
 {
-    "fields": {
-        "Slides": {
-            "fields": {
-                "item": {
-                    "fields": {
-                        "Description": {
-                            "type": "wysihtml"
-                        },
-                        "Image": {
-                            "type": "image",
-                            "helper": "Url of the image",
-                            "typeahead": {
-                                "Folder": "Images"
-                            }
-                        }
-                    }
-                }
-            }
+  "fields": {
+    "ModuleTitle": {
+      "type": "text"
+    },
+    "Slides": {
+      "type": "array",
+      "items": {
+        "fields": {
+          "Title": {
+            "type": "text"
+          },
+          "Description": {
+            "type": "wysihtml"
+          },
+          "Image": {
+            "type": "image"
+          }
         }
+      }
     }
+  }
 }

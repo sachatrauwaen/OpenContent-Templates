@@ -1,8 +1,8 @@
-<div id="carousel-{{Context.ModuleId}}" class="carousel slide" data-ride="carousel" data-interval="{{Settings.Interval}}">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="{{Settings.Interval}}">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         {{#each Slides}}
-        <li data-target="#carousel-{{../Context.ModuleId}}" data-slide-to="{{@index}}" {{#if @first}} class="active" {{/if}}></li>
+        <li data-target="#carousel-example-generic" data-slide-to="{{@index}}" {{#if @first}} class="active" {{/if}}></li>
         {{/each}}
     </ol>
     <!-- Wrapper for slides -->
@@ -18,10 +18,10 @@
         {{/each}}
     </div>
     <!-- Controls -->
-    <a class="left carousel-control" href="#carousel-{{Context.ModuleId}}" data-slide="prev">
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
-    <a class="right carousel-control" href="#carousel-{{Context.ModuleId}}" data-slide="next">
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
 </div>
