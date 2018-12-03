@@ -1,0 +1,24 @@
+﻿{
+    "type": "object",
+	"properties": {
+		"executedon" : {
+			"title" : "Animation executed on",
+			"type" : "select",
+			"enum":["show","hover"],
+			"required":true,
+			 
+		},
+		"showanimation" : { 
+			"title":"Show animition",
+			"type" : "select",
+			"enum":["fadeIn","fadeInDown","fadeInLeft","fadeInRight","fadeInUp","fadeInDownBig","fadeInLeftBig","fadeInRightBig","fadeInUpBig"],
+			"dependencies": "executedon"
+		},
+		"hoveranimation" : { 
+			"title":"Hover animation",
+			"type" : "select",
+			"enum":["rubberBand","shake","swing","tada"],
+			"dependencies": "executedon"
+		}
+	}
+}

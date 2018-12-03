@@ -1,0 +1,10 @@
+﻿{
+    "type": "object",
+	"properties":{
+		"image": {
+			"title": "Image",
+			"type": "string"
+		},
+
+	}
+}

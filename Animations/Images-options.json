@@ -1,0 +1,19 @@
+﻿{
+    "fields": {
+		
+		"showanimation": {
+			"type": "select",
+			"removeDefaultNone":true,
+                "dependencies": {
+                    "executedon": "show"
+                }
+        },
+		"hoveranimation": {
+			"type": "select",
+			"removeDefaultNone":true,
+                "dependencies": {
+                    "executedon": "hover"
+                }
+        },
+    }
+}

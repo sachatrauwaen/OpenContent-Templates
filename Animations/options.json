@@ -1,0 +1,8 @@
+﻿{
+    "fields": {
+		"image": {
+			"type": "image",
+			"helper": "Url of the image"
+		}
+    }
+}

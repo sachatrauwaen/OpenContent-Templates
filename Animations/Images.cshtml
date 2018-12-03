@@ -1,0 +1,8 @@
+@if (Model.Settings.executedon == "show")
+{
+    <div class="animation @Model.Settings.showanimation"> <img src="@Model.image" /> </div>
+}
+else
+{
+    <div class="animated @Model.Settings.hoveranimation"> <img src="@Model.image" /> </div>
+}
