@@ -1,0 +1,49 @@
+{
+  "type": "object",
+  "properties": {
+    "ModuleTitle": {
+      "type": "string",
+      "title": "Module Title"
+    },
+    "Boxes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "Description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "Image": {
+            "type": "string",
+            "title": "Icon fa-"
+          },
+          "Effekt": {
+            "type": "string",
+            "title": "Icon Effect",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ]
+          },
+          "Link": {
+            "type": "string",
+            "title": "Link"
+          },
+          "LinkText": {
+            "type": "string",
+            "title": "Link Text"
+          }
+        }
+      }
+    }
+  }
+}

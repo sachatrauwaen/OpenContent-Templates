@@ -1,0 +1,25 @@
+{
+  "Boxes": [
+    {
+      "Title":"Lorem",
+      "Description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "Effekt": "1",
+      "Image":"eye",
+	  "LinkText" : "Read more ..."
+    },
+    {
+      "Title":"Ipsum",
+      "Description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "Effekt": "2",
+      "Image":"car",
+	  "LinkText" : "Read more ..."
+    },
+    {
+      "Title":"Dolor",
+      "Description":"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+      "Effekt": "3",
+      "Image":"camera",
+	  "LinkText" : "Read more ..."
+    }
+  ]
+}

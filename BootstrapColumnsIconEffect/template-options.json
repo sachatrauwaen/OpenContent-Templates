@@ -1,0 +1,15 @@
+{
+    "fields": {
+		"Color": {
+		        "helper": "Enter the HTML color code (e.g. #C0C0C0)"
+		},
+		"Columns": {
+			"type": "select",
+			"helper": "Define how many columns you want to show",
+			"removeDefaultNone":true
+		},
+		"Bootstrap2": {
+		        "helper": "If not checked Bootstrap 3 syntax is used"				
+		}
+    }
+}

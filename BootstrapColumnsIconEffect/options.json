@@ -1,0 +1,40 @@
+{
+  "fields": {
+    "ModuleTitle": {
+      "type": "text"
+    },
+    "Boxes": {
+      "type": "array",
+      "items": {
+        "fields": {
+          "Title": {
+            "type": "text"
+          },
+          "Description": {
+            "type": "text"
+          },
+          "Image": {
+            "type": "icon"
+          },
+          "Effekt": {
+            "type": "select",
+            "optionLabels": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ]
+          },
+          "Link": {
+            "type": "text"
+          },
+          "LinkText": {
+            "type": "text"
+          }
+        }
+      }
+    }
+  }
+}

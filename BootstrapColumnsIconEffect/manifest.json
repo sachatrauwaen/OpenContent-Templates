@@ -1,0 +1,15 @@
+{
+    "templates": {
+        "template": {
+            "type": "single",
+            "title": "template",           
+            "main": {
+                "template": "template.hbs",
+              	"dnnsearch": true,
+                 "dnnSearchTitle": "{{#each Boxes}}{{Title}} {{/each}}",
+                 "dnnSearchDescription": "{{#each Boxes}}{{Description}} {{/each}}",
+                 "dnnSearchText": "{{#each Boxes}}{{Title}} {{Description}} {{/each}}"
+            }
+        }
+    }
+}

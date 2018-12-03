@@ -1,0 +1,80 @@
+{
+  "formfields": [
+    {
+      "fieldname": "ModuleTitle",
+      "title": "Module Title",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Boxes",
+      "fieldtype": "array",
+      "subfields": [
+        {
+          "fieldname": "Title",
+          "title": "Title",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "Description",
+          "title": "Description",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "Image",
+          "title": "Icon fa-",
+          "fieldtype": "icon",
+          "advanced": false
+        },
+        {
+          "fieldname": "Effekt",
+          "title": "Icon Effect",
+          "fieldtype": "select",
+          "fieldoptions": [
+            {
+              "value": "1",
+              "text": "1"
+            },
+            {
+              "value": "2",
+              "text": "2"
+            },
+            {
+              "value": "3",
+              "text": "3"
+            },
+            {
+              "value": "4",
+              "text": "4"
+            },
+            {
+              "value": "5",
+              "text": "5"
+            },
+            {
+              "value": "6",
+              "text": "6"
+            }
+          ],
+          "advanced": false
+        },
+        {
+          "fieldname": "Link",
+          "title": "Link",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "LinkText",
+          "title": "Link Text",
+          "fieldtype": "text",
+          "advanced": false
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}

@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "Color": {
+            "title": "Color",
+            "type": "string"
+        },
+        "Columns": {
+	    "title": "Columns",
+	    "type": "number",
+	    "enum": [1, 2, 3, 4, 6, 12 ]
+        },
+        "Bootstrap2": {
+            "title": "Bootstrap 2",
+            "type": "boolean"
+        }
+    }
+}

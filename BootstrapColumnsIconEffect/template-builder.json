@@ -1,0 +1,52 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "Color",
+      "fieldtype": "text",
+      "title": "Color",
+      "helper": "Enter the HTML color code (e.g. #C0C0C0)",
+      "advanced": true
+    },
+    {
+      "fieldname": "Columns",
+      "fieldoptions": [
+        {
+          "value": "1",
+          "text": "1"
+        },
+        {
+          "value": "2",
+          "text": "2"
+        },
+        {
+          "value": "3",
+          "text": "3"
+        },
+        {
+          "value": "4",
+          "text": "4"
+        },
+        {
+          "value": "6",
+          "text": "6"
+        },
+        {
+          "value": "12",
+          "text": "12"
+        }
+      ],
+      "fieldtype": "select",
+      "title": "Columns",
+      "helper": "Define how many columns you want to show",
+      "advanced": true
+    },
+    {
+      "fieldname": "Bootstrap2",
+      "fieldtype": "checkbox",
+      "title": "Bootstrap 2",
+      "helper": "If not checked Bootstrap 3 syntax is used",
+      "advanced": true
+    }
+  ]
+}

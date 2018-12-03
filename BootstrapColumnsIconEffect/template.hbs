@@ -1,0 +1,26 @@
+{{registerstylesheet "font-awesome.min.css"}}
+
+<style>
+/* Color settings */
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-1 .fa{background-color:{{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-1 .fa:after{box-shadow: 0 0 0 2px {{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-2 .fa{background-color:{{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-2 .fa:after{box-shadow: 0 0 0 2px {{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-3 .fa{box-shadow: 0 0 0 2px {{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-3 .fa:after{background-color:{{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-4 .fa{ background-color:{{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-5 .fa{background-color:{{Settings.Color}};}
+#icon-hover-{{Context.ModuleId}} .icon_hover .icon-effect-6 .fa{background-color:{{Settings.Color}};}
+</style>
+<div class="{{#if Settings.Bootstrap2}}row-fluid{{else}}row{{/if}}" id="icon-hover-{{Context.ModuleId}}">
+{{#each Boxes}}
+<div class="{{#if ../Settings.Bootstrap2}}span{{else}}col-md-{{/if}}{{divide "12" ../Settings.Columns}} main_top icon_hover">
+	<a href="{{Link}}">
+		<div class="fa-effect icon-effect-{{Effekt}}"><span class="{{Image}}"></span> </div>
+	</a>
+	<h3>{{Title}}</h3>
+	<div class="main_top_list">{{Description}}</div>
+	<p class="readmore"><a target="_blank" href="{{Link}}">{{LinkText}}</a></p>
+</div>
+{{/each}}
+</div>
