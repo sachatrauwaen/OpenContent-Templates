@@ -1,0 +1,43 @@
+{
+  "fields": {
+    "Category": {
+      "type": "select2",
+      "dataService": {
+        "action": "LookupData",
+        "data": {
+          "dataKey": "Categories",
+          "valueField": "Id",
+          "textField": "Title"
+        }
+      }
+    },
+    "Title": {
+      "type": "text"
+    },
+    "Summary": {
+      "type": "wysihtml"
+    },
+    "Description": {
+      "type": "wysihtml"
+    },
+    "Image": {
+      "type": "image"
+    },
+    "Address": {
+      "type": "address"
+    },
+    "Gallery": {
+      "type": "gallery"
+    },
+    "Featured": {
+      "type": "checkbox"
+    },
+    "publishstatus": {
+      "type": "select",
+      "optionLabels": [
+        "draft",
+        "published"
+      ]
+    }
+  }
+}

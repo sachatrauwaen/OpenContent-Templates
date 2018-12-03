@@ -1,0 +1,29 @@
+{
+  "formfields": [
+    {
+      "fieldname": "Name",
+      "title": "Name",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Email",
+      "title": "Email",
+      "fieldtype": "email",
+      "advanced": false
+    },
+    {
+      "fieldname": "Phone",
+      "title": "Phone",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Message",
+      "title": "Message",
+      "fieldtype": "textarea",
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}

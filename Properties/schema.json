@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "Category": {
+      "type": "string",
+      "title": "Category"
+    },
+    "Title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "Summary": {
+      "type": "string",
+      "title": "Summary"
+    },
+    "Description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "Image": {
+      "type": "string",
+      "title": "Main Image"
+    },
+    "Address": {
+      "type": "object",
+      "title": "Address"
+    },
+    "Gallery": {
+      "type": "array",
+      "title": "Image Gallery"
+    },
+    "Featured": {
+      "type": "boolean",
+      "title": "Featured"
+    },
+    "publishstatus": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "default": "published",
+      "required": true
+    }
+  }
+}

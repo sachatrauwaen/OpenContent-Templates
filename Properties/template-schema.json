@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "Rss": {
+      "type": "boolean",
+      "title": "Rss Feed"
+    },
+    "Sort": {
+      "type": "boolean",
+      "title": "Sorting"
+    },
+    "ItemsPage": {
+      "type": "boolean",
+      "title": "Items per page"
+    },
+    "CurrentPage": {
+      "type": "boolean",
+      "title": "Current page label"
+    }
+  }
+}

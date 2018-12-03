@@ -1,0 +1,19 @@
+{
+    "items": {
+        "fields": {
+            "Id": {
+                "type": "guid",
+                "hidden": true
+            },
+            "Title": {
+                "type": "text"
+            },
+            "Description": {
+                "type": "textarea"
+            },
+            "Image": {
+                "type": "image"
+            }
+        }
+    }
+}

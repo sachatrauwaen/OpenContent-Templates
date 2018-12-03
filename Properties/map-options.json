@@ -1,0 +1,14 @@
+{
+    "fields": {
+        "MapCenter": {
+            "type": "address"
+        },
+        "MapIcon": {
+            "type": "image",
+            "helper": "Url of the image",
+            "typeahead": {
+                "Folder": "Images"
+            }
+        }
+    }
+}

@@ -1,0 +1,200 @@
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.core.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.filter-toggle-bundle.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.textbox-filter.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.bootstrap-pagination-bundle.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.bootstrap-sort-dropdown.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.preloader-control.min.js"}}
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+
+{{registerscript "/DesktopModules/OpenContent/js/lib/handlebars/handlebars.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/lib/moment/min/moment.min.js"}}
+
+{{AdditionalData.Intro.Title}}
+
+<div class="">
+    <div id="demo" class="jplist" data-moduleid="{{Context.ModuleId}}">
+        <div class="row">
+            <div class="col-md-3 side-bar">
+
+                <!-- panel -->
+                <div class="jplist-panel">
+
+                    <!-- filter by title -->
+                    <div class="text-filter-box form-group">
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <!--[if lt IE 10]>
+                            <div class="jplist-label">Filter by Title:</div>
+                            <![endif]-->
+
+                            <input data-path=".title" class="form-control"
+                                   type="text"
+                                   value=""
+                                   placeholder="Filter by Title"
+                                   data-control-type="textbox"
+                                   data-control-name="Title"
+                                   data-control-action="filter" />
+                        </div>
+                    </div>
+                    <!-- checkbox filters -->
+                    <div class="jplist-group form-group"
+                         data-control-type="checkbox-group-filter"
+                         data-control-action="filter"
+                         data-control-name="Category">
+
+                        {{#each AdditionalData.Categories}}
+
+                        <div class="checkbox ">
+                            <label for="{{this}}">
+                                <input data-path="{{Id}}"
+                                       id="{{Id}}"
+                                       type="checkbox" />
+                                {{Title}}
+                            </label>
+                        </div>
+
+                        {{/each}}
+                    </div>
+                   
+					{{#if Settings.Sort}}
+                    <!-- sort dropdown -->
+                    <div class="dropdown form-group"
+                         data-control-type="boot-sort-drop-down"
+                         data-control-name="sort"
+                         data-control-action="sort"
+                         data-control-deep-link="true"
+                         data-datetime-format="{month}/{day}/{year}">
+                        <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
+
+                        <label for="dropdown-menu-1">Sort by</label>
+
+                        <button class="btn btn-default dropdown-toggle"
+                                type="button"
+                                id="dropdown-menu-1"
+                                data-toggle="dropdown"
+                                aria-expanded="true">
+                            <span data-type="selected-text">Sort by</span>
+                            <span class="caret"></span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-1">
+
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#" data-path="Title" data-order="asc" data-type="text" data-default="true">Title A-Z</a>
+                            </li>
+
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="#" data-path="Title" data-order="desc" data-type="text">Title Z-A</a>
+                            </li>
+
+                           
+
+                        </ul>
+
+                    </div>
+					{{/if}}
+                </div>
+                {{#if Settings.Rss}}
+                <div class="row">
+                    <div class="col-md-9">
+                        <i class="fa fa-rss"></i>
+                        <a href="{{Context.RssUrl}}">Rss</a>
+                    </div>
+                </div>
+                {{/if}}
+				
+				 <!-- preloader for data sources -->
+			  <div 
+				 class="jplist-hide-preloader jplist-preloader"
+				 data-control-type="preloader" 
+				 data-control-name="preloader" 
+				 data-control-action="preloader">
+                Loading...
+			  </div>	
+				
+				
+            </div>
+            <div class="col-md-9">
+			
+                <!-- data -->
+                <div class="list row text-shadow">
+
+
+                </div>
+                <div class="row jplist-no-results text-shadow align-center">
+                    <p>No results found</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="jplist-panel row">
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-4">
+						{{#if Settings.ItemsPage}}
+                        <!-- items per page dropdown -->
+                        <div class="dropdown pull-left jplist-items-per-page"
+                             data-control-type="boot-items-per-page-dropdown"
+                             data-control-name="paging"
+                             data-control-action="paging">
+
+                            <button class="btn btn-primary dropdown-toggle"
+                                    type="button"
+                                    data-toggle="dropdown"
+                                    id="dropdown-menu-1"
+                                    aria-expanded="true">
+                                <span data-type="selected-text">Items per Page</span>
+                                <span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-1">
+
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#" data-number="3">3 per page</a>
+                                </li>
+
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#" data-number="5" data-default="true">5 per page</a>
+                                </li>
+
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#" data-number="10">10 per page</a>
+                                </li>
+
+                                <li role="presentation" class="divider"></li>
+
+                                <li role="presentation">
+                                    <a role="menuitem" tabindex="-1" href="#" data-number="all">View All</a>
+                                </li>
+                            </ul>
+                        </div>
+						{{/if}}
+                    </div>
+                    <div class="col-md-8">
+                        <!-- bootstrap pagination control -->
+                        <ul class="pagination pull-left jplist-pagination"
+                            data-control-type="boot-pagination"
+                            data-control-name="paging"
+                            data-control-action="paging"
+                            data-range="8"
+                            data-mode="google-like"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+				{{#if Settings.CurrentPage}}
+                <!-- pagination info label -->
+                <div class="pull-left jplist-pagination-info"
+                     data-type="<strong>Page {current} of {pages}</strong><br/> <small>{start} - {end} of {all}</small>"
+                    data-control-type="pagination-info"
+                    data-control-name="paging"
+                    data-control-action="paging"></div>
+				{{/if}}
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{{registerstylesheet "flexslider.css"}}
+{{registerscript "jquery.flexslider-min.js"}}
+
+<div id="flexslider-slider-{{Context.ModuleId}}" class="flexslider flex-slider"
+     data-animationloop="false"
+     data-slideshow="false"
+     data-animation="fade"
+     data-touch="true"
+     data-controlnav="false"
+     data-directionnav="true"
+     data-sync="#flexslider-carousel-{{Context.ModuleId}}">
+    <ul class="slides">
+        {{#if Image}}
+        <li>
+            <img src="{{Image}}" />
+        </li>
+        {{/if}}
+        {{#each Gallery}}
+        <li>
+            <img src="{{Image}}" />
+            {{#if Title}}<div class="flex-title">{{Title}}</div>{{/if}}
+            {{#if Description}}<div class="flex-description">{{Description}}</div>{{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>

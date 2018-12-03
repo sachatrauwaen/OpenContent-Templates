@@ -1,0 +1,69 @@
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+
+{{registerform}}
+
+<div class="row jplist-detail" data-moduleid="{{Context.ModuleId}}" data-id="{{Context.Id}}" data-title="{{Title}}">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="row article">
+                    <div class="col-md-5">
+                        {{#if Gallery}}
+                        {{> flexslider}}
+                        {{else}}
+                        <img src="{{Image}}" alt="" title="" class="img-rounded img-responsive" />
+                        {{/if}}
+                    </div>
+                    <div class="caption col-md-7">
+                        <h2 class="title">{{Title}}</h2>
+                        {{#if Category}}
+                        <p>
+                            <span class="fa fa-tag" aria-hidden="true"></span>
+                            <span>{{Category.Title}}</span>
+                        </p>
+                        {{/if}}
+                        <div class="description">
+                            {{Description}}
+                        </div>
+                        <!-- Button trigger modal -->
+                        <br />
+                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal-{{Context.ModuleId}}">Contact</a>
+
+                    </div>
+                </div>
+                {{#if Gallery}}
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {{> flexcarousel}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{{Context.MainUrl}}" class="btn btn-default">Return to list</a></li>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-{{Context.ModuleId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Contact form</h4>
+            </div>
+            <div class="modal-body">
+                <div class="contactform"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="submit-{{Context.ModuleId}}">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>

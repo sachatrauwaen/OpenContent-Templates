@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "Rss": {
+      "type": "checkbox"
+    },
+    "Sort": {
+      "type": "checkbox"
+    },
+    "ItemsPage": {
+      "type": "checkbox"
+    },
+    "CurrentPage": {
+      "type": "checkbox"
+    }
+  }
+}

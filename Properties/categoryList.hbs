@@ -1,0 +1,14 @@
+
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+
+<div class="row">
+    <div class="col-md-12 sidebar">
+        <ul class="nav nav-sidebar">
+            {{#each AdditionalData.Categories}}
+
+            <li><a href="{{../Context.MainUrl}}#Category:pathGroup={{Id}}|sort:path~type~order=Title~text~asc|paging:number=5|paging:currentPage=0" onclick="location.reload();"> {{Title}}</a></li>
+
+            {{/each}}
+        </ul>
+    </div>
+</div>

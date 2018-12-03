@@ -1,0 +1,101 @@
+{
+  "editWitoutPostback": true,
+  "editRole": "",
+  "Index": true,
+  "detailMetaTitle": "{{Title}}",
+  "detailMetaDescription": "{{Description}}",
+  "detailUrl": "{{Category.Title}}-{{Title}}",
+  "detailMeta": "{{#if Image}}<meta property=\"og:image\" content=\"{{Image}}\" />{{/if}}",
+  "templates": {
+    "template": {
+      "type": "multiple",
+      "title": "List",
+      "clientSideData": true,
+      "main": {
+        "template": "template.hbs",
+        "partialTemplates": {
+          "item": {
+            "template": "item.hbs",
+            "clientside": true
+          }
+        },
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "additionalDataInTemplate": true
+      },
+      "detail": {
+        "template": "detail.hbs",
+        "partialTemplates": {
+          "flexslider": {
+            "template": "flexslider.hbs"
+          },
+          "flexcarousel": {
+            "template": "flexcarousel.hbs"
+          }
+        },
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "additionalDataInTemplate": true
+      }
+
+    },
+    "categorylist": {
+      "type": "multiple",
+      "title": "Categories",
+      "main": {
+        "template": "categorylist.hbs",
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "dataInTemplate": false,
+        "additionalDataInTemplate": true
+      }
+    },
+    "latest": {
+      "type": "multiple",
+      "title": "Latests",
+      "main": {
+        "template": "latest.hbs",
+        "additionalDataInTemplate": true
+      }
+    },
+    "map": {
+      "type": "multiple",
+      "title": "Map",
+      "clientSideData": true,
+      "main": {
+        "template": "map.hbs",
+        "partialTemplates": {
+          "item": {
+            "template": "map-item.hbs",
+            "clientside": true
+          }
+        },
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "additionalDataInTemplate": true
+      },
+      "detail": {
+        "template": "detail.hbs",
+        "partialTemplates": {
+          "flexslider": {
+            "template": "flexslider.hbs"
+          },
+          "flexcarousel": {
+            "template": "flexcarousel.hbs"
+          }
+        },
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "additionalDataInTemplate": true
+      }
+
+    }
+  },
+  "additionalData": {
+    "Categories": {
+      "title": "Categories",
+      "storageKey": "Categories",
+      "modelKey": "Categories"
+    }
+  }
+}

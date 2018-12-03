@@ -1,0 +1,29 @@
+{
+  "formfields": [
+    {
+      "fieldname": "Rss",
+      "title": "Rss Feed",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "Sort",
+      "title": "Sorting",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "ItemsPage",
+      "title": "Items per page",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "CurrentPage",
+      "title": "Current page label",
+      "fieldtype": "checkbox",
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}

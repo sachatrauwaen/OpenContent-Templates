@@ -1,0 +1,24 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "MapIcon",
+      "fieldtype": "image",
+      "title": "Map Icon",
+      "helper": "Url of the image",
+      "advanced": true
+    },
+    {
+      "fieldname": "Zoom",
+      "fieldtype": "text",
+      "title": "Zoom",
+      "default": 8,
+      "advanced": true
+    },
+    {
+      "fieldname": "MapCenter",
+      "fieldtype": "address",
+      "title": "Map Center"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+.map-canvas {
+    height: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+.mapitem {
+    max-width:300px;
+}
+
+.mapitem img{
+    max-width:100%;
+}
+
+.jplist-hide-preloader{
+    display:none;
+}

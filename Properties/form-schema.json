@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "Email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "Phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "Message": {
+      "type": "string",
+      "title": "Message"
+    }
+  }
+}
