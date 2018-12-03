@@ -1,0 +1,65 @@
+{
+  "formfields": [
+    {
+      "fieldname": "ModuleTitle",
+      "title": "Module Title",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Elements",
+      "fieldtype": "array",
+      "subfields": [
+        {
+          "fieldname": "Title",
+          "title": "Title",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "Description",
+          "title": "Description",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "Image",
+          "title": "Image",
+          "fieldtype": "image",
+          "imageoptions": {},
+          "advanced": false
+        },
+        {
+          "fieldname": "ItemWidth",
+          "title": "Item Width",
+          "fieldtype": "select",
+          "fieldoptions": [
+            {
+              "value": "grid-item-1",
+              "text": "20%"
+            },
+            {
+              "value": "grid-item-2",
+              "text": "40%"
+            },
+            {
+              "value": "grid-item-3",
+              "text": "60%"
+            },
+            {
+              "value": "grid-item-4",
+              "text": "80%"
+            },
+            {
+              "value": "grid-item-5",
+              "text": "100%"
+            }
+          ],
+          "advanced": false
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}
