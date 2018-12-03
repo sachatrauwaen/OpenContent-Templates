@@ -1,15 +1,20 @@
 {
-    "fields": {
-		"Columns" : {
-				"fields": {
-				"item": {
-					"fields": {
-						"Description": {
-							"type": "wysihtml"
-						}
-					}
-				}
-			}
-		}
+  "fields": {
+    "ModuleTitle": {
+      "type": "text"
+    },
+    "Columns": {
+      "type": "array",
+      "items": {
+        "fields": {
+          "Title": {
+            "type": "text"
+          },
+          "Description": {
+            "type": "wysihtml"
+          }
+        }
+      }
     }
+  }
 }
