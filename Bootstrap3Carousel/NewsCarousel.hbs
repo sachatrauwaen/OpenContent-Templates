@@ -1,0 +1,35 @@
+<div id="myNewsCarousel" class="carousel slide" data-ride="carousel">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+      	{{#each Slides}}
+        <div class="item {{#if @first}}active{{/if}}">
+          <img src="{{Image}}" >
+           <div class="carousel-caption">
+             <h4><a href="#">{{Title}}</a></h4>
+             <p>{{Description}}{{#if UrlText}}<a class="label label-primary" href="{{LinkUrl}}" target="_blank">{{LinkText}}</a>{{/if}}</p>
+          </div>
+        </div><!-- End Item -->
+ 		 {{/each}}
+         
+                
+      </div><!-- End Carousel Inner -->
+ 
+ 
+    <ul class="list-group col-sm-4">
+      {{#each Slides}}
+      <li data-target="#myNewsCarousel" data-slide-to="{{@index}}" class="list-group-item {{#if @first}}active {{/if}}"><h4>{{Title}}</h4></li>
+       {{/each}}
+    </ul>
+ 
+      <!-- Controls -->
+      <div class="carousel-controls">
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
+      </div>
+ 
+    </div><!-- End Carousel -->

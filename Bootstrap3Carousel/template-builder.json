@@ -1,0 +1,10 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "Interval",
+      "fieldtype": "text",
+      "title": "Interval"
+    }
+  ]
+}

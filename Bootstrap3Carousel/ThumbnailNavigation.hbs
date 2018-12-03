@@ -1,0 +1,18 @@
+<div class="carousel slide article-slide" id="myThumbnailCarousel">
+      <div class="carousel-inner cont-slider">
+    	{{#each Slides}}
+        <div class="item {{#if @first}}active{{/if}}">
+          <img src="{{Image}}">
+        </div>
+        {{/each}}        
+      </div>
+      
+      <!-- Indicators -->
+      <ol class="carousel-indicators visible-lg visible-md">
+        {{#each Slides}}
+        <li class="{{#if @first}}active{{/if}}" data-slide-to="{{@index}}" data-target="#myThumbnailCarousel">
+          <img alt="" title="" src="{{Image}}">
+        </li>
+        {{/each}}        
+      </ol>                 
+    </div>

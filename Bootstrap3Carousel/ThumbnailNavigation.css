@@ -1,0 +1,31 @@
+#myThumbnailCarousel .carousel-indicators {
+    bottom: 0;
+    left: 10px;
+    margin-left: 5px;
+    width: 100%;
+}
+
+#myThumbnailCarousel .carousel-indicators li {
+    border: medium none;
+    border-radius: 0;
+    float: left;
+    height: 44px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-right: 5px !important;
+    margin-top: 0;
+    width: 120px;
+}
+
+#myThumbnailCarousel .carousel-indicators img {
+    border: 2px solid #FFFFFF;
+    float: left;
+    height: 44px;
+    left: 0;
+    width: 120px;
+}
+
+#myThumbnailCarousel .carousel-indicators .active img {
+    border: 2px solid #39b3d7;
+
+}
