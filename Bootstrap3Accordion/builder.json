@@ -1,0 +1,26 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "ModuleTitle",
+      "fieldtype": "text",
+      "title": "Module Title"
+    },
+    {
+      "fieldname": "Panels",
+      "subfields": [
+        {
+          "fieldname": "Title",
+          "fieldtype": "text",
+          "title": "Title"
+        },
+        {
+          "fieldname": "Description",
+          "fieldtype": "text",
+          "title": "Description"
+        }
+      ],
+      "fieldtype": "array"
+    }
+  ]
+}
