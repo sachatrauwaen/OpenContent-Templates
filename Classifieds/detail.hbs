@@ -1,0 +1,42 @@
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+
+<div class="row .jplist-detail">
+    <div class="col-md-10">
+        <div class="row article">
+
+            <div class="col-sm-12 col-md-12">
+                <div class="row article">
+                    <div class="col-md-5">
+                        <img src="{{Image}}" alt="" title="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="caption col-md-7">
+                        <h2 class="title">{{Title}}</h2>
+                        {{Summary}}
+
+                        <p class="theme">
+                            {{#each Category}}
+                            <span class="{{this}}">{{arraytranslate ../Schema.properties.Category.enum ../Options.fields.Category.optionLabels this }}</span>
+                            {{/each}}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{Description}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active"><a href="{{Context.MainUrl}}">Return to list</a></li>
+
+            {{#each Schema.properties.Category.enum}}
+            <li role="presentation" class=""><a href="{{../Context.MainUrl}}#categories:pathGroup=.{{this}}">{{arrayindex ../Options.fields.Category.optionLabels @index }}</a></li>
+            {{/each}}
+        </ul>
+
+    </div>
+</div>

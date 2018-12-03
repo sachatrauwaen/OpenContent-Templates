@@ -1,0 +1,46 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "Category",
+      "fieldoptions": [
+        {
+          "value": "Category1",
+          "text": "Category 1"
+        },
+        {
+          "value": "Category2",
+          "text": "Category 2"
+        },
+        {
+          "value": "Category3",
+          "text": "Category 3"
+        }
+      ],
+      "fieldtype": "multicheckbox",
+      "title": "Category"
+    },
+    {
+      "fieldname": "Title",
+      "fieldtype": "text",
+      "title": "Title"
+    },
+    {
+      "fieldname": "Summary",
+      "fieldtype": "wysihtml",
+      "title": "Summary"
+    },
+    {
+      "fieldname": "Description",
+      "fieldtype": "wysihtml",
+      "title": "Description"
+    },
+    {
+      "fieldname": "Image",
+      "fieldtype": "image",
+      "title": "Image",
+      "helper": "Url of the image",
+      "advanced": true
+    }
+  ]
+}

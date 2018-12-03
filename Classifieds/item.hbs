@@ -1,0 +1,27 @@
+<!-- item {{@index}} -->
+<div class="row article">
+
+    <div class="col-sm-12 col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="{{Context.DetailUrl}}"><img src="{{Image}}" alt="" title="" class="img-thumbnail img-responsive" /></a>
+            </div>
+            <div class="caption col-md-8">
+                <h3 class="title"><a href="{{Context.DetailUrl}}">{{Title}}</a></h3>
+                <p class="desc">{{Summary}}</p>
+                <p><a href="{{Context.DetailUrl}}" class="btn btn-default" role="button">Read more</a></p>
+                {{#if Context.IsEditable}}
+                <p><a href="{{Context.EditUrl}}" title="Edit Item" class="btn btn-primary">Edit</a></p>
+                    {{/if}}
+                <p class="theme">
+                    {{#each Category}}
+                    <span class="{{this}}">{{arraytranslate ../../Schema.properties.Category.enum ../../Options.fields.Category.optionLabels this }}</span>
+                    {{/each}}
+                </p>
+            </div>
+        </div>
+        
+
+    </div>
+
+</div>
