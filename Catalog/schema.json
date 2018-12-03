@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "Category": {
+            "title": "Category",
+            "type": "array",
+            "enum": ["Category1", "Category2","Category3"]
+        },
+        "Title": {
+            "title": "Title",
+            "type": "string"
+        },
+      	"Summary": {
+            "title": "Summary",
+            "type": "string"
+        },
+        "Description": {
+            "title": "Description",
+            "type": "string"
+        },
+        "Image": {
+            "title": "Image",
+            "type": "string"
+        }
+    }
+}

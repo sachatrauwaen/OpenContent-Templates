@@ -1,0 +1,21 @@
+{
+    "fields": {
+      	"Title": {
+			"type":"text"
+        },
+      	"Summary": {
+			"type":"wysihtml"
+        },
+        "Description": {
+			"type":"wysihtml"
+        },
+        "Image": {
+            "type": "image",
+            "helper": "Url of the image"
+        },
+        "Category": {
+            "type": "checkbox",
+            "optionLabels": ["Category 1", "Category 2","Category 3"]
+        }
+    }
+}
