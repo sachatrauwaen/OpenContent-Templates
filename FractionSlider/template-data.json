@@ -1,0 +1,11 @@
+{
+  "FullWidth": true,
+  "Controls": true,
+  "Pager": true,
+  "AutoChange": true,
+  "PauseOnHover": true,
+  "Responsive": true,
+  "Increase": true,
+  "Width": 900,
+  "Height": 300
+}
