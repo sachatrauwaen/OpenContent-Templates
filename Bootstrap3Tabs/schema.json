@@ -1,26 +1,25 @@
-﻿{
-    "type": "object",
-    "properties": {
-        "ModuleTitle": {
-            "title": "Module Title",
-            "type": "string"
-        },
-        "Tabs": {
-            "type": "array",
-            "items": {
-                "title": "Tab",
-                "type": "object",
-                "properties": {
-                    "Title": {
-                        "title": "Title",
-                        "type": "string"
-                    },
-                    "Description": {
-                        "title": "Description",
-                        "type": "string"
-                    }
-                }
-            }
+{
+  "type": "object",
+  "properties": {
+    "ModuleTitle": {
+      "type": "string",
+      "title": "Module Title"
+    },
+    "Tabs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "Description": {
+            "type": "string",
+            "title": "Description"
+          }
         }
+      }
     }
+  }
 }

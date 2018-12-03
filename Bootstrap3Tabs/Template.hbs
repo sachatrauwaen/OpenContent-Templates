@@ -1,9 +1,9 @@
 <div role="tabpanel">
 
     <!-- Nav tabs -->
-  <ul class="nav nav-{{Settings.Layout}}s" role="tablist">
+    <ul class="nav nav-{{Settings.Layout}}s" role="tablist">
         {{#each Tabs}}
-    <li role="presentation" {{#if @first}}class="active"{{/if}} ><a href="#tab{{@index}}" aria-controls="tab{{@index}}" role="tab" data-toggle="{{../Settings.Layout}}">{{Title}}</a></li>        
+      <li role="presentation" {{#if @first}}class="active"{{/if}} ><a href="#tab{{@index}}" aria-controls="tab{{@index}}" role="tab" data-toggle="{{../Settings.Layout}}">{{Title}}</a></li>        
         {{/each}}
     </ul>
 
