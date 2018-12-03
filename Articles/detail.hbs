@@ -1,0 +1,108 @@
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+
+<div class="row jplist-detail">
+  <div class="col-md-12">
+
+    <div class="col-sm-12 col-md-12">
+      <div class="row article">
+        <div class="col-md-5">
+          {{#if Gallery}}
+          {{> flexslider}}
+          {{else}}
+          <img src="{{Image}}" alt="" title="" class="img-rounded img-responsive" />
+          {{/if}}
+        </div>
+        <div class="caption col-md-7">
+          <h2 class="title">{{Title}}</h2>
+          {{#if Category}}
+          <span class="fa fa-tag" aria-hidden="true"></span>
+          <span>{{Category.Title}}</span> -
+          {{/if}}
+          <span class="fa fa-calendar" aria-hidden="true"></span>
+          {{formatDateTime publishstartdate "dd/MM/yyyy" "fr-BE" }}
+
+          <p class="tags">
+            {{#each Tags}}
+            <span class="{{Id}}">{{Tag}}</span>
+            {{/each}}
+          </p>
+          <div class="description">
+            {{Description}}
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+      </div>
+      {{#if Gallery}}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{> flexcarousel}}
+          {{!--
+                        <div class="row">
+                            {{#each Gallery}}
+                            <div class="col-md-2">
+                                <img src="{{Image}}" alt="" title="" class="img-rounded img-responsive" />
+                            </div>
+                            {{/each}}
+                        </div>
+                        --}}
+        </div>
+      </div>
+      {{/if}}
+      {{#if Documents}}
+      <div class="row panel-body">
+        <div class="panel panel-default">
+          <div class="panel-heading">Documents</div>
+          <div class="panel-body">
+            <ul>
+              {{#each Documents}}
+              <li>
+                <a href="{{File}}" alt="" title="" target="_blank">{{Title}}</a>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{#unless Context.IsEditable}}
+  <div class="row">
+    <div class="col-md-12">
+      {{#if Settings.Social.FaceBook}}
+      <div id="fb-root"></div>
+      <script>
+        (function (d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+      {{/if}}
+      <div class="panel ">
+        <div class="panel-body">
+          {{#if Settings.Social.FbLike}}
+          <div class="fb-like" data-href="{{Context.DetailUrl}}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+          {{/if}}
+          {{#if Settings.Social.Tweeter}}
+          <a href="https://twitter.com/share" class="twitter-share-button" {count}>Tweet</a>
+          <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+          {{/if}}
+        </div>
+      </div>
+      {{#if Settings.Social.FbComments}}
+      <div class="embed-responsive embed-responsive-4by3">
+        <div class="fb-comments" data-href="{{Context.DetailUrl}}" data-numposts="5"></div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{/unless}}
+  <div class="row">
+    <div class="col-md-12">
+      <a href="{{Context.MainUrl}}" class="btn btn-default">Return to list</a>
+    </div>
+  </div>
+</div>

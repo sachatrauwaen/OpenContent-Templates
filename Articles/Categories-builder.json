@@ -1,0 +1,25 @@
+{
+  "formtype": "array",
+  "formfields": [
+    {
+      "fieldname": "Id",
+      "fieldtype": "guid",
+      "title": "Id (internal)"
+    },
+    {
+      "fieldname": "Title",
+      "fieldtype": "text",
+      "title": "Title"
+    },
+    {
+      "fieldname": "Description",
+      "fieldtype": "textarea",
+      "title": "Description"
+    },
+    {
+      "fieldname": "Image",
+      "fieldtype": "image",
+      "title": "Image"
+    }
+  ]
+}

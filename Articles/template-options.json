@@ -1,0 +1,45 @@
+{
+  "fields": {
+    "Rss": {
+      "type": "checkbox",
+      "label": "Rss Feed"
+    },
+    "Sort": {
+      "type": "checkbox",
+      "label": "Sorting"
+    },
+    "ItemsPage": {
+      "type": "checkbox",
+      "label": "Items per page"
+    },
+    "CurrentPage": {
+      "type": "checkbox",
+      "label": "Current page label"
+    },
+    "Tags": {
+      "type": "checkbox",
+      "label": "Tags"
+    },
+    "Social": {
+      "type": "object",
+      "fields": {
+        "Facebook": {
+          "type": "checkbox",
+          "label": "Facebook"
+        },
+        "FbLike": {
+          "type": "checkbox",
+          "label": "Facebook : Like / Share"
+        },
+        "FbComments": {
+          "type": "checkbox",
+          "label": "Facebook : Comments"
+        },
+        "Tweeter": {
+          "type": "checkbox",
+          "label": "Twiiter : Tweet"
+        }
+      }
+    }
+  }
+}

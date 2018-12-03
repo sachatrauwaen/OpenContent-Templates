@@ -1,0 +1,80 @@
+{
+  "type": "object",
+  "properties": {
+    "Category": {
+      "type": "string",
+      "title": "Category",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "Summary": {
+      "type": "string",
+      "title": "Summary"
+    },
+    "Description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "Image": {
+      "type": "string",
+      "title": "Main Image"
+    },
+    "Gallery": {
+      "type": "array",
+      "title": "Image Gallery"
+    },
+    "Documents": {
+      "type": "array",
+      "title": "Documents"
+    },
+    "Seo": {
+      "type": "object",
+      "title": "SEO",
+      "properties": {
+        "Slug": {
+          "type": "string",
+          "title": "Slug"
+        },
+        "MetaTitle": {
+          "type": "string",
+          "title": "Meta Title"
+        },
+        "MetaDescription": {
+          "type": "string",
+          "title": "Meta Description"
+        }
+      }
+    },
+    "Tags": {
+      "type": "array",
+      "title": "Tags"
+    },
+    "Featured": {
+      "type": "boolean",
+      "title": "Featured"
+    },
+    "publishstartdate": {
+      "title": "Publish Start Date",
+      "required": true,
+      "default": "today"
+    },
+    "publishenddate": {
+      "title": "Publish End Date",
+      "required": true,
+      "default": "2099-12-31"
+    },
+    "publishstatus": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "default": "draft",
+      "required": true
+    }
+  }
+}

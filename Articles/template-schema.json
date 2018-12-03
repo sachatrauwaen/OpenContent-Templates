@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "Rss": {
+      "type": "boolean"
+    },
+    "Sort": {
+      "type": "boolean"
+    },
+    "ItemsPage": {
+      "type": "boolean"
+    },
+    "CurrentPage": {
+      "type": "boolean"
+    },
+    "Tags": {
+      "type": "boolean"
+    },
+    "Social": {
+      "type": "object",
+      "title": "Social",
+      "properties": {
+        "Facebook": {
+          "type": "boolean"
+        },
+        "FbLike": {
+          "type": "boolean"
+        },
+        "FbComments": {
+          "type": "boolean"
+        },
+        "Tweeter": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

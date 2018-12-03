@@ -1,0 +1,43 @@
+<script id="jplist-template" type="text/x-handlebars-template">
+
+    <!-- handlebars template -->
+    {{#each Items}}
+    <div class="list-item col-md-12">
+        {{#if Context.IsEditable}}
+        <div style="outline: 1px dashed #ccc;height: 22px !important;position:relative;margin-top:1px;">
+            <div style="padding-left:5px; line-height:22px;">
+                {{publishstatus}} : {{formatDateTime publishstartdate "DD/MM/YYYY"}} - {{formatDateTime publishenddate "DD/MM/YYYY"}}
+            </div>
+            <div style="position:absolute;right:0;top:0;line-height:22px; ">
+            	<a href="{{Context.EditUrl}}" title="Edit Item" style="background-color:#000;color:#fff;padding: 0 2px; "><i class="fa fa-pencil"></i></a>
+            </div>
+        </div>
+        {{/if}}
+        <!-- item {{@index}} -->
+        <div class="row article">
+            <div class="col-sm-12 col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="{{Context.DetailUrl}}"><img src="{{Image}}" alt="" title="" class="img-thumbnail img-responsive" /></a>
+                    </div>
+                    <div class="caption col-md-8">
+                        <h3 class="title"><a href="{{Context.DetailUrl}}">{{Title}}</a></h3>
+                        <p class="desc">{{{Summary}}}</p>
+                        <p><a href="{{Context.DetailUrl}}" class="btn btn-default" role="button">Read more</a></p>
+                        <p class="theme">
+                            <span class="fa fa-calendar" aria-hidden="true"></span>
+                            {{formatDateTime publishstartdate "DD/MM/YYYY"}}
+                            <span class="fa fa-tags" aria-hidden="true"></span>
+                            {{#if Category}}
+                            <span>{{Category.Title}}</span>
+                            {{/if}}
+                        </p>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+</script>

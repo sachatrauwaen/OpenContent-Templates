@@ -1,0 +1,15 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "Title",
+      "fieldtype": "text",
+      "title": "Title"
+    },
+    {
+      "fieldname": "Description",
+      "fieldtype": "text",
+      "title": "Description"
+    }
+  ]
+}

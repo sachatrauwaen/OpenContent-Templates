@@ -1,0 +1,13 @@
+{
+    "items": {
+        "fields": {
+            "Id": {
+                "type": "guid",
+                "hidden": true
+            },
+            "Tag": {
+                "type": "text"
+            }
+        }
+    }
+}

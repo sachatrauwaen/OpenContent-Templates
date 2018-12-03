@@ -1,0 +1,165 @@
+{
+  "formfields": [
+    {
+      "fieldname": "Category",
+      "title": "Category",
+      "fieldtype": "relation",
+      "relationoptions": {
+        "many": false,
+        "datakey": "Categories",
+        "valuefield": "Id",
+        "textfield": "Title"
+      },
+      "advanced": true,
+      "required": true,
+      "hidden": false,
+      "index": false,
+      "position": "1col1",
+      "dependencies": []
+    },
+    {
+      "fieldname": "Title",
+      "title": "Title",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Summary",
+      "title": "Summary",
+      "fieldtype": "wysihtml",
+      "advanced": false
+    },
+    {
+      "fieldname": "Description",
+      "title": "Description",
+      "fieldtype": "wysihtml",
+      "advanced": false
+    },
+    {
+      "fieldname": "Image",
+      "title": "Main Image",
+      "fieldtype": "image",
+      "imageoptions": {},
+      "advanced": true,
+      "required": false,
+      "hidden": false,
+      "helper": "Url of the image",
+      "multilanguage": false,
+      "position": "1col1",
+      "dependencies": []
+    },
+    {
+      "fieldname": "Gallery",
+      "title": "Image Gallery",
+      "fieldtype": "gallery",
+      "advanced": false
+    },
+    {
+      "fieldname": "Documents",
+      "title": "Documents",
+      "fieldtype": "documents",
+      "advanced": false
+    },
+    {
+      "fieldname": "Seo",
+      "title": "SEO",
+      "fieldtype": "object",
+      "subfields": [
+        {
+          "fieldname": "Slug",
+          "title": "Slug",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "MetaTitle",
+          "title": "Meta Title",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "MetaDescription",
+          "title": "Meta Description",
+          "fieldtype": "text",
+          "advanced": false
+        }
+      ],
+      "advanced": false
+    },
+    {
+      "fieldname": "Tags",
+      "title": "Tags",
+      "fieldtype": "relation",
+      "relationoptions": {
+        "many": true,
+        "datakey": "Tags",
+        "valuefield": "Id",
+        "textfield": "Tag"
+      },
+      "advanced": false
+    },
+    {
+      "fieldname": "Featured",
+      "title": "Featured",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "publishstartdate",
+      "title": "Publish Start Date",
+      "fieldtype": "date",
+      "dateoptions": {
+        "format": "DD/MM/YYYY",
+        "minDate": "2000-01-01",
+        "maxDate": "2099-12-31"
+      },
+      "advanced": true,
+      "required": true,
+      "hidden": false,
+      "default": "today",
+      "index": false,
+      "position": "1col1",
+      "dependencies": []
+    },
+    {
+      "fieldname": "publishenddate",
+      "title": "Publish End Date",
+      "fieldtype": "date",
+      "dateoptions": {
+        "format": "DD/MM/YYYY",
+        "minDate": "2000-01-01",
+        "maxDate": "2099-12-31"
+      },
+      "advanced": true,
+      "required": true,
+      "hidden": false,
+      "default": "2099-12-31",
+      "index": false,
+      "position": "1col1",
+      "dependencies": []
+    },
+    {
+      "fieldname": "publishstatus",
+      "title": "Status",
+      "fieldtype": "select",
+      "fieldoptions": [
+        {
+          "value": "draft",
+          "text": "draft"
+        },
+        {
+          "value": "published",
+          "text": "published"
+        }
+      ],
+      "advanced": true,
+      "required": true,
+      "hidden": false,
+      "default": "draft",
+      "index": false,
+      "position": "1col1",
+      "dependencies": []
+    }
+  ],
+  "formtype": "object"
+}

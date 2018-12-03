@@ -1,0 +1,81 @@
+{
+    "editWitoutPostback": true,
+    "editRole": "",
+    "Index": true,
+    "detailMetaTitle": "{{#if Seo.MetaTitle}}{{Seo.MetaTitle}}{{else}}{{Title}}{{/if}}",
+    "detailMetaDescription": "{{#if Seo.MetaDescription}}{{Seo.MetaDescription}}{{else}}{{Description}}{{/if}}",
+    "detailUrl": "{{Category.Title}}-{{#if Seo.Slug}}{{Seo.Slug}}{{else}}{{Title}}{{/if}}",
+    "detailMeta": "{{#if Image}}<meta property=\"og:image\" content=\"{{Image}}\" />{{/if}}<meta property=\"og:type\" content=\"article\" />",
+    "templates": {
+        "template": {
+            "type": "multiple", 
+            "title": "List",
+            "clientSideData": true,
+            "main": {
+                "template": "template.hbs",
+                "partialTemplates": {
+                    "item": {
+                        "template": "item.hbs",
+                        "clientside": true
+                    }
+                },
+                "schemaInTemplate": true,
+                "optionsInTemplate": true,
+                "additionalDataInTemplate": true
+            },
+            "detail": {
+                "template": "detail.hbs",
+                "partialTemplates": {
+                    "flexslider": {
+                        "template": "flexslider.hbs"
+                    },
+                     "flexcarousel": {
+                        "template": "flexcarousel.hbs"
+                    }
+                },
+                "schemaInTemplate": true,
+                "optionsInTemplate": true,
+                "additionalDataInTemplate": true
+            }
+
+        },
+        "categorylist": {
+            "type": "multiple", 
+            "title": "Categories",
+            "main": {
+                "template": "categorylist.hbs",
+                "schemaInTemplate": true,
+                "optionsInTemplate": true,
+                "dataInTemplate": false,
+                "additionalDataInTemplate": true
+            }
+        },
+        "latest": {
+            "type": "multiple",
+            "title": "Latests",
+            "main": {
+                "template": "latest.hbs",
+               "additionalDataInTemplate": true
+            }
+        }
+    },
+    "additionalData": {
+        "Intro": {
+            "title": "Introduction",
+            "scope": "tabmodule", 
+            "storageKey": "intro",
+            "modelKey": "intro",
+            "templateFolder": ""
+        },
+        "Categories": {
+            "title": "Categories",
+            "storageKey": "Categories",
+            "modelKey": "Categories"
+        },
+        "Tags": {
+            "title": "Tags",
+            "storageKey": "Tags",
+            "modelKey": "Tags"
+        }
+    }
+}

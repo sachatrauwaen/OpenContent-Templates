@@ -1,0 +1,67 @@
+{
+  "formfields": [
+    {
+      "fieldname": "Rss",
+      "title": "Rss Feed",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "Sort",
+      "title": "Sorting",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "ItemsPage",
+      "title": "Items per page",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "CurrentPage",
+      "title": "Current page label",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "Tags",
+      "title": "Tags",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "Social",
+      "title": "Social",
+      "fieldtype": "object",
+      "subfields": [
+        {
+          "fieldname": "Facebook",
+          "title": "Facebook",
+          "fieldtype": "checkbox",
+          "advanced": false
+        },
+        {
+          "fieldname": "FbLike",
+          "title": "Facebook : Like / Share",
+          "fieldtype": "checkbox",
+          "advanced": false
+        },
+        {
+          "fieldname": "FbComments",
+          "title": "Facebook : Comments",
+          "fieldtype": "checkbox",
+          "advanced": false
+        },
+        {
+          "fieldname": "Tweeter",
+          "title": "Twiiter : Tweet",
+          "fieldtype": "checkbox",
+          "advanced": false
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}

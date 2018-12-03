@@ -1,0 +1,17 @@
+{
+    "type": "array",
+    "items": {
+        "type": "object",
+        "title": "Tag",
+        "properties": {
+            "Id": {
+                "type": "string",
+                "title": "Id (internal)"
+            },
+            "Tag": {
+                "type": "string",
+                "title": "Tag"
+            }
+        }
+    }
+}

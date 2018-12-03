@@ -1,0 +1,25 @@
+<div id="flexslider-carousel-{{Context.ModuleId}}" class="flexslider flex-carousel"
+     data-animationloop="false"
+     data-slideshow="false"
+     data-touch="true"
+     data-controlnav="false"
+     data-directionnav="true"
+     data-itemwidth="100"
+     data-itemmargin="5"
+     data-minitems="2"
+     data-maxitems="6"
+     data-move="1"
+     data-asnavfor="#flexslider-slider-{{Context.ModuleId}}">
+    <ul class="slides">
+        {{#if Image}}
+        <li>
+            <img src="{{Image}}" />
+        </li>
+        {{/if}}
+        {{#each Gallery}}
+        <li>
+            <img src="{{Image}}" />
+        </li>
+        {{/each}}
+    </ul>
+</div>

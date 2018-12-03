@@ -1,0 +1,21 @@
+{
+  "fields": {
+    "Category": {
+      "items": {
+        "indexType": "key",
+        "index": true,
+        "sort": true
+      }
+    },
+    "Title": {
+      "indexType": "text",
+      "index": true,
+      "sort": true
+    },
+    "Date": {
+      "indexType": "datetime",
+      "index": true,
+      "sort": true
+    }
+  }
+}

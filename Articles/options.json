@@ -1,0 +1,87 @@
+{
+  "fields": {
+    "Category": {
+      "type": "select2",
+      "dataService": {
+        "action": "LookupData",
+        "data": {
+          "dataKey": "Categories",
+          "valueField": "Id",
+          "textField": "Title"
+        }
+      },
+	  "hideNone":false
+    },
+    "Title": {
+      "type": "text"
+    },
+    "Summary": {
+      "type": "wysihtml"
+    },
+    "Description": {
+      "type": "wysihtml"
+    },
+    "Image": {
+      "type": "image",
+      "helper": "Url of the image"
+    },
+    "Gallery": {
+      "type": "gallery"
+    },
+    "Documents": {
+      "type": "documents"
+    },
+    "Seo": {
+      "type": "object",
+      "fields": {
+        "Slug": {
+          "type": "text"
+        },
+        "MetaTitle": {
+          "type": "text"
+        },
+        "MetaDescription": {
+          "type": "text"
+        }
+      }
+    },
+    "Tags": {
+      "type": "select2",
+      "dataService": {
+        "action": "LookupData",
+        "data": {
+          "dataKey": "Tags",
+          "valueField": "Id",
+          "textField": "Tag"
+        }
+      }
+    },
+    "Featured": {
+      "type": "checkbox"
+    },
+    "publishstartdate": {
+      "type": "date",
+      "picker": {
+        "format": "DD/MM/YYYY",
+        "minDate": "2000-01-01",
+        "maxDate": "2099-12-31"
+      }
+    },
+    "publishenddate": {
+      "type": "date",
+      "picker": {
+        "format": "DD/MM/YYYY",
+        "minDate": "2000-01-01",
+        "maxDate": "2099-12-31"
+      }
+    },
+    "publishstatus": {
+      "type": "select",
+      "sort": false,
+      "optionLabels": [
+        "draft",
+        "published"
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "fields": {
+    "Title": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

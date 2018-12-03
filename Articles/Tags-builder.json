@@ -1,0 +1,15 @@
+{
+  "formtype": "array",
+  "formfields": [
+    {
+      "fieldname": "Id",
+      "fieldtype": "guid",
+      "title": "Id (internal)"
+    },
+    {
+      "fieldname": "Tag",
+      "fieldtype": "text",
+      "title": "Tag"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+﻿<rss version="2.0" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+    <channel>
+        <title>Copyburo</title>
+        <link>{{Context.MainUrl}}</link>
+        <description>RSS feed</description>
+        <ttl>60</ttl>
+        
+        {{#each Items}}
+        <item>
+            <title>{{Title}}</title>
+            <link>{{Context.DetailUrl}}</link>
+            <description>
+                <![CDATA[ 
+                <img src="{{Image}}" alt="" height="200"/>
+                {{{Description}}}
+                ]]>
+            </description>
+            <pubDate>{{formatDateTime publishstartdate "r"}}</pubDate>
+           <guid>{{Context.DetailUrl}}</guid>
+        </item>
+        {{/each}}
+    </channel>
+</rss>
+
+
