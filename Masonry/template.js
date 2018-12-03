@@ -15,7 +15,7 @@
 					columnWidth: '.grid-sizer',
 					percentPosition: true,
 					gutter: '.gutter-sizer'
-				});          				
+				});
 			});
         });
     }

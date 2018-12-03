@@ -1,26 +1,33 @@
 {
-    "fields": {
-        "Elements": {
-            "fields": {
-                "item": {
-                    "fields": {
-                        "Description": {
-                            "type": "wysihtml"
-                        },
-                        "Image": {
-                            "type": "image",
-                            "helper": "Url of the image",
-                            "typeahead": {
-                                "Folder": "Images"
-                            }
-                        },
-                      	"ItemWidth": {
-                            "optionLabels" : ["20%", "40%", "60%", "80%","100%"],
-							"removeDefaultNone":true
-                        }
-                    }
-                }
-            }
+  "fields": {
+    "ModuleTitle": {
+      "type": "text"
+    },
+    "Elements": {
+      "type": "array",
+      "items": {
+        "fields": {
+          "Title": {
+            "type": "text"
+          },
+          "Description": {
+            "type": "text"
+          },
+          "Image": {
+            "type": "image"
+          },
+          "ItemWidth": {
+            "type": "select",
+            "optionLabels": [
+              "20%",
+              "40%",
+              "60%",
+              "80%",
+              "100%"
+            ]
+          }
         }
+      }
     }
+  }
 }
