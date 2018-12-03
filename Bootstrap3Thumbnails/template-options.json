@@ -1,8 +1,17 @@
-﻿{
-    "fields": {
-		"Columns": {
-			"type": "select",				
-			"removeDefaultNone":true
-		}
+{
+  "fields": {
+    "Columns": {
+      "type": "select",
+      "optionLabels": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ]
+    },
+    "EqualHeight": {
+      "type": "checkbox",
+      "label": "Equal Height Columns"
     }
+  }
 }

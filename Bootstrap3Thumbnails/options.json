@@ -1,30 +1,35 @@
 {
-    "fields": {
-        "Columns": {
-            "fields": {
-                "item": {
-                    "fields": {
-                        "Description": {
-                            "type": "wysihtml"
-                        },
-                        "Image": {
-                            "type": "image",
-                            "helper": "Url of the image",
-                            "typeahead": {
-                                "Folder": "Images"
-                            }
-                        },
-                        "LinkUrl": {
-                            "type": "url",
-                            "label": "Link on the image"
-                        },
-                        "LinkNewWindow": {
-                        
-                            "type": "checkbox"
-                        }
-                    }
-                }
-            }
+  "fields": {
+    "ModuleTitle": {
+      "type": "text"
+    },
+    "Columns": {
+      "type": "array",
+      "items": {
+        "fields": {
+          "Image": {
+            "type": "image"
+          },
+          "Caption": {
+            "type": "checkbox"
+          },
+          "Title": {
+            "type": "text"
+          },
+          "Description": {
+            "type": "ckeditor"
+          },
+          "LinkText": {
+            "type": "text"
+          },
+          "LinkUrl": {
+            "type": "url"
+          },
+          "LinkNewWindow": {
+            "type": "checkbox"
+          }
         }
+      }
     }
+  }
 }

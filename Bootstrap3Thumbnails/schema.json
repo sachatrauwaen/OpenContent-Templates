@@ -1,51 +1,60 @@
 {
-    "type": "object",
-    "properties": {
-        "ModuleTitle": {
-            "title": "Module Title",
-            "type": "string"
-        },
-        "Columns": {
-            "type": "array",
-            "items": {
-                "title": "Column",
-                "type": "object",
-                "properties": {
-                    "Image": {
-                        "title": "Image",
-                        "type": "string"
-                    },
-                    "Caption": {
-                        "title": "Caption ?",
-                        "type": "boolean"
-                    },                  
-                    "Title": {
-                        "title": "Title",
-                        "type": "string",
-                      	"dependencies":"Caption"
-                    },
-                    "Description": {
-                        "title": "Description",
-                        "type": "string",
-                      	"dependencies":"Caption"
-                    },
-                    "LinkText": {
-                        "title": "Link Text",
-                        "type": "string",
-                      	"dependencies":"Caption"
-                    },
-                    "LinkUrl": {
-                        "title": "Link Url",
-                        "type": "string",
-                      	"dependencies":"Caption"
-                    },
-                     "LinkNewWindow": {
-                        "title": "Open Link in new window",
-                        "type": "boolean",
-                       	"dependencies":"Caption"
-                    }
-                }
-            }
+  "type": "object",
+  "properties": {
+    "ModuleTitle": {
+      "type": "string",
+      "title": "Module Title"
+    },
+    "Columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Image": {
+            "type": "string",
+            "title": "Image"
+          },
+          "Caption": {
+            "type": "boolean",
+            "title": "Caption ?"
+          },
+          "Title": {
+            "type": "string",
+            "title": "Title",
+            "dependencies": [
+              "Caption"
+            ]
+          },
+          "Description": {
+            "type": "string",
+            "title": "Description",
+            "dependencies": [
+              "Caption"
+            ]
+          },
+          "LinkText": {
+            "type": "string",
+            "title": "Link Text",
+            "dependencies": [
+              "Caption"
+            ]
+          },
+          "LinkUrl": {
+            "type": "string",
+            "title": "Link Url",
+            "dependencies": [
+              "Caption"
+            ]
+          },
+          "LinkNewWindow": {
+            "type": "boolean",
+            "title": "Open Link in new window",
+            "dependencies": [
+              "Caption"
+            ]
+          }
         }
+      }
     }
+  }
 }
