@@ -1,0 +1,110 @@
+{
+  "formfields": [
+    {
+      "fieldname": "ModuleTitle",
+      "title": "Module Title",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Columns",
+      "fieldtype": "array",
+      "subfields": [
+        {
+          "fieldname": "Image",
+          "title": "Image",
+          "fieldtype": "image",
+          "imageoptions": {},
+          "advanced": false
+        },
+        {
+          "fieldname": "Caption",
+          "title": "Caption ?",
+          "fieldtype": "checkbox",
+          "advanced": false
+        },
+        {
+          "fieldname": "Title",
+          "title": "Title",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "multilanguage": false,
+          "index": false,
+          "position": "1col1",
+          "dependencies": [
+            {
+              "fieldname": "Caption"
+            }
+          ]
+        },
+        {
+          "fieldname": "Description",
+          "title": "Description",
+          "fieldtype": "ckeditor",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "multilanguage": false,
+          "index": false,
+          "position": "1col1",
+          "dependencies": [
+            {
+              "fieldname": "Caption"
+            }
+          ]
+        },
+        {
+          "fieldname": "LinkText",
+          "title": "Link Text",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "multilanguage": false,
+          "index": false,
+          "position": "1col1",
+          "dependencies": [
+            {
+              "fieldname": "Caption"
+            }
+          ]
+        },
+        {
+          "fieldname": "LinkUrl",
+          "title": "Link Url",
+          "fieldtype": "url",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "multilanguage": false,
+          "index": false,
+          "position": "1col1",
+          "dependencies": [
+            {
+              "fieldname": "Caption"
+            }
+          ]
+        },
+        {
+          "fieldname": "LinkNewWindow",
+          "title": "Open Link in new window",
+          "fieldtype": "checkbox",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "index": false,
+          "position": "1col1",
+          "dependencies": [
+            {
+              "fieldname": "Caption"
+            }
+          ]
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}
