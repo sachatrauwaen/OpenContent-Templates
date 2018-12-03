@@ -19,7 +19,7 @@
                 {{#each Elements}}
 
                 {{#equal Tag "Text" }}
-                <p class="claim light-green"
+                <p class="{{CssClass}}"
                    data-position="{{PositionTop}},{{PositionLeft}}"
                    {{#if Fixed}} data-fixed="" {{/if}}
                    {{#if In}} data-in="{{In}}" {{/if}}

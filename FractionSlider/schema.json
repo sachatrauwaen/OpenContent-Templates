@@ -23,6 +23,12 @@
                                     "type": "string",
                                     "dependencies": "Tag"
                                 },
+                              	"CssClass" : {
+                              		"title": "CssClass",
+                                    "type": "string",
+                                    "dependencies": "Tag",
+                              		"enum":["claim light-green","teaser orange","teaser green", "teaser turky"]
+                            	},
                                 "Image": {
                                     "title": "Image",
                                     "type": "string",

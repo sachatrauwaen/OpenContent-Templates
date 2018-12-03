@@ -9,8 +9,7 @@
                                 "item": {
                                     "fields": {
                                         "Tag": {
-                                            "removeDefaultNone": true,
-                                            "emptySelectFirst": true
+                                            "removeDefaultNone": true
                                         },
                                         "Image": {
                                             "type": "image",
@@ -23,6 +22,12 @@
                                             }
                                         },
                                         "Title": { 
+                                            "dependencies": {
+                                                "Tag": "Text"
+                                            }
+                                        },
+                                       	"CssClass": { 
+                                         	 "type": "select",
                                             "dependencies": {
                                                 "Tag": "Text"
                                             }
