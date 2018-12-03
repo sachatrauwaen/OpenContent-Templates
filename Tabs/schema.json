@@ -1,0 +1,24 @@
+﻿{
+    "type": "object",
+	"properties":{
+		"Tabs": {
+			"type": "array",
+			"items": {
+				"title":"Tab",
+				"type":"object",
+				"properties": {
+					"Title": {
+						"title":"Title",
+						"type": "string",
+						"required":true
+					},
+					"Text": {
+						"title":"Text",
+						"type": "string",
+						"required":true
+					},
+				}
+			}
+		}
+	}
+}

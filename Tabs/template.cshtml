@@ -1,0 +1,19 @@
+﻿<div class="@(Model.Settings.Position) @(Model.Settings.Position)_@(Model.Settings.Version)">
+    <ul class="resp-tabs-list">
+        @foreach (var item in Model.Data.Tabs)
+        {
+            <li><span>@item.Title</span></li>
+        }
+
+    </ul>
+    <div class="resp-tabs-container">
+        @foreach (var item in Model.Data.Tabs)
+        {
+            <div class="resp_container">
+                <div class="resp_margin">@(item.Text)</div>
+            </div>
+        }
+    </div>
+</div>
+
+
