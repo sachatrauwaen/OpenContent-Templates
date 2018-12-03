@@ -1,0 +1,20 @@
+{
+  "formtype": "object",
+  "formfields": [
+    {
+      "fieldname": "Layout",
+      "fieldoptions": [
+        {
+          "value": "tab",
+          "text": "tab"
+        },
+        {
+          "value": "pill",
+          "text": "pill"
+        }
+      ],
+      "fieldtype": "select",
+      "title": "Layout"
+    }
+  ]
+}
