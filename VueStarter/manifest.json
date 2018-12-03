@@ -1,0 +1,18 @@
+{
+    "index": true,
+    "templates": {
+        "template": {
+            "type": "multiple", 
+            "title": "Template",
+            "main": {
+                "template": "template.hbs",
+                "partialTemplates": {
+                    "item": {
+                        "template": "vue-template.html",
+                      	"clientSide": true
+                    }
+                }
+            }
+        }
+    }
+}

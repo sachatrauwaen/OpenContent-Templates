@@ -1,0 +1,53 @@
+<script type="text/x-template" id="vue-template">
+<div class="vue-template">	
+	{{message}}
+    
+    <p>Search : <input type="text"  v-model="search" /> <button @click.prevent="searchItems">Search</button></p>
+    
+    <table>
+        <tr class="item">
+        	<td>
+        		Title
+            </td>
+            <td>
+            	Description
+           	<td>
+            <td>
+            	
+      		</td>
+            <td>
+            	
+      		</td>
+      	</tr>
+    	<tr class="item" v-for="item in items">
+        	<td>
+        		<input class="title" type="text" v-model="item.Title" >
+            </td>
+            <td>
+            	<input class="description" type="text" v-model="item.Description" >
+           	</td>
+            <td>
+            	<a class="update" href="#" @click.prevent="updateItem(item)">Update</a>
+      		</td>
+            <td>
+            	<a class="delete" href="#"  @click.prevent="deleteItem(item)" >Delete</a>
+      		</td>
+      	</tr>
+        <tr class="additem"  >
+        <td>
+        	<input class="title" type="text" v-model="form.Title">
+        </td>
+        <td>
+        	<input class="description" type="text" v-model="form.Description">
+  		</td>
+         <td>
+         	<a class="add" href="#" @click.prevent="addItem">Add</a>
+  		</td>
+         <td>
+            	
+      		</td>
+  		</tr>
+	</table>
+    
+</div>
+</script>
