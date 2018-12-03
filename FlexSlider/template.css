@@ -1,23 +1,23 @@
-.flex-title {
-  width: 100%;
-  padding: 1%;
-  left: 0;
-  bottom: 0;
+.flex-title {  
   background: rgba(0,0,0,.5);
+  bottom: 0;
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
   font-size: 14px;
+  left: 0;
   line-height: 18px;
+  padding: 1%;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);  
+  width: 100%;
 }
 
 .flex-description {
-  width: 100%;
-  padding: 1%;
-  left: 0;
-  bottom: 0;
   background: rgba(0,0,0,.5);
+  bottom: 0;
   color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
   font-size: 14px;
+  left: 0;
   line-height: 18px;
+  padding: 1%;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);  
+  width: 100%;
 }

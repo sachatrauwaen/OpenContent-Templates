@@ -7,7 +7,7 @@
         initSlider(element); // init slides on module which content change
     });
     function initSlider(element) {
-        $(".flexslider.carousel", element).each(function () {
+        $(".flexslider.flex-carousel", element).each(function () {
             $(this).flexslider({
                 'animationLoop': $(this).attr("data-animationloop") ? $(this).data("animationloop") : false,
                 'slideshow': $(this).attr("data-slideshow") ? $(this).data("slideshow") : false,
@@ -20,10 +20,10 @@
                 'minItems': $(this).attr("data-minitems") ? $(this).data("minitems") : 0,
                 'maxItems': $(this).attr("data-maxitems") ? $(this).data("maxitems") : 0,
                 'move': $(this).attr("data-move") ? $(this).data("move") : 0,
-                'asNavFor': $(this).attr("data-asnavfor") ? $(this).data("asnavfor") : "",
+                'asNavFor': $(this).attr("data-asnavfor") ? $(this).data("asnavfor") : ""
             });
         });
-        $(".flexslider.slider", element).each(function () {
+        $(".flexslider.flex-slider", element).each(function () {
             $(this).flexslider({
                 'animationLoop': $(this).attr("data-animationloop") ? $(this).data("animationloop") : false,
                 'slideshow': $(this).attr("data-slideshow") ? $(this).data("slideshow") : false,
@@ -32,7 +32,7 @@
                 'touch': $(this).attr("data-touch") ? $(this).data("touch") : false,
                 'controlNav': $(this).attr("data-controlnav") ? $(this).data("controlnav") : false,
                 'directionNav': $(this).attr("data-directionnav") ? $(this).data("directionnav") : false,
-                'sync': $(this).attr("data-sync") ? $(this).data("sync") : "",
+                'sync': $(this).attr("data-sync") ? $(this).data("sync") : ""
                 
             });
         });

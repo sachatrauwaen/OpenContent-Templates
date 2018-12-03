@@ -1,34 +1,82 @@
-﻿{
-    "fields": {
-        "slider": {
-            "fields": {
-                "animation": {
-                },
-                "touch": {
-                    "helper": "Allow touch swipe navigation of the slider on touch-enabled devices"
-                },
-                "controlNav": {
-                    "helper": "Create navigation for paging control of each clide"
-                },
-                "directionNav": {
-                    "helper": "Create navigation for previous/next navigation"
-                }
-            }
+{
+  "fields": {
+    "animationLoop": {
+      "type": "checkbox",
+      "label": "Animation Loop"
+    },
+    "slideshow": {
+      "type": "checkbox",
+      "label": "Slideshow"
+    },
+    "slider": {
+      "type": "object",
+      "fields": {
+        "show": {
+          "type": "checkbox",
+          "label": "Show Slider"
         },
-        "carousel": {
-            "fields": {
-                "animation": {
-                },
-                "touch": {
-                    "helper": "Allow touch swipe navigation of the slider on touch-enabled devices"
-                },
-                "controlNav": {
-                    "helper": "Create navigation for paging control of each clide"
-                },
-                "directionNav": {
-                    "helper": "Create navigation for previous/next navigation"
-                }
-            }
+        "animation": {
+          "type": "select",
+          "optionLabels": [
+            "slide",
+            "fade"
+          ]
+        },
+        "touch": {
+          "type": "checkbox",
+          "label": "Touch",
+          "helper": "Allow touch swipe navigation of the slider on touch-enabled devices"
+        },
+        "controlNav": {
+          "type": "checkbox",
+          "label": "Control Nav",
+          "helper": "Create navigation for paging control of each clide"
+        },
+        "directionNav": {
+          "type": "checkbox",
+          "label": "Direction Nav",
+          "helper": "Create navigation for previous/next navigation"
         }
+      }
+    },
+    "carousel": {
+      "type": "object",
+      "fields": {
+        "show": {
+          "type": "checkbox",
+          "label": "Show carousel"
+        },
+        "touch": {
+          "type": "checkbox",
+          "label": "Touch",
+          "helper": "Allow touch swipe navigation of the slider on touch-enabled devices"
+        },
+        "controlNav": {
+          "type": "checkbox",
+          "label": "Control Nav",
+          "helper": "Create navigation for paging control of each clide"
+        },
+        "directionNav": {
+          "type": "checkbox",
+          "label": "Direction Nav",
+          "helper": "Create navigation for previous/next navigation"
+        },
+        "itemWidth": {
+          "type": "text"
+        },
+        "itemMargin": {
+          "type": "text"
+        },
+        "minItems": {
+          "type": "text"
+        },
+        "maxItems": {
+          "type": "text"
+        },
+        "move": {
+          "type": "text"
+        }
+      }
     }
+  }
 }

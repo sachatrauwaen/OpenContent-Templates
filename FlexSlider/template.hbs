@@ -1,7 +1,7 @@
 {{registerstylesheet "flexslider.css"}}
 {{registerscript "jquery.flexslider-min.js"}}
 {{#if Settings.slider.show}}
-<div id="flexslider-slider-{{Context.ModuleId}}" class="flexslider slider"
+<div id="flexslider-slider-{{Context.ModuleId}}" class="flexslider flex-slider"
      data-animationloop="{{#if Settings.animationLoop}}true{{else}}false{{/if}}"
      data-slideshow="{{#if Settings.slideshow}}true{{else}}false{{/if}}"
      data-animation="{{Settings.slider.animation}}"
@@ -21,7 +21,7 @@
 </div>
 {{/if}}
 {{#if Settings.carousel.show}}
-<div id="flexslider-carousel-{{Context.ModuleId}}" class="flexslider carousel"
+<div id="flexslider-carousel-{{Context.ModuleId}}" class="flexslider flex-carousel"
      data-animationloop="{{#if Settings.animationLoop}}true{{else}}false{{/if}}"
      {{#unless Settings.slider.show}}data-slideshow="{{#if Settings.slideshow}}true{{else}}false{{/if}}"{{/unless}}     
      data-touch="{{#if Settings.carousel.touch}}true{{else}}false{{/if}}"
@@ -36,7 +36,7 @@
     <ul class="slides">
         {{#each Slides}}
         <li>
-            <img src="{{#if thumb}}{{Thumb}}{{else}}{{Image}}{{/if}}" />
+            <img src="{{#if Thumb}}{{Thumb}}{{else}}{{Image}}{{/if}}" />
             {{#unless ../Settings.slider.show}}
             {{#if Title}}<div class="flex-title">{{Title}}</div>{{/if}}
             {{#if Description}}<div class="flex-description">{{Description}}</div>{{/if}}

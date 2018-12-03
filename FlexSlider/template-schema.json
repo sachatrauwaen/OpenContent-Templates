@@ -1,111 +1,122 @@
-﻿{
-    "type": "object",
-    "properties": {
-        "animationLoop": {
-            "title": "Animation Loop",
-            "type": "boolean"
+{
+  "type": "object",
+  "properties": {
+    "animationLoop": {
+      "type": "boolean"
+    },
+    "slideshow": {
+      "type": "boolean"
+    },
+    "slider": {
+      "type": "object",
+      "title": "Slider",
+      "properties": {
+        "show": {
+          "type": "boolean"
         },
-        "slideshow": {
-            "title": "Slideshow",
-            "type": "boolean"
+        "animation": {
+          "type": "string",
+          "title": "Animation",
+          "enum": [
+            "slide",
+            "fade"
+          ],
+          "default": "slide",
+          "required": true,
+          "dependencies": [
+            "show"
+          ]
         },
-        "slider": {
-            "title": "Slider",
-            "type": "object",
-            "properties": {
-                "show": {
-                    "title": "Show Slider",
-                    "type": "boolean"
-                },
-                "animation": {
-                    "title": "Animation",
-                    "type": "string",
-                    "enum": [ "slide", "fade" ],
-                    "default": "slide",
-                    "required": true,
-                    "dependencies": "show"
-                },
-                "touch": {
-                    "title": "Touch",
-                    "type": "boolean",
-                    "description": "Allow touch swipe navigation of the slider on touch-enabled devices",
-                    "default": true,
-                    "dependencies": "show"
-                },
-                "controlNav": {
-                    "title": "Control Nav",
-                    "type": "boolean",
-                    "description": "Create navigation for paging control of each clide",
-                    "dependencies": "show"
-                },
-                "directionNav": {
-                    "title": "Direction Nav",
-                    "type": "boolean",
-                    "description": "Create navigation for previous/next navigation",
-                    "default": true,
-                    "dependencies": "show"
-                }
-            }
+        "touch": {
+          "type": "boolean",
+          "default": "true",
+          "dependencies": [
+            "show"
+          ]
         },
-        "carousel": {
-            "title": "Carousel",
-            "type": "object",
-            "properties": {
-                "show": {
-                    "title": "Show carousel",
-                    "type": "boolean"
-                },
-                "touch": {
-                    "title": "Touch",
-                    "type": "boolean",
-                    "description": "Allow touch swipe navigation of the slider on touch-enabled devices",
-                    "default": true,
-                    "dependencies": "show"
-                },
-                "controlNav": {
-                    "title": "Control Nav",
-                    "type": "boolean",
-                    "description": "Create navigation for paging control of each clide",
-                    "dependencies": "show"
-                },
-                "directionNav": {
-                    "title": "Direction Nav",
-                    "type": "boolean",
-                    "description": "Create navigation for previous/next navigation",
-                    "default": true,
-                    "dependencies": "show"
-                },
-                "itemWidth": {
-                    "title": "Item Width",
-                    "type": "number",
-                    "default": 210,
-                    "dependencies": "show"
-                },
-                "itemMargin": {
-                    "title": "Item Margin",
-                    "type": "number",
-                    "default": 5,
-                    "dependencies": "show"
-                },
-                "minItems": {
-                    "title": "Min. Items",
-                    "type": "number",
-                    "default": 5,
-                    "dependencies": "show"
-                },
-                "maxItems": {
-                    "title": "Max. Items",
-                    "type": "number",
-                    "default": 5,
-                    "dependencies": "show"
-                },
-                "move": {
-                    "title": "Move",
-                    "type": "number",
-                    "default": 5,
-                    "dependencies": "show"
-                }
-            }
+        "controlNav": {
+          "type": "boolean",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "directionNav": {
+          "type": "boolean",
+          "default": "true",
+          "dependencies": [
+            "show"
+          ]
         }
+      }
+    },
+    "carousel": {
+      "type": "object",
+      "title": "Carousel",
+      "properties": {
+        "show": {
+          "type": "boolean"
+        },
+        "touch": {
+          "type": "boolean",
+          "default": "true",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "controlNav": {
+          "type": "boolean",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "directionNav": {
+          "type": "boolean",
+          "default": "true",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "itemWidth": {
+          "type": "string",
+          "title": "Item Width",
+          "default": "210",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "itemMargin": {
+          "type": "string",
+          "title": "Item Margin",
+          "default": "5",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "minItems": {
+          "type": "string",
+          "title": "Min. Items",
+          "default": "5",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "maxItems": {
+          "type": "string",
+          "title": "Max. Items",
+          "default": "5",
+          "dependencies": [
+            "show"
+          ]
+        },
+        "move": {
+          "type": "string",
+          "title": "Move",
+          "default": "5",
+          "dependencies": [
+            "show"
+          ]
+        }
+      }
     }
+  }
 }

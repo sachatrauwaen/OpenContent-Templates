@@ -2,19 +2,22 @@
   "ModuleTitle": "Bootstrap Carousel",
   "Slides": [
     {
-      "Title": "Title 1",
-      "Description": "Description 1<br><br>",
-      "Image": "http://placehold.it/600x300&text=Opencontent+rocks!"
+      "Image": "http://placehold.it/600x300/71B02F/FFFFFF&text=Opencontent+rocks!"
     },
     {
-      "Title": "Title 2",
-      "Description": "Description 2<br><br>",
-      "Image": "http://placehold.it/600x300&text=Alpaca forms+rocks!"
+      "Image": "http://placehold.it/600x300/E8117F/FFFFFF&text=Alpaca forms+rocks!"
     },
     {
-      "Title": "Title 3",
-      "Description": "Description 3<br><br>",
-      "Image": "http://placehold.it/600x300&text=DNN+rocks!"
+      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!"
+    },
+	{
+      "Image": "http://placehold.it/600x300/71B02F/FFFFFF&text=Opencontent+rocks!"
+    },
+    {
+      "Image": "http://placehold.it/600x300/E8117F/FFFFFF&text=Alpaca forms+rocks!"
+    },
+    {
+      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!"
     }
   ]
 }

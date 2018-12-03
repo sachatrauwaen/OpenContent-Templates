@@ -1,8 +1,8 @@
 {
     "fields": {
         "Slides": {
-            "fields": {
-                "item": {
+
+                "items": {
                     "fields": {
                         "Description": {
                             "type": "wysihtml"
@@ -23,7 +23,7 @@
                         }
                     }
                 }
-            }
+            
         }
     }
 }
