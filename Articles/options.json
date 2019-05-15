@@ -9,8 +9,7 @@
           "valueField": "Id",
           "textField": "Title"
         }
-      },
-	  "hideNone":false
+      }
     },
     "Title": {
       "type": "text"

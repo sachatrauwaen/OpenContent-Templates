@@ -3,8 +3,7 @@
   "properties": {
     "Category": {
       "type": "string",
-      "title": "Category",
-      "required": true
+      "title": "Category"
     },
     "Title": {
       "type": "string",

@@ -1,25 +1,27 @@
 {
-  "formtype": "array",
   "formfields": [
     {
-      "fieldname": "Id",
-      "fieldtype": "guid",
-      "title": "Id (internal)"
+      "fieldname": "Title",
+      "title": "Title",
+      "fieldtype": "text",
+      "advanced": false
     },
     {
-      "fieldname": "Title",
-      "fieldtype": "text",
-      "title": "Title"
+      "fieldname": "Id",
+      "title": "Id (internal)",
+      "fieldtype": "guid",
+      "advanced": true,
+      "required": false,
+      "hidden": true,
+      "position": "1col1",
+      "dependencies": []
     },
     {
       "fieldname": "Description",
+      "title": "Description",
       "fieldtype": "textarea",
-      "title": "Description"
-    },
-    {
-      "fieldname": "Image",
-      "fieldtype": "image",
-      "title": "Image"
+      "advanced": false
     }
-  ]
+  ],
+  "formtype": "array"
 }

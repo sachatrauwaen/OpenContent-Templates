@@ -10,12 +10,7 @@
         "valuefield": "Id",
         "textfield": "Title"
       },
-      "advanced": true,
-      "required": true,
-      "hidden": false,
-      "index": false,
-      "position": "1col1",
-      "dependencies": []
+      "advanced": false
     },
     {
       "fieldname": "Title",
