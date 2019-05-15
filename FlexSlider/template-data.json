@@ -1,0 +1,14 @@
+{
+  "animationLoop": true,
+  "slideshow": true,
+  "slider": {
+    "show": true,
+    "animation": "fade",
+    "touch": true,
+    "controlNav": true,
+    "directionNav": true
+  },
+  "carousel": {
+    "show": false
+  }
+}
