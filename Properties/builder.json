@@ -21,13 +21,19 @@
     {
       "fieldname": "Summary",
       "title": "Summary",
-      "fieldtype": "wysihtml",
+      "fieldtype": "ckeditor",
+      "ckeditoroptions": {
+        "configset": "basic"
+      },
       "advanced": false
     },
     {
       "fieldname": "Description",
       "title": "Description",
-      "fieldtype": "wysihtml",
+      "fieldtype": "ckeditor",
+      "ckeditoroptions": {
+        "configset": "basic"
+      },
       "advanced": false
     },
     {
@@ -73,6 +79,8 @@
       "required": true,
       "hidden": false,
       "default": "published",
+      "index": false,
+      "position": "1col1",
       "dependencies": []
     }
   ],

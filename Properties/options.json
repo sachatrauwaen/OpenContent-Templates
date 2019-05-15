@@ -15,10 +15,12 @@
       "type": "text"
     },
     "Summary": {
-      "type": "wysihtml"
+      "type": "ckeditor",
+      "configset": "basic"
     },
     "Description": {
-      "type": "wysihtml"
+      "type": "ckeditor",
+      "configset": "basic"
     },
     "Image": {
       "type": "image"
@@ -34,6 +36,7 @@
     },
     "publishstatus": {
       "type": "select",
+      "sort": false,
       "optionLabels": [
         "draft",
         "published"
