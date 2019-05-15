@@ -1,0 +1,13 @@
+{
+  "Rss": true,
+  "Sort": true,
+  "ItemsPage": true,
+  "CurrentPage": true,
+  "Tags": true,
+  "Social": {
+    "Facebook": false,
+    "FbLike": false,
+    "FbComments": false,
+    "Tweeter": false
+  }
+}

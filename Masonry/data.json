@@ -1,20 +1,41 @@
 {
-  "ModuleTitle": "Bootstrap Carousel",
-  "Slides": [
+  "ModuleTitle": "OpenContent",
+  "Elements": [
     {
-      "Title": "Title 1",
-      "Description": "Description 1<br><br>",
-      "Image": "http://placehold.it/600x300&text=Opencontent+rocks!"
+      "Image": "https://ipsumimage.appspot.com/640x360",
+      "ItemWidth": "grid-item-2"
     },
     {
-      "Title": "Title 2",
-      "Description": "Description 2<br><br>",
-      "Image": "http://placehold.it/600x300&text=Alpaca forms+rocks!"
+      "Image": "https://ipsumimage.appspot.com/640x640",
+      "ItemWidth": "grid-item-1"
     },
     {
-      "Title": "Title 3",
-      "Description": "Description 3<br><br>",
-      "Image": "http://placehold.it/600x300&text=DNN+rocks!"
+      "Image": "https://ipsumimage.appspot.com/640x360",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "https://ipsumimage.appspot.com/640x360",
+      "ItemWidth": "grid-item-2"
+    },
+    {
+      "Image": "https://ipsumimage.appspot.com/640x640",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "https://ipsumimage.appspot.com/640x360",
+      "ItemWidth": "grid-item-2"
+    },
+    {
+      "Image": "https://ipsumimage.appspot.com/640x360",
+      "ItemWidth": "grid-item-2"
+    },
+    {
+      "Image": "https://ipsumimage.appspot.com/640x640",
+      "ItemWidth": "grid-item-1"
+    },
+    {
+      "Image": "https://ipsumimage.appspot.com/640x360",
+      "ItemWidth": "grid-item-2"
     }
   ]
 }
