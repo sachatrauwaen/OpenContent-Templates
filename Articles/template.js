@@ -8,35 +8,52 @@
     var template = '';
     function initPage(element) {
         $(".jplist", element).each(function () {
-			var moduleid = $(this).attr('data-moduleid');
+            var moduleid = $(this).attr('data-moduleid');
             var moduleScope = $(this),
                 self = moduleScope,
                 sf = $.ServicesFramework(moduleid);
 
-            var $list = $('#demo .list'), 
+            var $list = $('#demo .list'),
                 template = Handlebars.compile($('#jplist-template').html());
 
             $(this).jplist({
-                itemsBox: ".list", 
-              itemPath: ".list-item", 
-              panelPath: ".jplist-panel", 
-              deepLinking: true, 
-              dataSource: {
-                    type: 'server', 
-                server: {
+                itemsBox: ".list",
+                itemPath: ".list-item",
+                panelPath: ".jplist-panel",
+                deepLinking: true,
+                dataSource: {
+                    type: 'server',
+                    server: {
                         ajax: {
-                            data: {}, 
-                            url: sf.getServiceRoot('OpenContent') + "JplistAPI/List", 
-                            dataType: 'json', type: 'POST', 
+                            data: {},
+                            url: sf.getServiceRoot('OpenContent') + "JplistAPI/List",
+                            dataType: 'json', type: 'POST',
                             beforeSend: sf.setModuleHeaders
                         }
-                    }, 
-					render: function (dataItem, statuses) {
-                        $list.html(template(dataItem.content));                      
-						var logs = dataItem.content.Logs;
+                    },
+                    render: function (dataItem, statuses) {
+                        $list.html(template(dataItem.content));
+                        var logs = dataItem.content.Logs;
                         $.fn.openContent.printLogs('Module ' + moduleid + ' - jplist webapi', logs);
                     }
                 }
+            });
+            var isTyping = false;
+            var typingHandler = null;
+            var $textfilter = $(".textfilter", this);
+
+            $textfilter.on('input', function (context) {
+                if (isTyping) {
+                    window.clearTimeout(typingHandler);
+                }
+                else {
+                    isTyping = true;
+                }
+
+                typingHandler = window.setTimeout(function () {
+                    isTyping = false;
+                    $textfilter.trigger("keydelay");
+                }, 1000);
             });
         });
 
@@ -77,6 +94,6 @@
             } else {
                 return context;   //  moment plugin is not available, context does not have a truthy value, or context is not a valid date
             }
-        });       
+        });
     }
 }(jQuery));

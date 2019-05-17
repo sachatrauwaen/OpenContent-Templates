@@ -1,6 +1,7 @@
 <script id="jplist-template" type="text/x-handlebars-template">
 
     <!-- handlebars template -->
+    {{#if Items}}
     {{#each Items}}
     <div class="list-item col-md-12">
         {{#if Context.IsEditable}}
@@ -39,5 +40,9 @@
         </div>
     </div>
     {{/each}}
-
+    {{else}}
+        <div class="col-md-12">
+            <p>No results found</p>
+        </div>
+    {{/if}}
 </script>

@@ -54,6 +54,6 @@ margin:0;
 }
 
 .jplist-hide-preloader{display:none}
-.jplist-preloader{height:30px;line-height:30px;margin:10px 10px 0 0;float:right}
+.jplist-preloader{height:30px;line-height:30px;margin:10px 10px 0 0;}
 
 .flexslider li {list-style-type: none;}
