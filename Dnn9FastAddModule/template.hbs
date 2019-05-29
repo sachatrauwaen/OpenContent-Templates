@@ -1,0 +1,8 @@
+{{#if Context.IsEditable}}
+<p>Choose the modules by bookmark them in DNN Standard Add module popup (and refresh the page)</p>
+<p>How to add <b>DNN 9 - Fast Add Module</b> to your skin :</p>
+<textarea style="width:100%;height:80px;">
+  <dnn:DnnJsInclude ID="Dnn9FastAddModuleJS" runat="server" FilePath="~{{Context.HomeDirectory}}OpenContent/Templates/Dnn9FastAddModule/template.js" />
+  <dnn:DnnCssInclude ID="Dnn9FastAddModuleCSS" runat="server" FilePath="~{{Context.HomeDirectory}}OpenContent/Templates/Dnn9FastAddModule/template.css" />
+</textarea>
+{{/if}}
