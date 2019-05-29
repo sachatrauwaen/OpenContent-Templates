@@ -1,23 +1,17 @@
 {
-  "ModuleTitle": "Bootstrap Carousel",
+  "ModuleTitle": "OpenContent",
   "Slides": [
     {
-      "Image": "http://placehold.it/600x300/71B02F/FFFFFF&text=Opencontent+rocks!"
+      "Image": "https://picsum.photos/id/1015/2000/400"
     },
     {
-      "Image": "http://placehold.it/600x300/E8117F/FFFFFF&text=Alpaca forms+rocks!"
+      "Image": "https://picsum.photos/id/1018/2000/400"
     },
     {
-      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!"
-    },
-	{
-      "Image": "http://placehold.it/600x300/71B02F/FFFFFF&text=Opencontent+rocks!"
+      "Image": "https://picsum.photos/id/103/2000/400"
     },
     {
-      "Image": "http://placehold.it/600x300/E8117F/FFFFFF&text=Alpaca forms+rocks!"
-    },
-    {
-      "Image": "http://placehold.it/600x300/42A2CE/FFFFFF&text=DNN+rocks!"
+      "Image": "https://picsum.photos/id/1050/2000/400"
     }
   ]
 }
