@@ -1,26 +1,33 @@
 {
-  "formtype": "object",
   "formfields": [
     {
       "fieldname": "ModuleTitle",
+      "title": "Module Title",
       "fieldtype": "text",
-      "title": "Module Title"
+      "advanced": false
     },
     {
       "fieldname": "Panels",
+      "fieldtype": "array",
       "subfields": [
         {
           "fieldname": "Title",
+          "title": "Title",
           "fieldtype": "text",
-          "title": "Title"
+          "advanced": false
         },
         {
           "fieldname": "Description",
-          "fieldtype": "text",
-          "title": "Description"
+          "title": "Description",
+          "fieldtype": "ckeditor",
+          "ckeditoroptions": {
+            "configset": "full"
+          },
+          "advanced": false
         }
       ],
-      "fieldtype": "array"
+      "advanced": false
     }
-  ]
+  ],
+  "formtype": "object"
 }
