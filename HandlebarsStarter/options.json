@@ -1,0 +1,20 @@
+{
+  "fields": {
+    "Columns": {
+      "type": "array",
+      "items": {
+        "fields": {
+          "Image": {
+            "type": "text"
+          },
+          "Title": {
+            "type": "text"
+          },
+          "Description": {
+            "type": "textarea"
+          }
+        }
+      }
+    }
+  }
+}

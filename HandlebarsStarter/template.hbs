@@ -1,0 +1,17 @@
+<div class="row">  
+  {{#each Columns}}
+  <div class="col-md-{{divide 12 ../Settings.Columns}} col-sm-{{divide 24 ../Settings.Columns}}">
+    <div class="thumbnail">
+      {{#if Image}}        
+      <img src="{{Image}}" alt="{{Title}}">
+      {{/if}}
+      <div class="caption">
+        {{#if Title}}
+        <h3>{{Title}}</h3>
+        {{/if}}
+        {{Description}}            
+      </div>          	
+    </div>
+  </div>
+  {{/each}}
+</div>

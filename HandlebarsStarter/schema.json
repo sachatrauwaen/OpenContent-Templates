@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "Columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Image": {
+            "type": "string",
+            "title": "Image"
+          },
+          "Title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "Description": {
+            "type": "string",
+            "title": "Description"
+          }
+        }
+      }
+    }
+  }
+}
