@@ -6,17 +6,14 @@
             @if (!string.IsNullOrEmpty(col.Image))
           	{          
             <img src="@col.Image" alt="@col.Title}}">
-            }
-          	@if (col.Caption)
-          	{
+            }          	
             <div class="caption">
                 @if (!string.IsNullOrEmpty(col.Title))
               	{
                 <h3>@col.Title</h3>
                 }
                 @col.Description            
-            </div>
-          	}
+            </div>          	
         </div>
     </div>
   	}
