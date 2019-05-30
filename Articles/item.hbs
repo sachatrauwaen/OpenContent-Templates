@@ -30,7 +30,7 @@
                             {{formatDateTime publishstartdate "DD/MM/YYYY"}}
                             <span class="fa fa-tags" aria-hidden="true"></span>
                             {{#if Category}}
-                            <span>{{Category.Title}}</span>
+                            <a class="categorylink" data-id="{{Category.Id}}" href="#" ><span>{{Category.Title}}</span></a>
                             {{/if}}
                         </p>
                     </div>

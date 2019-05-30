@@ -33,6 +33,13 @@
                     },
                     render: function (dataItem, statuses) {
                         $list.html(template(dataItem.content));
+                      
+                       $(".categorylink", $list).click(function(e){
+                            var id= $(this).data('id');
+                            e.preventDefault(); 
+                            $("input[data-path='"+id+"']").click();
+                            return false;
+                       });                                            
                         var logs = dataItem.content.Logs;
                         $.fn.openContent.printLogs('Module ' + moduleid + ' - jplist webapi', logs);
                     }
@@ -55,6 +62,11 @@
                     $textfilter.trigger("keydelay");
                 }, 1000);
             });
+          
+          
+          	
+          
+          
         });
 
         $(".flexslider.flex-carousel", element).each(function () {
