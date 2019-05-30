@@ -41,6 +41,12 @@
         },function () {
           $($container).hide();
         });
+        $(this).mousemove(function (){
+          if($container.css('display') == 'none')
+			{
+				$($container).show();
+			}
+        });                
       });
       initClick(sf);
     }).fail(function (xhr, result, status) {
