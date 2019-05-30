@@ -51,7 +51,7 @@
     $('.addOpenContent').each(function (index) {
       var pane = $(this).data('pane');
       var moduleid = $(this).data('moduleid');
-      $(this).click(function () {
+      $(this).off().click(function () {
         $.ajax({
           type: "POST",
           url: sf.getServiceRoot('InternalServices') + "ControlBar/AddModule",
