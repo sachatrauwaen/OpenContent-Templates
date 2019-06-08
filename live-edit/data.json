@@ -1,0 +1,19 @@
+{
+  "Columns": [
+    {
+      "Image": "http://placehold.it/242x200",
+      "Caption": true,
+      "Title": "Title",
+      "Description": "<p>Description</p>"
+    },
+    {
+      "Caption": true,
+      "Title": "Title",
+      "Description": "<p>Description</p>"
+    },
+    {
+      "Image": "http://placehold.it/242x200",
+      "Caption": false
+    }
+  ]
+}

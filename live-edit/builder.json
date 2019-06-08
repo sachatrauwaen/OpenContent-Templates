@@ -1,0 +1,54 @@
+{
+  "formfields": [
+    {
+      "fieldname": "Columns",
+      "fieldtype": "accordion",
+      "subfields": [
+        {
+          "fieldname": "Title",
+          "title": "Title",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "Category",
+          "title": "Category",
+          "fieldtype": "select",
+          "fieldoptions": [
+            {
+              "value": "Flower",
+              "text": "Flower"
+            },
+            {
+              "value": "Animal",
+              "text": "Animal"
+            },
+            {
+              "value": "Place",
+              "text": "Place"
+            }
+          ],
+          "advanced": false
+        },
+        {
+          "fieldname": "Description",
+          "title": "Description",
+          "fieldtype": "ckeditor",
+          "ckeditoroptions": {
+            "configset": "basic"
+          },
+          "advanced": false
+        },
+        {
+          "fieldname": "Image",
+          "title": "Image",
+          "fieldtype": "image",
+          "imageoptions": {},
+          "advanced": false
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}

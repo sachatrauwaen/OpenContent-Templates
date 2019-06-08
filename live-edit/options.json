@@ -1,0 +1,30 @@
+{
+  "fields": {
+    "Columns": {
+      "type": "accordion",
+      "items": {
+        "fields": {
+          "Title": {
+            "type": "text"
+          },
+          "Category": {
+            "type": "select",
+            "sort": false,
+            "optionLabels": [
+              "Flower",
+              "Animal",
+              "Place"
+            ]
+          },
+          "Description": {
+            "type": "ckeditor",
+            "configset": "basic"
+          },
+          "Image": {
+            "type": "image"
+          }
+        }
+      }
+    }
+  }
+}

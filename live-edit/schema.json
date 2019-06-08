@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "Columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "Category": {
+            "type": "string",
+            "title": "Category",
+            "enum": [
+              "Flower",
+              "Animal",
+              "Place"
+            ]
+          },
+          "Description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "Image": {
+            "type": "string",
+            "title": "Image"
+          }
+        }
+      }
+    }
+  }
+}

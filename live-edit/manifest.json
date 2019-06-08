@@ -1,0 +1,14 @@
+{
+  "editWitoutPostback": false,
+  "templates": {
+    "template": {
+      "type": "single",
+      "title": "Live Edit Columns",
+      "main": {
+        "template": "template.hbs",
+        "schemaInTemplate": true,
+        "optionsInTemplate": true
+      }
+    }  
+  }
+}

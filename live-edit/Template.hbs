@@ -1,0 +1,73 @@
+{{#if Context.IsEditable}}
+
+{{#script}}
+window.openContent = window.openContent || {};
+window.openContent[{{Context.ModuleId}}] = {{convertToJson this}};
+{{/script}}
+
+{{registerscript "vue.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/ckeditor/ckeditor.js"}}
+{{registerscript "vue-ckeditor2.umd.js"}}
+{{registerscript "vue-upload-component.min.js"}}
+{{registerscript "vue-slicksort.min.js"}}
+
+<div class="row live-edit" id="live-edit-{{Context.ModuleId}}" data-moduleid="{{Context.ModuleId}}">
+    {{{{raw}}}}
+    <slick-list axis="xy" :use-window-as-scroll-container="true" v-model="Columns" :use-drag-handle="true"
+        @input="save">
+        <slick-item v-for="(col, index) in Columns" class="col-md-3" :index="index" :key="index">
+            <div class="thumbnail">
+                <live-edit v-model="col.Image" :schema="colSchema.Image" :options="colOptions.Image">
+                    <img v-if="col.Image" :src="col.Image" :alt="col.Title" class="img-responsive" />
+                </live-edit>
+                <div class="caption">
+                    <h3 v-if="col.Title || Context.IsEditable">
+                        <live-edit v-model="col.Title" :schema="colSchema.Title" :options="colOptions.Title">
+                            {{col.Title}}
+                        </live-edit>
+                    </h3>
+                    <live-edit v-model="col.Category" :schema="colSchema.Category" :options="colOptions.Category">
+                        <span class="tag">{{col.Category}}</span>
+                    </live-edit>
+                    <div style="margin:10px;"></div>
+                    <live-edit v-model="col.Description" :schema="colSchema.Description" :options="colOptions.Description">
+                        <div v-html="col.Description"></div>
+                    </live-edit>
+                </div>
+                <div v-handle class="btn btn-default btn-move"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></div>
+                <button class="btn btn-default btn-delete" @click.prevent="remove(Columns, index)">Delete</button>
+            </div>
+        </slick-item>
+    </slick-list>
+    <div class="col-md-3">
+        <div class="thumbnail" style="padding:50px 50px;">
+            <button class="btn btn-default" @click.prevent="add(Columns)">Add</button>
+        </div>
+    </div>
+    {{{{/raw}}}}
+</div>
+
+{{else}}
+
+<div class="row">
+    {{#each Columns}}
+    <div class="col-md-3">
+        <div class="thumbnail" style="min-height:400px">
+            {{#if Image}}
+            <img src="{{Image}}" alt="{{Title}}" />
+            {{/if}}
+            <div class="caption">
+                {{#if Title}}
+                <h3>{{Title}}</h3>
+                {{/if}}
+                <p>
+                    <span class="tag">{{Category}}</span>
+                </p>
+                {{Description}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+
+{{/if}}
