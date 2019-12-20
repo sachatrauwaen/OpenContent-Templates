@@ -55,7 +55,8 @@
   }
   function initClick(sf) {
     $('.addOpenContent').each(function (index) {
-      var pane = $(this).data('pane');
+	//var pane = $(this).data('name');
+      var pane =  $(this).attr('id').substring(4);      
       var moduleid = $(this).data('moduleid');
       $(this).off().click(function () {
         $.ajax({
