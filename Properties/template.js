@@ -88,8 +88,12 @@
                     data.Title = itemTitle;
                 },
                 onSubmited: function (data) {
-                    form.destroy();
-                    $contactForm.text(data.message);
+                    form.destroy();                    
+		    if (data.errors && data.errors.length) {
+                        $contactForm.text(data.errors.join(", "));
+                    } else {
+                        $contactForm.text(data.message);
+                    }
                     $submitButton.hide();
                     //$modal.modal('hide');
                 }
