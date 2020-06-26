@@ -1,0 +1,26 @@
+{
+	"AddUser": "Add User",
+	"EditUser": "Edit User",
+	"Search":{
+		"ByName": "Search By Display Name",
+		"NoResults": "No results found"
+	},
+	"UserStatus":{
+		"Status": "Status",
+		"All": "All",
+		"Approved": "Approved",
+		"NotApproved": "Not Approved",
+		"Blocked": "Blocked",
+		"Deleted": "Deleted",
+	},
+	"Items":{
+		"Title": "Items per Page",
+		"25": "25 per page",
+		"50": "50 per page",
+		"100": "100 per page",
+		"All": "View All"
+	
+	}
+	
+	
+}

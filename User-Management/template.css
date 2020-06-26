@@ -1,0 +1,49 @@
+.jplist .article {
+    padding-bottom: 20px;
+}
+
+.tags span {
+    background-color: #999999;
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 11.844px;
+    font-weight: bold;
+    line-height: 14px;
+    color: #ffffff;
+    vertical-align: baseline;
+    white-space: nowrap;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.tags span.jplist-selected {
+     background-color: #ff6a00;
+}
+
+ul.tags {
+    list-style:none;
+    margin-left:0;
+}
+
+.tags li{
+    display:inline-block;
+}
+
+
+
+.jplist-hidden {
+    display: none;
+}
+
+
+.jplist-panel .pagination {
+margin:0;
+}
+
+
+.oembedall-container{
+
+  border:#eee solid 1px;
+  padding:3px;
+  
+}
