@@ -1,0 +1,46 @@
+{
+  "formfields": [
+    {
+      "fieldname": "Rss",
+      "fieldtype": "checkbox",
+      "title": "Rss Feed"
+    },
+    {
+      "fieldname": "Tags",
+      "fieldtype": "checkbox",
+      "title": "Tags"
+    },
+    {
+      "fieldname": "Social",
+      "subfields": [
+        {
+          "fieldname": "Facebook",
+          "fieldtype": "checkbox",
+          "title": "Facebook"
+        },
+        {
+          "fieldname": "FbLike",
+          "fieldtype": "checkbox",
+          "title": "Facebook : Like / Share"
+        },
+        {
+          "fieldname": "FbComments",
+          "fieldtype": "checkbox",
+          "title": "Facebook : Comments"
+        },
+        {
+          "fieldname": "Tweeter",
+          "fieldtype": "checkbox",
+          "title": "Twiter : Tweet"
+        }
+      ],
+      "fieldtype": "object",
+      "title": "Social"
+    },
+    {
+      "fieldname": "Oembed",
+      "fieldtype": "checkbox",
+      "title": "OEmbed links"
+    }
+  ]
+}

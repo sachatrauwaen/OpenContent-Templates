@@ -1,0 +1,37 @@
+{
+  "fields": {
+    "Email": {
+      "type": "email"
+    },
+    "Password": {
+      "type": "password"
+    },
+    "Approved": {
+    },
+    "Profile": {
+      "fields": {        
+        "Biography": {
+          "type": "textarea"
+        },
+		"Photo": {
+          "type": "image2",
+          "folder": "users"
+        }
+      }
+    },
+    "Roles": {
+      "type": "checkbox",
+      "optionLabels": [
+        "Subscribers"
+      ]
+    }
+  },
+  "form": {
+    "buttons": {
+      "unlock": {
+        "title": "Unlock Account"
+
+      }
+    }
+  }
+}
