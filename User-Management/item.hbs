@@ -1,0 +1,60 @@
+<script id="jplist-template" type="text/x-handlebars-template">
+
+    <!-- handlebars template -->
+    {{#each Items}}
+    <div class="list-item col-md-12">
+        <!-- item {{@index}} -->
+        <div class="row article">
+            <div class="col-sm-12 col-md-12">
+                <div class="row">
+				     <div class="col-md-2">
+                        <h3>Photo</h3>
+						<img src="{{Profile.PhotoURL}}" alt="{{DisplayName}}" title="{{DisplayName}}" class="img-thumbnail img-responsive" />
+						<div class="bio">
+						
+						</div>
+                    </div>
+                    <div class="caption col-md-6">
+                        <h3 class="title">{{DisplayName}}</h3>
+                        <p class="desc">{{FirstName}} {{LastName}}</p>
+
+                        <p class="theme">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> {{Email}} <br />
+                            {{#if Phone}}<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> {{Phone}}<br />{{/if}}
+                        </p>
+						 <p>
+                            <a href="{{Context.EditUrl}}" title="Add User" class="btn btn-primary">{{Localization.EditUser}}</a>
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                            {{Localization.UserStatus.Status}}: {{#if Approved}}
+								{{Localization.UserStatus.Approved}}
+                            {{else}}
+								{{Localization.UserStatus.NotApproved}}
+                            {{/if}}
+                            <br />
+                            {{#if LockedOut}}
+								{{Localization.UserStatus.Blocked}}
+                            {{/if}}
+                            <br />
+                            {{#if IsDeleted}}
+								{{Localization.UserStatus.Deleted}}
+                            {{/if}}
+                        {{#if Context.IsEditable}}{{/if}}
+                        {{#unless IsDeleted}}
+                       
+                        {{/unless}}
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+</script>

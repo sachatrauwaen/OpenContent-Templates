@@ -1,0 +1,34 @@
+{
+	"AddUser": "Ajouter un utilisateur",
+	"AddUser": "Editer"
+	"Search":{
+		"ByName": "Rechercher par nom"
+	},
+}
+
+{
+	"AddUser": "Ajouter un utilisateur",
+	"EditUser": "Editer",
+	"Search":{
+		"ByName": "Search By Display Name",
+		"NoResults": "No results found"
+	},
+	"UserStatus":{
+		"Status": "Status",
+		"All": "All",
+		"Approved": "Approved",
+		"NotApproved": "Not Approved",
+		"Blocked": "Blocked",
+		"Deleted": "Deleted",
+	},
+	"Items":{
+		"Title": "Items per Page",
+		"25": "25 per page",
+		"50": "50 per page",
+		"100": "100 per page",
+		"All": "View All"
+	
+	}
+	
+	
+}

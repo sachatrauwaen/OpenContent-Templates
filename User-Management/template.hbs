@@ -1,0 +1,157 @@
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.core.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.filter-toggle-bundle.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.filter-dropdown-bundle.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.textbox-filter.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.bootstrap-pagination-bundle.min.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/jplist/jplist.bootstrap-sort-dropdown.min.js"}}
+
+{{registerstylesheet "/DesktopModules/OpenContent/css/font-awesome/css/font-awesome.css"}}
+
+{{registerscript "/DesktopModules/OpenContent/js/lib/handlebars/handlebars.js"}}
+{{registerscript "/DesktopModules/OpenContent/js/lib/moment/min/moment.min.js"}}
+
+{{AdditionalData.Intro.Title}}
+
+<div class="">
+  <div id="demo" class="jplist mt40 mb40" data-moduleid="{{Context.ModuleId}}">
+    <div class="row">
+      <div class="col-md-3 side-bar">
+        <p>
+          <a href="{{Context.AddUrl}}" title="Ajouter" class="btn btn-primary">{{Localization.AddUser}}</a>
+        </p>
+        <!-- panel -->
+        <div class="jplist-panel">
+
+          <!-- filter by DisplayName -->
+          <div class="text-filter-box form-group">
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-search"></i></span>
+              <!--[if lt IE 10]>
+<div class="jplist-label">Filter by Name</div>
+<![endif]-->
+
+              <input data-path=".title" class="form-control textfilter"
+                     type="text"
+                     value=""
+                     data-mode="only"
+                     placeholder="{{Localization.Search.ByName}}"
+                     data-control-type="textbox"
+                     data-control-name="DisplayName"
+                     data-control-action="filter" 
+                     data-event-name="keydelay" />
+            </div>
+          </div>
+ <div class="col-xs-4 col-sm-3 col-md-12">
+              <select 
+             class="form-control"
+             data-control-type="filter-select" 
+             data-control-name="Approved" 
+             data-control-action="filter">
+
+               <option data-path="*">{{Localization.UserStatus.All}}</option>
+               <option data-path="true">{{Localization.UserStatus.Approved}}</option>
+               <option data-path="false">{{Localization.UserStatus.NotApproved}}</option>
+            </select>
+          </div>
+          <br /><br />
+          <!-- checkbox filters -->
+          <div class="jplist-group row"
+               data-control-type="checkbox-group-filter"
+               data-control-action="filter"
+               data-control-name="Roles">
+
+            {{#each Schema.properties.Roles.enum}}
+            <div class="col-xs-4 col-sm-3 col-md-12">
+              <div class="checkbox">
+                <label for="{{this}}">
+                  <input data-path="{{this}}"
+                         id="{{this}}"
+                         type="checkbox" />
+                  {{arrayindex ../Options.fields.Roles.optionLabels @index }}
+                </label>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          
+        
+          
+        </div>
+      </div>
+      <div class="col-md-9">
+        <!-- data -->
+        <div class="list row text-shadow">
+
+        </div>
+        <div class="row jplist-no-results text-shadow align-center">
+          <p>{{Localization.Search.NoResults}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="jplist-panel row">
+
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <!-- items per page dropdown -->
+            <div class="dropdown pull-left jplist-items-per-page"
+                 data-control-type="boot-items-per-page-dropdown"
+                 data-control-name="paging"
+                 data-control-action="paging">
+
+              <button class="btn btn-primary dropdown-toggle"
+                      type="button"
+                      data-toggle="dropdown"
+                      id="dropdown-menu-1"
+                      aria-expanded="true">
+                <span data-type="selected-text">{{Localization.Items.Title}}</span>
+                <span class="caret"></span>
+              </button>
+
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-1">
+
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="#" data-number="25">{{Localization.Items.25}}</a>
+                </li>
+
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="#" data-number="50" data-default="true">{{Localization.Items.50}}</a>
+                </li>
+
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="#" data-number="100">{{Localization.Items.100}}</a>
+                </li>
+
+                <li role="presentation" class="divider"></li>
+
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="#" data-number="all">{{Localization.Items.All}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <!-- bootstrap pagination control -->
+            <ul class="pagination pull-left jplist-pagination"
+                data-control-type="boot-pagination"
+                data-control-name="paging"
+                data-control-action="paging"
+                data-range="50"
+                data-mode="google-like"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <!-- pagination info label -->
+        <div class="pull-left jplist-pagination-info"
+             data-type="<strong>Page {current} of {pages}</strong><br/> <small>{start} - {end} of {all}</small>"
+             data-control-type="pagination-info"
+             data-control-name="paging"
+             data-control-action="paging"></div>
+
+      </div>
+    </div>
+  </div>
+</div>

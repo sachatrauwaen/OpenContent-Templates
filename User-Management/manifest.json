@@ -1,0 +1,27 @@
+{
+  "DataSource": "Satrabel.DnnUsers",
+  "editWitoutPostback": true,
+  "index": false,
+  "editRole": "",
+  "title": "Users",
+  "templates": {
+    "template": {
+      "type": "multiple",
+      "title": "List",
+      "clientSideData": true,
+      "main": {
+        "template": "template.hbs",
+        "partialTemplates": {
+          "item": {
+            "template": "item.hbs",
+            "clientside": true
+          }
+        },
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "additionalDataInTemplate": true
+      }
+    }
+  }
+
+}

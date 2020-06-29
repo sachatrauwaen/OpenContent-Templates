@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "Username": {
+      "type": "string",
+      "title": "User Name",
+      "required": true
+    },
+    "FirstName": {
+      "type": "string",
+      "title": "First Name",
+      "required": true
+    },  
+    "LastName": {
+      "type": "string",
+      "title": "Last Name",
+      "required": true
+    },  
+     
+    "Email": {
+      "type": "string",
+      "title": "Email",
+      "required": true
+    },
+	 "Profile": {
+      "type": "object",
+      "title": "Profile",
+      "properties": {
+	  "Biography": {
+	   "type": "string",
+          "title": "Biography"
+	  },
+        "Photo": {
+          "type": "string",
+          "title": "Photo"
+        },
+        "PreferredLocale": {
+          "type": "string",
+          "title": "PreferredLocale",
+          "enum": [ "nl-NL", "fr-FR","en-US" ]
+        }
+      }
+    },
+    "Approved": {
+      "type": "boolean",
+      "title": "Approved",
+      "default": true
+    },
+    "Password": {
+      "type": "string",
+      "title": "Password"
+    },
+	"Roles": {
+      "type": "array",
+      "title": "Roles",
+      "enum": [
+        "Subscribers"
+      ],
+      "default": [ "Subscribers" ]
+    }
+
+  }
+}
