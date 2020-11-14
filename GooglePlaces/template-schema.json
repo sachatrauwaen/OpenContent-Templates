@@ -1,0 +1,29 @@
+{
+  "type": "object",
+  "properties": {
+    "PlaceID": {
+      "type": "string",
+      "title": "Google PlaceID"
+    },
+    "Language": {
+      "type": "string",
+      "title": "Language"
+    },
+    "Header": {
+      "type": "string",
+      "title": "Header"
+    },
+    "Footer": {
+      "type": "string",
+      "title": "Footer"
+    },
+    "ShortenName": {
+      "type": "checkbox",
+      "title": "Shorten name"
+    },
+    "MinimumRating": {
+      "type": "text",
+      "title": "Minimum rating"
+    }
+  }
+}

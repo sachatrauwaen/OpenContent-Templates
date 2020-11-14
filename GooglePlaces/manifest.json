@@ -1,0 +1,16 @@
+{
+    "templates": {
+        "template": {
+            "type": "single", 
+            "main": {
+                "template": "template.hbs",
+                "partialTemplates": {
+                    "item": {
+                        "template": "places.hbs",
+                        "clientSide": true
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{{registerscript "/DesktopModules/OpenContent/js/alpaca-1.5.8/lib/handlebars/handlebars.js"}}
+<h2>{{Settings.Header}}</h2>
+<div id="places" class="places" data-placeid="{{Settings.PlaceID}}" data-google-api="{{Context.GoogleApiKey}}" data-shorten-name="{{Settings.ShortenName}}" data-minimum-rating="{{Settings.MinimumRating}} data-language="{{Settings.Language}}"></div>
+{{#if Settings.Footer}}
+<div class="container"><div class="row"><div class="col-sm-12 col-md-12"><div class="dnnFormMessage dnnFormInfo">{{Settings.Footer}}</div></div></div></div>
+{{/if}}
