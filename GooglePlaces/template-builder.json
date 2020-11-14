@@ -1,0 +1,41 @@
+{
+  "formfields": [
+    {
+      "fieldname": "PlaceID",
+      "title": "Google PlaceID",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Language",
+      "title": "Language",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Header",
+      "title": "Header",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "Footer",
+      "title": "Footer",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "ShortenName",
+      "title": "Shorten name",
+      "fieldtype": "checkbox",
+      "advanced": false
+    },
+    {
+      "fieldname": "MinimumRating",
+      "title": "Minimum rating",
+      "fieldtype": "text",
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}

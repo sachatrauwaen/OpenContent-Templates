@@ -1,0 +1,7 @@
+{
+  "parent": "dnnbootstrap-edit-horizontal",
+  "layout": {
+    "template": "<div></div>",
+    "bindings": {}
+  }
+}

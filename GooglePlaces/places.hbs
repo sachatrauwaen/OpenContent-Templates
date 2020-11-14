@@ -1,0 +1,30 @@
+<script id="places-template" type="text/x-handlebars-template">
+<div class="text-center"><p>{{renderStars rating "fa-2x"}}</p>
+<p>Gesamt: {{rating}} Punkte</p>
+<div class="container">
+   <div class="row mt-1 mb-1">
+{{#each reviews}}
+      <div class="col-sm-4 mt-2 mb-3">
+         <div class="card h-100">
+            <div class="card-header">{{getShortName author_name}}</div>
+            <img class="mx-auto mt-3 mr-3 ml-3 mb-3 w-25 card-img-top img-fluid" src="{{profile_photo_url}}" alt="{{getShortName author_name}}" />
+			{{renderStars rating "fa-lg"}}
+            <div class="card-body d-flex flex-column">
+            	<p>{{text}}</p>
+                <p class="text-right"><small>({{convertTime time}})</small></p>
+            </div>
+         </div>
+      </div>
+{{/each}}
+      <div class="col-sm-4 mt-2 mb-3">
+         <div class="card h-100">
+            <img class="card-img-top" src="{{getUrl photo}}" alt="{{name}}" title="{{name}} &copy; {{getAttributions photo}}">
+            <div class="card-body d-flex flex-column">
+               <p class="card-text">Photo &copy; {{getAttributions photo}}</p>
+               <a href="{{url}}" class="btn btn-primary mt-auto" target="_blank">Read all...</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</script>

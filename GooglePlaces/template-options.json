@@ -1,0 +1,22 @@
+{
+  "fields": {
+    "PlaceID": {
+      "type": "text"
+    },
+    "Language": {
+      "type": "text"
+    },
+    "Header": {
+      "type": "text"
+    },
+    "Footer": {
+      "type": "text"
+    },
+    "ShortenName": {
+      "type": "checkbox"
+    },
+    "MinimumRating": {
+      "type": "text"
+    }
+  }
+}
