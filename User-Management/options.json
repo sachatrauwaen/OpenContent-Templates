@@ -14,8 +14,11 @@
           "type": "textarea"
         },
 		"Photo": {
-          "type": "image2",
+          "type": "imagex",
           "folder": "users"
+        },
+		"PreferredLocale": {
+          "type": "select"
         }
       }
     },

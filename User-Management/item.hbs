@@ -23,22 +23,22 @@
                             {{#if Phone}}<span class="glyphicon glyphicon-phone" aria-hidden="true"></span> {{Phone}}<br />{{/if}}
                         </p>
 						 <p>
-                            <a href="{{Context.EditUrl}}" title="Add User" class="btn btn-primary">{{Localization.EditUser}}</a>
+                            <a href="{{Context.EditUrl}}" title="Add User" class="btn btn-primary">{{@root.Localization.EditUser}}</a>
                         </p>
                     </div>
                     <div class="col-md-3">
-                            {{Localization.UserStatus.Status}}: {{#if Approved}}
-								{{Localization.UserStatus.Approved}}
+                            {{@root.Localization.UserStatus.Status}}: {{#if Approved}}
+								{{@root.Localization.UserStatus.Approved}}
                             {{else}}
-								{{Localization.UserStatus.NotApproved}}
+								{{@root.Localization.UserStatus.NotApproved}}
                             {{/if}}
                             <br />
                             {{#if LockedOut}}
-								{{Localization.UserStatus.Blocked}}
+								{{@root.Localization.UserStatus.Blocked}}
                             {{/if}}
                             <br />
                             {{#if IsDeleted}}
-								{{Localization.UserStatus.Deleted}}
+								{{@root.Localization.UserStatus.Deleted}}
                             {{/if}}
                         {{#if Context.IsEditable}}{{/if}}
                         {{#unless IsDeleted}}
