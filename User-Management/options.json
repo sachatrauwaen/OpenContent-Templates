@@ -14,7 +14,7 @@
           "type": "textarea"
         },
 		"Photo": {
-          "type": "imagex",
+          "type": "image2",
           "folder": "users"
         },
 		"PreferredLocale": {
