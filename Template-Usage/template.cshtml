@@ -1,0 +1,57 @@
+@using System
+@using System.Text
+@using System.Data.SqlClient
+@inherits Satrabel.OpenContent.Components.OpenContentWebPage
+
+@{
+	var intPortalId = Dnn.Portal.PortalId;
+	var strPortalAlias = Dnn.Portal.PortalAlias;
+	
+	var db = Database.Open("SiteSqlServer");
+	var txtSql = @"SELECT Tabs.TabID, 
+	Tabs.PortalID, 
+	Tabs.TabName ,
+	Tabs.TabPath as Path,
+	ModuleDefinitions.FriendlyName, 
+	ModuleSettings.SettingName, 
+	ModuleSettings.SettingValue as Template
+	FROM            ModuleDefinitions INNER JOIN
+	 Modules ON ModuleDefinitions.ModuleDefID = Modules.ModuleDefID INNER JOIN
+	 TabModules ON Modules.ModuleID = TabModules.ModuleID INNER JOIN
+	 Tabs ON TabModules.TabID = Tabs.TabID INNER JOIN
+	 ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
+	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' and Tabs.PortalID = "
+	 + intPortalId +
+	 "Order By  ModuleSettings.SettingValue";
+}
+
+<div class="oc-template-list">
+	<table>
+	<tr>
+	<th>
+		Page Name
+	</th>
+		<th>
+		Path
+	</th>
+	<th>
+		Template Name
+	</th>
+	</tr>
+	
+		@foreach(var row in db.Query(txtSql)) {
+		
+			string[] items = row.Template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
+			string template = string.Join("/", items.Skip(4));
+
+			<tr>
+			  <td>@row.TabName</td>
+			  <td>@row.Path.Replace("//", "/")</td>
+			  <td>@template</td>
+		  </tr>
+		}
+	</table>
+</div>
+</li>
+</ul>
+</div>
