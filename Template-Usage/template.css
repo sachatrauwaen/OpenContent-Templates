@@ -1,0 +1,19 @@
+.oc-template-list table{
+	border-collapse:collapse;
+	
+}
+
+.oc-template-list h3{
+	margin: 1.5em 0 0.5em;
+	
+}
+
+.oc-template-list th{
+	font-weight:bold;
+}
+
+.oc-template-list th, .oc-template-list td{
+	padding:0.5rem;
+	text-align:left;
+	border-bottom: solid 1px #ddd;
+}
