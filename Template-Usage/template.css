@@ -3,6 +3,11 @@
 	
 }
 
+.oc-template-list h3{
+	margin: 1.5em 0 0.5em;
+	
+}
+
 .oc-template-list th{
 	font-weight:bold;
 }
