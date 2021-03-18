@@ -1,0 +1,20 @@
+{
+    "editWitoutPostback": true,
+    "editRole": "",
+    "Index": false,
+	"Advanced": true,
+    
+    "templates": {
+        "template": {
+            "type": "single", 
+            "title": "Table",
+            "clientSideData": false,
+            "main": {
+                "template": "template.cshtml",
+                "schemaInTemplate": false,
+                "optionsInTemplate": false,
+                "additionalDataInTemplate": false
+            }
+    }
+}
+}
