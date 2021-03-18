@@ -25,7 +25,7 @@
 	 
 	 int tables = 0;
 	 string lastTemplate = "";
-	 string tableOpen = "<table><tr><th>PortalId</th><th>Page Name</th><th>Path</th></tr>";
+	 string tableOpen = "<table><tr><th>PortalId</th><th>Page Name</th><th>Path</th><th>Location</th></tr>";
 	 string tableClose = "</table>";
 	 
 }
@@ -34,8 +34,17 @@
 	
 		@foreach(var row in db.Query(txtSql)) {
 		
-			string[] items = row.Template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
+			string fullPath = row.Template;
+			
+			// Get the Shorter Path
+			string[] items = fullPath.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
 			string template = string.Join("/", items.Skip(4));
+			
+			string Type = "Portal";
+			
+			if(fullPath.ToLower().Contains("/skins/")){
+				Type = "Skin";
+			}
 			
 			// Close previous tables to start a new one
 			if(lastTemplate != template && tables > 0){
@@ -45,6 +54,7 @@
 			// Start a new table if there's a new template
 			if(lastTemplate != template){
 				<h3>Template: @template</h3>
+				<h4 title="@fullPath">Type: @Type</h4>
 				@Html.Raw(tableOpen);
 				tables++ ;
 			}
@@ -53,6 +63,7 @@
 				<td>@row.PortalID</td>
 				<td>@row.TabName</td>
 				<td>@row.Path.Replace("//", "/")</td>
+				<td>@row.TabName</td>
 			</tr>
 			
 
