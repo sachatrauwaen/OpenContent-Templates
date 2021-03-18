@@ -20,14 +20,16 @@
 	 TabModules ON Modules.ModuleID = TabModules.ModuleID INNER JOIN
 	 Tabs ON TabModules.TabID = Tabs.TabID INNER JOIN
 	 ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
-	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' and Tabs.PortalID = "
-	 + intPortalId +
-	 "Order By  ModuleSettings.SettingValue";
+	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' 
+	 ORDER BY  Tabs.PortalID, ModuleSettings.SettingValue";
 }
 
 <div class="oc-template-list">
 	<table>
 	<tr>
+	<th>
+		PortalId
+	</th>
 	<th>
 		Page Name
 	</th>
@@ -45,9 +47,10 @@
 			string template = string.Join("/", items.Skip(4));
 
 			<tr>
-			  <td>@row.TabName</td>
-			  <td>@row.Path.Replace("//", "/")</td>
-			  <td>@template</td>
+				<td>@row.PortalID</td>
+				<td>@row.TabName</td>
+				<td>@row.Path.Replace("//", "/")</td>
+				<td>@template</td>
 		  </tr>
 		}
 	</table>
