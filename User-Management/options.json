@@ -16,6 +16,9 @@
 		"Photo": {
           "type": "image2",
           "folder": "users"
+        },
+		"PreferredLocale": {
+          "type": "select"
         }
       }
     },

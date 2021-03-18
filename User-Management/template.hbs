@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-md-3 side-bar">
         <p>
-          <a href="{{Context.AddUrl}}" title="Ajouter" class="btn btn-primary">{{Localization.AddUser}}</a>
+          <a href="{{Context.AddUrl}}" title="Ajouter" class="btn btn-primary">{{@root.Localization.AddUser}}</a>
         </p>
         <!-- panel -->
         <div class="jplist-panel">
@@ -35,7 +35,7 @@
                      type="text"
                      value=""
                      data-mode="only"
-                     placeholder="{{Localization.Search.ByName}}"
+                     placeholder="{{@root.Localization.Search.ByName}}"
                      data-control-type="textbox"
                      data-control-name="DisplayName"
                      data-control-action="filter" 
@@ -49,9 +49,9 @@
              data-control-name="Approved" 
              data-control-action="filter">
 
-               <option data-path="*">{{Localization.UserStatus.All}}</option>
-               <option data-path="true">{{Localization.UserStatus.Approved}}</option>
-               <option data-path="false">{{Localization.UserStatus.NotApproved}}</option>
+               <option data-path="*">{{@root.Localization.UserStatus.All}}</option>
+               <option data-path="true">{{@root.Localization.UserStatus.Approved}}</option>
+               <option data-path="false">{{@root.Localization.UserStatus.NotApproved}}</option>
             </select>
           </div>
           <br /><br />
@@ -85,7 +85,7 @@
 
         </div>
         <div class="row jplist-no-results text-shadow align-center">
-          <p>{{Localization.Search.NoResults}}</p>
+          <p>{{@root.Localization.Search.NoResults}}</p>
         </div>
       </div>
     </div>
@@ -106,28 +106,28 @@
                       data-toggle="dropdown"
                       id="dropdown-menu-1"
                       aria-expanded="true">
-                <span data-type="selected-text">{{Localization.Items.Title}}</span>
+                <span data-type="selected-text">{{@root.Localization.Items.Title}}</span>
                 <span class="caret"></span>
               </button>
 
               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown-menu-1">
 
                 <li role="presentation">
-                  <a role="menuitem" tabindex="-1" href="#" data-number="25">{{Localization.Items.25}}</a>
+                  <a role="menuitem" tabindex="-1" href="#" data-number="25">{{@root.Localization.Items.25}}</a>
                 </li>
 
                 <li role="presentation">
-                  <a role="menuitem" tabindex="-1" href="#" data-number="50" data-default="true">{{Localization.Items.50}}</a>
+                  <a role="menuitem" tabindex="-1" href="#" data-number="50" data-default="true">{{@root.Localization.Items.50}}</a>
                 </li>
 
                 <li role="presentation">
-                  <a role="menuitem" tabindex="-1" href="#" data-number="100">{{Localization.Items.100}}</a>
+                  <a role="menuitem" tabindex="-1" href="#" data-number="100">{{@root.Localization.Items.100}}</a>
                 </li>
 
                 <li role="presentation" class="divider"></li>
 
                 <li role="presentation">
-                  <a role="menuitem" tabindex="-1" href="#" data-number="all">{{Localization.Items.All}}</a>
+                  <a role="menuitem" tabindex="-1" href="#" data-number="all">{{@root.Localization.Items.All}}</a>
                 </li>
               </ul>
             </div>
