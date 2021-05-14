@@ -25,12 +25,13 @@
                             <div class="jplist-label">Filter by Title:</div>
                             <![endif]-->
 
-                                <input data-path=".title" class="form-control textfilter"
+                                <input class="form-control textfilter"
                                     type="text"
                                     value=""
                                     placeholder="Filter by Title"
+									data-path=".title" 
                                     data-control-type="textbox"
-                                    data-control-name="Title"
+                                    data-control-name="Title" <!-- Comma separate fields to search in example:  "Title,Summary"  -->
                                     data-control-action="filter"
                                     data-event-name="keydelay"  />
                         </div>
