@@ -25,13 +25,15 @@
                             <div class="jplist-label">Filter by Title:</div>
                             <![endif]-->
 
+								<!-- For in-page Client Side Search use: data-path=".title,.summary" (not used in this Template)-->
+								<!-- For server side search (webapi /ajax) : Comma separate OC fields to search: data-control-name="Title,Summary"  -->
                                 <input class="form-control textfilter"
                                     type="text"
                                     value=""
                                     placeholder="Filter by Title"
-									data-path=".title" <!-- For in-page Client Side Search use: ".title,.summary" (not used in this Template)-->
+									data-path=".title" 
                                     data-control-type="textbox"
-                                    data-control-name="Title" <!-- For server side search (webapi /ajax) : Comma separate OC fields to search: "Title,Summary"  -->
+                                    data-control-name="Title" 
                                     data-control-action="filter"
                                     data-event-name="keydelay"  />
                         </div>
