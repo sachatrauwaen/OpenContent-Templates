@@ -1,0 +1,47 @@
+{
+  "type": "object",
+  "properties": {
+    "FirstLevelText": {
+      "type": "string",
+      "title": "First level text field"
+    },
+    "FirstLevelTextArea": {
+      "type": "string",
+      "title": "First level Text Area field"
+    },
+    "FirstLevelImage2": {
+      "type": "string",
+      "title": "FirstLevelImage2"
+    },
+    "FirstLevelFile2": {
+      "type": "string",
+      "title": "FirstLevelFile2"
+    },
+    "FirstLevelImageX": {
+      "type": "string",
+      "title": "FirstLevelImageX"
+    },
+    "SecondLevel": {
+      "type": "object",
+      "title": "Object",
+      "properties": {
+        "SecondLevelText": {
+          "type": "string",
+          "title": "Second level text"
+        },
+        "SecondLevelTextArea": {
+          "type": "string",
+          "title": "Second level TextArea"
+        },
+        "SecondLevelImage2": {
+          "type": "string",
+          "title": "SecondLevelImage2"
+        },
+        "SecondLevelImageX": {
+          "type": "string",
+          "title": "SecondLevelImageX"
+        }
+      }
+    }
+  }
+}

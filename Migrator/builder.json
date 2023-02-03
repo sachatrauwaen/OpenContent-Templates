@@ -1,0 +1,107 @@
+{
+  "formfields": [
+    {
+      "fieldname": "FirstLevelText",
+      "title": "First level text field",
+      "fieldtype": "text",
+      "advanced": false
+    },
+    {
+      "fieldname": "FirstLevelTextArea",
+      "title": "First level Text Area field",
+      "fieldtype": "textarea",
+      "advanced": true,
+      "required": false,
+      "hidden": false,
+      "helper": "leave this empty. it is a target field.",
+      "multilanguage": false,
+      "index": false,
+      "position": "1col1",
+      "dependencies": []
+    },
+    {
+      "fieldname": "FirstLevelImage2",
+      "title": "FirstLevelImage2",
+      "fieldtype": "image2",
+      "image2options": {
+        "folder": "Images"
+      },
+      "advanced": false
+    },
+    {
+      "fieldname": "FirstLevelFile2",
+      "title": "FirstLevelFile2",
+      "fieldtype": "file2",
+      "file2options": {
+        "folder": "Files/Images",
+        "filter": "^.*\\\\.(jpg|JPG|gif|GIF|png|PNG)$"
+      },
+      "advanced": false
+    },
+    {
+      "fieldname": "FirstLevelImageX",
+      "title": "FirstLevelImageX",
+      "fieldtype": "imagex",
+      "imagexoptions": {
+        "uploadhidden": false,
+        "fileExtensions": "gif|jpg|jpeg|tiff|png",
+        "fileMaxSize": 2000000,
+        "showOverwrite": true,
+        "overwrite": false,
+        "showCropper": false
+      },
+      "advanced": false
+    },
+    {
+      "fieldname": "SecondLevel",
+      "title": "Object",
+      "fieldtype": "object",
+      "subfields": [
+        {
+          "fieldname": "SecondLevelText",
+          "title": "Second level text",
+          "fieldtype": "text",
+          "advanced": false
+        },
+        {
+          "fieldname": "SecondLevelTextArea",
+          "title": "Second level TextArea",
+          "fieldtype": "text",
+          "advanced": true,
+          "required": false,
+          "hidden": false,
+          "helper": "leave this empty. it is a target field.",
+          "multilanguage": false,
+          "index": false,
+          "position": "1col1",
+          "dependencies": []
+        },
+        {
+          "fieldname": "SecondLevelImage2",
+          "title": "SecondLevelImage2",
+          "fieldtype": "image2",
+          "image2options": {
+            "folder": "Images"
+          },
+          "advanced": false
+        },
+        {
+          "fieldname": "SecondLevelImageX",
+          "title": "SecondLevelImageX",
+          "fieldtype": "imagex",
+          "imagexoptions": {
+            "uploadhidden": false,
+            "fileExtensions": "gif|jpg|jpeg|tiff|png",
+            "fileMaxSize": 2000000,
+            "showOverwrite": true,
+            "overwrite": false,
+            "showCropper": false
+          },
+          "advanced": false
+        }
+      ],
+      "advanced": false
+    }
+  ],
+  "formtype": "object"
+}
