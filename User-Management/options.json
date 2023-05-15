@@ -1,40 +1,48 @@
 {
   "fields": {
+    "Username": {
+      "dependencies": {},
+      "type": "text"
+    },
+    "FirstName": {
+      "dependencies": {},
+      "type": "text"
+    },
+    "LastName": {
+      "dependencies": {},
+      "type": "text"
+    },
     "Email": {
+      "dependencies": {},
       "type": "email"
     },
-    "Password": {
-      "type": "password"
-    },
-    "Approved": {
-    },
     "Profile": {
-      "fields": {        
+      "fields": {
         "Biography": {
+          "dependencies": {},
           "type": "textarea"
         },
-		"Photo": {
-          "type": "image2",
-          "folder": "users"
-        },
-		"PreferredLocale": {
-          "type": "select"
+        "PreferredLocale": {
+          "dependencies": {},
+          "type": "select",
+          "optionLabels": [
+            "nl-NL",
+            "fr-FR",
+            "en-US"
+          ]
         }
       }
     },
+    "Approved": {
+      "dependencies": {}
+    },
+    "Password": {
+      "dependencies": {},
+      "type": "password"
+    },
     "Roles": {
-      "type": "checkbox",
-      "optionLabels": [
-        "Subscribers"
-      ]
-    }
-  },
-  "form": {
-    "buttons": {
-      "unlock": {
-        "title": "Unlock Account"
-
-      }
+		"type": "select",
+      "dependencies": {}
     }
   }
 }

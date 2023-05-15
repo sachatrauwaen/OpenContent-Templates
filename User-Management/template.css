@@ -1,8 +1,10 @@
-.jplist .article {
+.oc-user-management .jplist .article {
     padding-bottom: 20px;
 }
 
-.tags span {
+
+
+.oc-user-management .tags span {
     background-color: #999999;
     display: inline-block;
     padding: 2px 4px;
@@ -16,34 +18,39 @@
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-.tags span.jplist-selected {
+.oc-user-management .tags span.jplist-selected {
      background-color: #ff6a00;
 }
 
-ul.tags {
+.oc-user-management ul.tags {
     list-style:none;
     margin-left:0;
 }
 
-.tags li{
+.oc-user-management .tags li{
     display:inline-block;
 }
 
 
 
-.jplist-hidden {
+.oc-user-management .jplist-hidden {
     display: none;
 }
 
 
-.jplist-panel .pagination {
+.oc-user-management .jplist-panel .pagination {
 margin:0;
 }
 
 
-.oembedall-container{
+.oc-user-management .oembedall-container{
 
   border:#eee solid 1px;
   padding:3px;
   
+}
+
+/* Theme correction */
+.oc-user-management .btn-primary{
+	color: white;
 }
