@@ -4,15 +4,6 @@
 	"Search":{
 		"ByName": "Rechercher par nom"
 	},
-}
-
-{
-	"AddUser": "Ajouter un utilisateur",
-	"EditUser": "Editer",
-	"Search":{
-		"ByName": "Search By Display Name",
-		"NoResults": "No results found"
-	},
 	"UserStatus":{
 		"Status": "Status",
 		"All": "All",
