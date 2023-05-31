@@ -1,0 +1,20 @@
+.oc-rest-api img{
+	max-width: 100%; height:auto !important;	
+}
+.oc-rest-api .oc-rest-list{
+	display:flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+}
+
+.oc-rest-api .edit-btn a{
+	display:inline-block;
+}
+
+
+@media screen and (min-width: 768px){
+	.oc-rest-api .oc-rest-list .item{
+		width: 33%;
+		padding: 1em;
+	}
+}

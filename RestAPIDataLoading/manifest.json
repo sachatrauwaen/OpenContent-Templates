@@ -1,0 +1,28 @@
+{
+   "DataSource": "Satrabel.RestApi",
+  "DataSourceConfig": {
+    "listUrl": "https://[PORTALALIAS]/opencontent-default-templates/DesktopModules/OpenContent/api/ExternalApi/GetAllItems?apiKey=[APIKEY]&tabId=[TABID]&moduleId=[MODULEID]",
+    "detailUrl": "https://[PORTALALIAS]/opencontent-default-templates/DesktopModules/OpenContent/api/ExternalApi/GetItem?apiKey=[APIKEY]&tabId=[TABID]&moduleId=[MODULEID]&id={0}"
+
+  },
+  "editWitoutPostback": true,
+  "editRole": "",
+  "disableEdit": true,
+  "Index": true,
+ 
+  "templates": {
+    "template": {
+      "type": "multiple",
+      "title": "Blocks",
+      "clientSideData": false,
+      "main": {
+        "template": "template.hbs",
+        
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "additionalDataInTemplate": true
+      }
+    }
+
+  }
+}
