@@ -1,0 +1,21 @@
+{
+   "editWitoutPostback": true,
+  "editRole": "",
+  "Index": true,
+ 
+  "templates": {
+    "template": {
+      "type": "multiple",
+      "title": "Blocks",
+      "clientSideData": false,
+      "main": {
+        "template": "template.hbs",
+        
+        "schemaInTemplate": true,
+        "optionsInTemplate": true,
+        "additionalDataInTemplate": true
+      }
+    }
+
+  }
+}

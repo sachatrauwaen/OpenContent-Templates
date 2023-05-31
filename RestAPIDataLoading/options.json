@@ -1,0 +1,16 @@
+{
+  "fields": {
+    "Title": {
+      "dependencies": {},
+      "type": "text"
+    },
+    "Description": {
+      "dependencies": {},
+      "type": "ckeditor"
+    },
+    "Image": {
+      "dependencies": {},
+      "type": "image"
+    }
+  }
+}
