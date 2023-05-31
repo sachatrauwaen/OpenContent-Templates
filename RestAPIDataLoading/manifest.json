@@ -1,8 +1,8 @@
 {
    "DataSource": "Satrabel.RestApi",
   "DataSourceConfig": {
-    "listUrl": "https://demo.40fingers.net/opencontent-default-templates/DesktopModules/OpenContent/api/ExternalApi/GetAllItems?apiKey=[APIKEY]&tabId=4753&moduleId=1792",
-    "detailUrl": "https://demo.40fingers.net/opencontent-default-templates/DesktopModules/OpenContent/api/ExternalApi/GetItem?apiKey=[APIKEY]&tabId=4753&moduleId=1792&id={0}"
+    "listUrl": "https://[PORTALALIAS]/opencontent-default-templates/DesktopModules/OpenContent/api/ExternalApi/GetAllItems?apiKey=[APIKEY]&tabId=[TABID]&moduleId=[MODULEID]",
+    "detailUrl": "https://[PORTALALIAS]/opencontent-default-templates/DesktopModules/OpenContent/api/ExternalApi/GetItem?apiKey=[APIKEY]&tabId=[TABID]&moduleId=[MODULEID]&id={0}"
 
   },
   "editWitoutPostback": true,
