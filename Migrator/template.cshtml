@@ -1,0 +1,34 @@
+@using Satrabel.OpenContent.Components.Migration;
+
+@inherits Satrabel.OpenContent.Components.OpenContentWebPage
+
+<div>
+<h2>Migrator Example</h2>
+<p>This template is an helper template to assist you with migration of one field to another field.<br/>
+See <a href="https://opencontent.readme.io/v5.0/docs/datafield-migration" target="_blank">the Online Manual</a> for more info.
+Edit the cshtml file of this template. </p>
+
+
+</div>
+
+@{
+    if (IsPost && Request["sbutton"] == "Start Migration") 
+    {
+        // The name of the folder of the template that holds an options.json file with a field to migrate
+        // Not the full path. Just the name of the folder. It will be searched in you portal\OpenContent\Templates folder.
+        string templateFolder = "PicturesOnly"; 
+
+        // Specify if your migration is allowed to overwrite any existing data of the target field or not. An additional failsave in some circumstances.
+        bool overwriteTargetData = false;
+
+        // Final fail safe: as long as dryRun==true, no modification what so ever will be made. 
+        bool dryRun = false;
+
+        // Now run the Migration.
+        // But what is going to be migrated you wonder? See https://opencontent.readme.io/v5.0/docs/datafield-migration for more information.
+        @FieldMigrator.Migrate(this, templateFolder, overwriteTargetData, dryRun);
+    }
+}
+
+<input type="submit" value="Start Migration" class="submit" name="sbutton" />
+<p>&nbsp;</p>
