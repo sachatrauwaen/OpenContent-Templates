@@ -6,7 +6,7 @@ Please note that this template will only show in the Advanced view due to
 "Advanced": true
 ~~~
 
-in manifest.sjon
+in manifest.json
 
 Example:
 
