@@ -1,5 +1,6 @@
 .oc-template-list table{
 	border-collapse:collapse;
+	width: 100%;
 	
 }
 
@@ -10,6 +11,14 @@
 
 .oc-template-list th{
 	font-weight:bold;
+}
+
+.oc-template-list  .col-portal{
+	width: 4em;
+}
+
+.oc-template-list  .col-page{
+	width: 50%;
 }
 
 .oc-template-list th, .oc-template-list td{
