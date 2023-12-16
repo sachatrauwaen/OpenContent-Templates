@@ -11,6 +11,7 @@
 	var txtSql = @"SELECT Tabs.TabID, 
 	Tabs.PortalID, 
 	Tabs.TabName ,
+	Tabs.TabId,
 	Tabs.TabPath as Path,
 	ModuleDefinitions.FriendlyName, 
 	ModuleSettings.SettingName, 
@@ -25,7 +26,7 @@
 	 
 	 int tables = 0;
 	 string lastTemplate = "";
-	 string tableOpen = "<table><tr><th>PortalId</th><th>Page Name</th><th>Path</th></tr>";
+	 string tableOpen = "<table><tr><th class='col-portal'>PortalId</th><th class='col-page'>Page Name</th><th class='col-path'>Path</th></tr>";
 	 string tableClose = "</table>";
 	 
 }
@@ -51,7 +52,7 @@
 
 			<tr>
 				<td>@row.PortalID</td>
-				<td>@row.TabName</td>
+				<td><a href="/default.aspx?tabid=@row.Tabid" target="_blank">@row.TabName</a> &raquo;</td>
 				<td>@row.Path.Replace("//", "/")</td>
 			</tr>
 			
