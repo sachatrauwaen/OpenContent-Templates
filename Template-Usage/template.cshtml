@@ -13,6 +13,7 @@
 	Tabs.TabName ,
 	Tabs.TabId,
 	Tabs.TabPath as Path,
+	Modules.ModuleID,
 	ModuleDefinitions.FriendlyName, 
 	ModuleSettings.SettingName, 
 	ModuleSettings.SettingValue as Template
@@ -52,7 +53,7 @@
 
 			<tr>
 				<td>@row.PortalID</td>
-				<td><a href="/default.aspx?tabid=@row.Tabid" target="_blank">@row.TabName</a> &raquo;</td>
+				<td><a href="/default.aspx?tabid=@row.Tabid#@row.ModuleID" target="_blank">@row.TabName</a> &raquo;</td>
 				<td>@row.Path.Replace("//", "/")</td>
 			</tr>
 			
