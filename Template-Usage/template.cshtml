@@ -22,9 +22,19 @@
 	 TabModules ON Modules.ModuleID = TabModules.ModuleID INNER JOIN
 	 Tabs ON TabModules.TabID = Tabs.TabID INNER JOIN
 	 ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
-	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' 
+	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
 	 ORDER BY  ModuleSettings.SettingValue, Tabs.PortalID";
 	 
+
+	 var portalFilter = "";
+	 
+
+	 if (Model.Settings.ThisPortal){
+			 portalFilter = " AND Tabs.PortalID =" + Dnn.Portal.PortalId.ToString();
+	 }
+
+	txtSql = string.Format(txtSql, portalFilter);
+
 	 int tables = 0;
 	 string lastTemplate = "";
 	 string tableOpen = "<table><tr><th class='col-portal'>PortalId</th><th class='col-page'>Page Name</th><th class='col-path'>Path</th></tr>";

@@ -1,0 +1,9 @@
+{
+	"type": "object",
+	"properties": {
+	"ThisPortal": {
+		"type": "boolean",
+		"title": "Show only current Portal"
+		}
+	}
+}
