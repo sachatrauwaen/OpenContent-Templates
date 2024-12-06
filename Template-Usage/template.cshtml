@@ -29,7 +29,7 @@
 	 var portalFilter = "";
 	 
 
-	 if (Model.Settings.ThisPortal){
+	 if (Model.Settings != null && Model.Settings.ThisPortal){
 			 portalFilter = " AND Tabs.PortalID =" + Dnn.Portal.PortalId.ToString();
 	 }
 
@@ -46,8 +46,16 @@
 	
 		@foreach(var row in db.Query(txtSql)) {
 		
-			string[] items = row.Template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
-			string template = string.Join("/", items.Skip(4));
+			string template = row.Template;
+
+			if (Model.Settings != null && Model.Settings.ShortPath != null){
+				if(Model.Settings.ShortPath){
+					string[] items = template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
+					template = string.Join("/", items.Skip(4));
+				}
+			}
+			
+			
 			
 			// Close previous tables to start a new one
 			if(lastTemplate != template && tables > 0){
@@ -56,7 +64,7 @@
 			
 			// Start a new table if there's a new template
 			if(lastTemplate != template){
-				<h3>Template: @template</h3>
+				<h5 class="oc-title"><span>Template:</span> @template</h5>
 				@Html.Raw(tableOpen);
 				tables++ ;
 			}
