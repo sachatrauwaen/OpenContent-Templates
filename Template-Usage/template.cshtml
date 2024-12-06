@@ -22,9 +22,19 @@
 	 TabModules ON Modules.ModuleID = TabModules.ModuleID INNER JOIN
 	 Tabs ON TabModules.TabID = Tabs.TabID INNER JOIN
 	 ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
-	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' 
+	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
 	 ORDER BY  ModuleSettings.SettingValue, Tabs.PortalID";
 	 
+
+	 var portalFilter = "";
+	 
+
+	 if (Model.Settings != null && Model.Settings.ThisPortal){
+			 portalFilter = " AND Tabs.PortalID =" + Dnn.Portal.PortalId.ToString();
+	 }
+
+	txtSql = string.Format(txtSql, portalFilter);
+
 	 int tables = 0;
 	 string lastTemplate = "";
 	 string tableOpen = "<table><tr><th class='col-portal'>PortalId</th><th class='col-page'>Page Name</th><th class='col-path'>Path</th></tr>";
@@ -36,8 +46,16 @@
 	
 		@foreach(var row in db.Query(txtSql)) {
 		
-			string[] items = row.Template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
-			string template = string.Join("/", items.Skip(4));
+			string template = row.Template;
+
+			if (Model.Settings != null && Model.Settings.ShortPath != null){
+				if(Model.Settings.ShortPath){
+					string[] items = template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
+					template = string.Join("/", items.Skip(4));
+				}
+			}
+			
+			
 			
 			// Close previous tables to start a new one
 			if(lastTemplate != template && tables > 0){
@@ -46,7 +64,7 @@
 			
 			// Start a new table if there's a new template
 			if(lastTemplate != template){
-				<h3>Template: @template</h3>
+				<h5 class="oc-title"><span>Template:</span> @template</h5>
 				@Html.Raw(tableOpen);
 				tables++ ;
 			}

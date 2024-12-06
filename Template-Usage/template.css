@@ -4,9 +4,15 @@
 	
 }
 
-.oc-template-list h3{
-	margin: 1.5em 0 0.5em;
+.oc-template-list .oc-title{
+	margin: 2em 0 0.5em;
+	line-height: 120%;
 	
+}
+
+.oc-template-list .oc-title span{
+	color: black;
+	display:block;
 }
 
 .oc-template-list th{
