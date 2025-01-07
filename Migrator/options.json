@@ -1,0 +1,56 @@
+{
+  "fields": {
+    "FirstLevelText": {
+      "type": "text"
+    },
+    "FirstLevelTextArea": {
+      "type": "textarea",
+      "helper": "leave this empty. it is a target field."
+    },
+    "FirstLevelImage2": {
+      "type": "image2",
+      "folder": "Images",
+      "migrateTo": "FirstLevelImageX"
+    },
+    "FirstLevelFile2": {
+      "type": "file2",
+      "folder": "Images",
+      "filter": "^.*\\\\.(jpg|JPG|gif|GIF|png|PNG)$"
+    },
+    "FirstLevelImageX": {
+      "type": "imagex",
+      "uploadhidden": false,
+      "fileExtensions": "gif|jpg|jpeg|tiff|png",
+      "fileMaxSize": 2000000,
+      "showOverwrite": true,
+      "overwrite": false,
+      "showCropper": false
+    },
+    "SecondLevel": {
+      "type": "object",
+      "fields": {
+        "SecondLevelText": {
+          "type": "text"
+        },
+        "SecondLevelTextArea": {
+          "type": "text",
+          "helper": "leave this empty. it is a target field."
+        },
+        "SecondLevelImage2": {
+          "type": "image2",
+          "folder": "Images",
+          "migrateTo": "SecondLevelImageX"
+        },
+        "SecondLevelImageX": {
+          "type": "imagex",
+          "uploadhidden": false,
+          "fileExtensions": "gif|jpg|jpeg|tiff|png",
+          "fileMaxSize": 2000000,
+          "showOverwrite": true,
+          "overwrite": false,
+          "showCropper": false
+        }
+      }
+    }
+  }
+}
