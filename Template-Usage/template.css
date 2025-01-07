@@ -1,20 +1,29 @@
 .oc-template-list table{
 	border-collapse:collapse;
-	min-width: 30vw;
+	width: 100%;
 	
 }
 
-.oc-template-list h3{
-	margin: 2em 0 0.3em;
+.oc-template-list .oc-title{
+	margin: 2em 0 0.5em;
+	line-height: 120%;
 }
 
-.oc-template-list h4{
-	margin: 0 0 0.5em
-	
+.oc-template-list .oc-title span{
+	color: black;
+	display:block;
 }
 
 .oc-template-list th{
 	font-weight:bold;
+}
+
+.oc-template-list  .col-portal{
+	width: 4em;
+}
+
+.oc-template-list  .col-page{
+	width: 50%;
 }
 
 .oc-template-list th, .oc-template-list td{

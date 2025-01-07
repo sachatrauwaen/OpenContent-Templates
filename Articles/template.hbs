@@ -8,6 +8,8 @@
 {{registerscript "/DesktopModules/OpenContent/js/lib/handlebars/handlebars.js"}}
 {{registerscript "/DesktopModules/OpenContent/js/lib/moment/min/moment.min.js"}}
 
+{{registerservicesframework}}
+
 {{AdditionalData.intro.Title}}
 
 <div class="">
@@ -106,7 +108,7 @@
                 <div class="row">
                     <div class="col-md-9">
                         <i class="fa fa-rss"></i>
-                        <a href="{{Context.RssUrl}}">Rss</a>
+                        <a href="//{{Context.RssUrl}}">Rss</a>
                     </div>
                 </div>
                 {{/if}}

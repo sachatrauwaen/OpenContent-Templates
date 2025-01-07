@@ -1,0 +1,21 @@
+<div class="oc-rest-api os-api-source">
+	<h2>Rest API Data Source</h2>
+	<div class="oc-rest-list">
+    {{#each Items}}
+	<div class="item">
+		<h2>{{Title}}</h2>
+		{{#if @root.Context.IsEditable}}
+		<div class="edit-btn"><a href="{{Context.EditUrl}}" title="Edit Item" style="background-color:#000;color:#fff;padding: 0.3em; margin: 0.5em 0; ">edit &raquo;</a></div>
+		{{/if}}
+		{{#if Image.url}}
+		<div class="api-image">
+			<img src="{{Image.url}}" alt="{{Title}}" />
+		</div>
+		{{/if}}
+		<div class="text">
+		{{Description}}
+		</div>
+	</div>
+	{{/each}}
+	</div>
+</div>

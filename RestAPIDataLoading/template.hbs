@@ -1,0 +1,16 @@
+<div class="oc-rest-api os-api-target">
+	<h2>Rest API Data Target</h2>
+	<div class="oc-rest-list">
+    {{#each Items}}
+	<div class="item">
+		<h2>{{Title}}</h2>
+		<div class="api-image">
+		<img src="{{Image.url}}" alt="{{Title}}" />
+		</div>
+		<div class="text">
+		{{Description}}
+		</div>
+	</div>
+	{{/each}}
+	</div>
+</div>

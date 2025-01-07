@@ -56,7 +56,9 @@
       "type": "array",
       "title": "Roles",
       "enum": [
-        "Subscribers"
+        "Subscribers",
+		"Role1",
+		"Role2"
       ],
       "default": [ "Subscribers" ]
     }

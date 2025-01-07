@@ -11,7 +11,9 @@
 	var txtSql = @"SELECT Tabs.TabID, 
 	Tabs.PortalID, 
 	Tabs.TabName ,
+	Tabs.TabId,
 	Tabs.TabPath as Path,
+	Modules.ModuleID,
 	ModuleDefinitions.FriendlyName, 
 	ModuleSettings.SettingName, 
 	ModuleSettings.SettingValue as Template
@@ -20,12 +22,22 @@
 	 TabModules ON Modules.ModuleID = TabModules.ModuleID INNER JOIN
 	 Tabs ON TabModules.TabID = Tabs.TabID INNER JOIN
 	 ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
-	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' 
+	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
 	 ORDER BY  ModuleSettings.SettingValue, Tabs.PortalID";
 	 
+
+	 var portalFilter = "";
+	 
+
+	 if (Model.Settings != null && Model.Settings.ThisPortal){
+			 portalFilter = " AND Tabs.PortalID =" + Dnn.Portal.PortalId.ToString();
+	 }
+
+	txtSql = string.Format(txtSql, portalFilter);
+
 	 int tables = 0;
 	 string lastTemplate = "";
-	 string tableOpen = "<table><tr><th>PortalId</th><th>Page Name</th><th>Path</th><th>Location</th></tr>";
+	 string tableOpen = "<table><tr><th class='col-portal'>PortalId</th><th class='col-page'>Page Name</th><th class='col-path'>Path</th></tr>";
 	 string tableClose = "</table>";
 	 
 }
@@ -34,11 +46,14 @@
 	
 		@foreach(var row in db.Query(txtSql)) {
 		
-			string fullPath = row.Template;
-			
-			// Get the Shorter Path
-			string[] items = fullPath.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
-			string template = string.Join("/", items.Skip(4));
+			string template = row.Template;
+
+			if (Model.Settings != null && Model.Settings.ShortPath != null){
+				if(Model.Settings.ShortPath){
+					string[] items = template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
+					template = string.Join("/", items.Skip(4));
+				}
+			}
 			
 			string Type = "Portal";
 			
@@ -53,15 +68,14 @@
 			
 			// Start a new table if there's a new template
 			if(lastTemplate != template){
-				<h3>Template: @template</h3>
-				<h4 title="@fullPath">Type: @Type</h4>
+				<h5 class="oc-title"><span>Template:</span> @template</h5>
 				@Html.Raw(tableOpen);
 				tables++ ;
 			}
 
 			<tr>
 				<td>@row.PortalID</td>
-				<td><a href="/default.aspx?tabid=@row.TabId" target="_blank">@row.TabName</a></td>
+				<td><a href="/default.aspx?tabid=@row.Tabid#@row.ModuleID" target="_blank">@row.TabName</a> &raquo;</td>
 				<td>@row.Path.Replace("//", "/")</td>
 				<td>@row.TabName</td>
 			</tr>

@@ -1,0 +1,14 @@
+{
+	"type": "object",
+	"properties": {
+		"ThisPortal": {
+			"type": "boolean",
+			"title": "Show only current Portal"
+			},
+			"ShortPath": {
+			"type": "boolean",
+			"title": "Show Sort Template Path"
+			}
+		
+	}
+}
