@@ -55,7 +55,11 @@
 				}
 			}
 			
+			string Type = "Portal";
 			
+			if(fullPath.ToLower().Contains("/skins/")){
+				Type = "Skin";
+			}
 			
 			// Close previous tables to start a new one
 			if(lastTemplate != template && tables > 0){
@@ -73,6 +77,7 @@
 				<td>@row.PortalID</td>
 				<td><a href="/default.aspx?tabid=@row.Tabid#@row.ModuleID" target="_blank">@row.TabName</a> &raquo;</td>
 				<td>@row.Path.Replace("//", "/")</td>
+				<td>@row.TabName</td>
 			</tr>
 			
 
