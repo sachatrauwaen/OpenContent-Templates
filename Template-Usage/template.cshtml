@@ -54,8 +54,6 @@
 					template = string.Join("/", items.Skip(4));
 				}
 			}
-			
-		
 			// Close previous tables to start a new one
 			if(lastTemplate != template && tables > 0){
 				@Html.Raw(tableClose);
