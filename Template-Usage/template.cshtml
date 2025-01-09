@@ -61,7 +61,7 @@
 			
 			// Start a new table if there's a new template
 			if(lastTemplate != template){
-				<h5 class="oc-title"><span>Template:</span> @template</h5>
+				<h5 class="oc-template-title"><span class="oc-title">Template:</span><span class="oc-template">@template</span></h5>
 				@Html.Raw(tableOpen);
 				tables++ ;
 			}
