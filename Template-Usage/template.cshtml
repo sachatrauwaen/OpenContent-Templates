@@ -54,6 +54,8 @@
 					template = string.Join("/", items.Skip(4));
 				}
 			}
+			
+		
 			// Close previous tables to start a new one
 			if(lastTemplate != template && tables > 0){
 				@Html.Raw(tableClose);
@@ -70,7 +72,7 @@
 				<td>@row.PortalID</td>
 				<td><a href="/default.aspx?tabid=@row.Tabid#@row.ModuleID" target="_blank">@row.TabName</a> &raquo;</td>
 				<td>@row.Path.Replace("//", "/")</td>
-				<td>@row.TabName</td>		 
+
 			</tr>
 			
 
