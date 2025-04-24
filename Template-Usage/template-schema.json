@@ -7,7 +7,7 @@
 			},
 			"ShortPath": {
 			"type": "boolean",
-			"title": "Show Sort Template Path"
+			"title": "Show Short Template Path"
 			}
 		
 	}
