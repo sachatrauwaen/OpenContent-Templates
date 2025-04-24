@@ -4,95 +4,111 @@
 @inherits Satrabel.OpenContent.Components.OpenContentWebPage
 
 @{
-	var intPortalId = Dnn.Portal.PortalId;
-	var strPortalAlias = Dnn.Portal.PortalAlias;
-	
-	var db = Database.Open("SiteSqlServer");
-	var txtSql = @"SELECT Tabs.TabID, 
-	Tabs.PortalID, 
-	Tabs.TabName ,
-	Tabs.TabId,
-	Tabs.TabPath as Path,
-	Modules.ModuleID,
-	ModuleDefinitions.FriendlyName, 
-	ModuleSettings.SettingName, 
-	ModuleSettings.SettingValue as Template
-	FROM            ModuleDefinitions INNER JOIN
-	 Modules ON ModuleDefinitions.ModuleDefID = Modules.ModuleDefID INNER JOIN
-	 TabModules ON Modules.ModuleID = TabModules.ModuleID INNER JOIN
-	 Tabs ON TabModules.TabID = Tabs.TabID INNER JOIN
-	 ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
-	 WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
-	 ORDER BY  ModuleSettings.SettingValue, Tabs.PortalID";
-	 
+    var intPortalId = Dnn.Portal.PortalId;
+    var strPortalAlias = Dnn.Portal.PortalAlias;
 
-	 var portalFilter = "";
-	 
+    string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SiteSqlServer"].ConnectionString;
+    string txtSql = @"SELECT Tabs.TabID, 
+        Tabs.PortalID, 
+        Tabs.TabName,
+        Tabs.TabId,
+        Tabs.TabPath as Path,
+        Modules.ModuleID,
+        ModuleDefinitions.FriendlyName, 
+        ModuleSettings.SettingName, 
+        ModuleSettings.SettingValue as Template
+    FROM ModuleDefinitions
+    INNER JOIN Modules ON ModuleDefinitions.ModuleDefID = Modules.ModuleDefID
+    INNER JOIN TabModules ON Modules.ModuleID = TabModules.ModuleID
+    INNER JOIN Tabs ON TabModules.TabID = Tabs.TabID
+    INNER JOIN ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
+    WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
+    ORDER BY ModuleSettings.SettingValue, Tabs.PortalID";
 
-	 if (Model.Settings != null && Model.Settings.ThisPortal){
-			 portalFilter = " AND Tabs.PortalID =" + Dnn.Portal.PortalId.ToString();
-	 }
+    var portalFilter = "";
 
-	txtSql = string.Format(txtSql, portalFilter);
+    if (Model.Settings != null && Model.Settings.ThisPortal)
+    {
+        portalFilter = " AND Tabs.PortalID = @PortalId";
+    }
 
-	 int tables = 0;
-	 string lastTemplate = "";
-	 string tableOpen = "<table><tr><th class='col-portal'>PortalId</th><th class='col-page'>Page Name</th><th class='col-path'>Path</th></tr>";
-	 string tableClose = "</table>";
-	 
+    txtSql = string.Format(txtSql, portalFilter);
+
+    int tables = 0;
+    string lastTemplate = "";
+    string tableOpen = "<table><tr><th class='col-portal'>PortalId</th><th class='col-page'>Page Name</th><th class='col-path'>Path</th></tr>";
+    string tableClose = "</table>";
+
+    var rows = new List<dynamic>();
+
+    using (var connection = new SqlConnection(connectionString))
+    {
+        connection.Open();
+        using (var command = new SqlCommand(txtSql, connection))
+        {
+            if (!string.IsNullOrEmpty(portalFilter))
+            {
+                command.Parameters.AddWithValue("@PortalId", intPortalId);
+            }
+
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    rows.Add(new
+                    {
+                        TabID = reader["TabID"],
+                        PortalID = reader["PortalID"],
+                        TabName = reader["TabName"],
+                        Path = reader["Path"],
+                        ModuleID = reader["ModuleID"],
+                        Template = reader["Template"]
+                    });
+                }
+            }
+        }
+    }
 }
 
 <div class="oc-template-list">
-	
-		@foreach(var row in db.Query(txtSql)) {
-		
-			string template = row.Template;
+    @foreach (var row in rows)
+    {
+        string template = row.Template.ToString();
 
-			if (Model.Settings != null && Model.Settings.ShortPath != null){
-				if(Model.Settings.ShortPath){
-					string[] items = template.Split(new char[] {'/'}, StringSplitOptions.RemoveEmptyEntries);
-					template = string.Join("/", items.Skip(4));
-				}
-			}
-			
-		
-			// Close previous tables to start a new one
-			if(lastTemplate != template && tables > 0){
-				@Html.Raw(tableClose);
-			}
-			
-			// Start a new table if there's a new template
-			if(lastTemplate != template){
-				<h5 class="oc-template-title"><span class="oc-title">Template:</span><span class="oc-template">@template</span></h5>
-				@Html.Raw(tableOpen);
-				tables++ ;
-			}
+        if (Model.Settings != null && Model.Settings.ShortPath != null && Model.Settings.ShortPath)
+        {
+            string[] items = template.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            template = string.Join("/", items.Skip(4));
+        }
 
-			<tr>
-				<td>@row.PortalID</td>
-				<td><a href="/default.aspx?tabid=@row.Tabid#@row.ModuleID" target="_blank">@row.TabName</a> &raquo;</td>
-				<td>@row.Path.Replace("//", "/")</td>
+        // Close previous tables to start a new one
+        if (lastTemplate != template && tables > 0)
+        {
+            @Html.Raw(tableClose);
+        }
 
-			</tr>
-			
+        // Start a new table if there's a new template
+        if (lastTemplate != template)
+        {
+            <h5 class="oc-template-title"><span class="oc-title">Template:</span><span class="oc-template">@template</span></h5>
+            @Html.Raw(tableOpen);
+            tables++;
+        }
 
-			
-			lastTemplate = template;
-			
-			
-		}
-		
-		@{
-		
-			// Close previous tables
-			if(tables > 0){
-				@Html.Raw(tableClose);
-			}
-		
-		}
+        <tr>
+            <td>@row.PortalID</td>
+            <td><a href="/default.aspx?tabid=@row.TabID#@row.ModuleID" target="_blank">@row.TabName</a> &raquo;</td>
+            <td>@row.Path.ToString().Replace("//", "/")</td>
+        </tr>
 
-	</table>
-</div>
-</li>
-</ul>
+        lastTemplate = template;
+    }
+
+    @{
+        // Close previous tables
+        if (tables > 0)
+        {
+            @Html.Raw(tableClose);
+        }
+    }
 </div>
