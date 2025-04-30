@@ -4,6 +4,10 @@
 @inherits Satrabel.OpenContent.Components.OpenContentWebPage
 
 @{
+
+    
+    RegisterScript ("js/accordion.js");
+
     var intPortalId = Dnn.Portal.PortalId;
     var strPortalAlias = Dnn.Portal.PortalAlias;
 
@@ -34,11 +38,6 @@
 
     txtSql = string.Format(txtSql, portalFilter);
 
-    int tables = 0;
-    string lastTemplate = "";
-    string tableOpen = "<table><tr><th class='col-portal'>PortalId</th><th class='col-page'>Page Name</th><th class='col-path'>Path</th></tr>";
-    string tableClose = "</table>";
-
     var rows = new List<dynamic>();
 
     using (var connection = new SqlConnection(connectionString))
@@ -68,10 +67,12 @@
             }
         }
     }
-}
 
-<div class="oc-template-list">
-    @foreach (var row in rows)
+    var tableBuilder = new StringBuilder();
+    string lastTemplate = "";
+    int tables = 0;
+
+    foreach (var row in rows)
     {
         string template = row.Template.ToString();
 
@@ -81,34 +82,73 @@
             template = string.Join("/", items.Skip(4));
         }
 
-        // Close previous tables to start a new one
-        if (lastTemplate != template && tables > 0)
-        {
-            @Html.Raw(tableClose);
-        }
-
-        // Start a new table if there's a new template
+        // Close the previous wrapper and start a new one if the template changes
         if (lastTemplate != template)
         {
-            <h5 class="oc-template-title"><span class="oc-title">Template:</span><span class="oc-template">@template</span></h5>
-            @Html.Raw(tableOpen);
+            if (tables > 0)
+            {
+                tableBuilder.Append("</table></div></div>"); // Close the previous table and wrapper
+            }
+
+            // Start a new wrapper
+            tableBuilder.Append(string.Format(
+                "<div class='oc-template-wrapper'>" + // Wrapper starts here
+                "<header class='oc-template-header'>" +
+                "<div class='oc-template-title'>" +
+                "<h5 class='oc-title'>Template:<span class='oc-template-name'>{0}</span></h5>" +
+                "</div>" +
+                "<div class='buttons'>" +
+                "<span class='btn oc-accordion-trigger oc-open' data-selector='#content-{1}' id='section-{1}'>" +
+                "<span class='oc-show-text'>Show </span>" +
+                "<span class='oc-hide-text'>Hide </span>" +
+                "Pages" +
+                "</span>" +
+                "</div>" +
+                "</header>" +
+                "<div class='oc-accordion-content oc-open' id='content-{1}'>" +
+                "<table>" +
+                "<tr>" +
+                "<th class='col-portal'>PortalId</th>" +
+                "<th class='col-page'>Page Name</th>" +
+                "<th class='col-path'>Path</th>" +
+                "</tr>",
+                template, tables));
             tables++;
         }
 
-        <tr>
-            <td>@row.PortalID</td>
-            <td><a href="/default.aspx?tabid=@row.TabID#@row.ModuleID" target="_blank">@row.TabName</a> &raquo;</td>
-            <td>@row.Path.ToString().Replace("//", "/")</td>
-        </tr>
+        // Add a row to the current table
+        tableBuilder.Append(string.Format(
+            "<tr>" +
+            "<td>{0}</td>" +
+            "<td><a href='/default.aspx?tabid={1}#{2}' target='_blank'>{3}</a> &raquo;</td>" +
+            "<td>{4}</td>" +
+            "</tr>",
+            row.PortalID,
+            row.TabID,
+            row.ModuleID,
+            row.TabName,
+            row.Path.ToString().Replace("//", "/")));
 
         lastTemplate = template;
     }
 
-    @{
-        // Close previous tables
-        if (tables > 0)
-        {
-            @Html.Raw(tableClose);
-        }
+    // Close the last wrapper
+    if (tables > 0)
+    {
+        tableBuilder.Append("</table></div>"); // Close the last table and wrapper
     }
+}
+
+<div class="oc-template-list">
+    <div class="buttons">
+        <a class="btn" id="oc-open-all">Show All</a>
+        <a class="btn" id="oc-close-all">Hide All</a>
+    </div>
+    @Html.Raw(tableBuilder.ToString())
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    initAccordion();
+  });
+</script>
