@@ -1,37 +1,113 @@
-.DnnModule-OpenContent .oc-template-list table{
-	border-collapse:collapse;
-	width: 100%;
-	
+/* Define CSS variables inside .oc-template-list for isolation */
+.oc-template-list {
+    --color-border: #ddd;
+    --color-background: #eee;
+    --color-title: #888;
+    --color-text: black;
+
+    --padding-cell: 0.5rem;
+    --padding-buttons: 0.5em;
+    --padding-accordion: 1em;
+
+    --font-size-title: 1em;
+    --line-height-title: 120%;
+
+    --transition-speed: 0.4s;
+    --accordion-max-height: 1000px;
 }
 
-.DnnModule-OpenContent .oc-template-list .oc-template-title{
-	margin: 2.5em 0 0.5em;
-	line-height: 120%;
-	font-size: 1em;
+/* General styles for the template list */
+.oc-template-list table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.DnnModule-OpenContent .oc-template-list .oc-template-title .oc-title{
-	color: #888;
-	display:block;
-	margin-bottom: 0.2em;
+.oc-template-list .buttons {
+    padding-bottom: var(--padding-buttons);
+    text-align: right;
 }
 
-.DnnModule-OpenContent .oc-template-list th{
-	font-weight:bold;
+.oc-template-list .btn {
+    cursor: pointer;
+    background: var(--color-background);
+    padding: var(--padding-buttons);
 }
 
-.DnnModule-OpenContent .oc-template-list .col-portal{
-	width: 4em;
+/* Wrapper styles */
+.oc-template-list .oc-template-wrapper {
+    margin: 2em 0 3em;
 }
 
-.DnnModule-OpenContent .oc-template-list .col-page{
-	width: 50%;
+/* Header styles */
+.oc-template-list .oc-template-header {
+    display: flex;
+    border-bottom: solid 1px var(--color-border);
+    align-items: flex-end;
+    margin-bottom: 1em;
 }
 
-.DnnModule-OpenContent .oc-template-list th, 
-.DnnModule-OpenContent .oc-template-list td{
-	padding:0.5rem;
-	text-align:left;
-	border: none;
-	border-bottom: solid 1px #ddd;
+.oc-template-list .oc-template-title {
+    flex-grow: 1;
+    margin: 0;
+    line-height: var(--line-height-title);
+    font-size: var(--font-size-title);
+}
+
+.oc-template-list .oc-template-title .oc-title {
+    color: var(--color-title);
+    display: block;
+    margin: 0;
+}
+
+.oc-template-list .oc-template-name {
+    color: var(--color-text);
+    display: block;
+    margin: 0.4em 0;
+}
+
+/* Table styles */
+.oc-template-list th,
+.oc-template-list td {
+    padding: var(--padding-cell);
+    text-align: left;
+    border: none;
+    border-bottom: solid 1px var(--color-border);
+}
+
+.oc-template-list th {
+    font-weight: bold;
+}
+
+.oc-template-list .col-portal {
+    width: 4em;
+}
+
+.oc-template-list .col-page {
+    width: 50%;
+}
+
+/* Accordion trigger styles */
+.oc-template-list .oc-accordion-trigger.oc-open .oc-show-text {
+    display: none;
+}
+
+.oc-template-list .oc-accordion-trigger.oc-closed .oc-hide-text {
+    display: none;
+}
+
+/* Accordion content styles */
+.oc-template-list .oc-accordion-content {
+    transition: max-height var(--transition-speed) ease, opacity var(--transition-speed) ease;
+    overflow: hidden;
+    padding: 0 var(--padding-accordion);
+}
+
+.oc-template-list .oc-accordion-content.oc-acc-open {
+    opacity: 1;
+    max-height: var(--accordion-max-height); /* fallback if JS doesn't set it */
+}
+
+.oc-template-list .oc-accordion-content.oc-acc-closed {
+    opacity: 0;
+    max-height: 0;
 }
