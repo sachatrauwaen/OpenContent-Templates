@@ -1,36 +1,36 @@
 @using System
 @using System.Text
 @using System.Data.SqlClient
+@using System.Linq
 @inherits Satrabel.OpenContent.Components.OpenContentWebPage
 
 @{
-
-    
-    RegisterScript ("js/accordion.js");
+    RegisterScript("js/accordion.js");
 
     var intPortalId = Dnn.Portal.PortalId;
     var strPortalAlias = Dnn.Portal.PortalAlias;
 
     string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SiteSqlServer"].ConnectionString;
-    string txtSql = @"SELECT Tabs.TabID, 
-        Tabs.PortalID, 
-        Tabs.TabName,
-        Tabs.TabId,
-        Tabs.TabPath as Path,
-        Modules.ModuleID,
-        ModuleDefinitions.FriendlyName, 
-        ModuleSettings.SettingName, 
-        ModuleSettings.SettingValue as Template
-    FROM ModuleDefinitions
-    INNER JOIN Modules ON ModuleDefinitions.ModuleDefID = Modules.ModuleDefID
-    INNER JOIN TabModules ON Modules.ModuleID = TabModules.ModuleID
-    INNER JOIN Tabs ON TabModules.TabID = Tabs.TabID
-    INNER JOIN ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
-    WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
-    ORDER BY ModuleSettings.SettingValue, Tabs.PortalID";
+
+    string txtSql = @"
+        SELECT 
+            Tabs.TabID, 
+            Tabs.PortalID, 
+            Tabs.TabName,
+            Tabs.TabPath as Path,
+            Modules.ModuleID,
+            ModuleDefinitions.FriendlyName, 
+            ModuleSettings.SettingName, 
+            ModuleSettings.SettingValue as Template
+        FROM ModuleDefinitions
+        INNER JOIN Modules ON ModuleDefinitions.ModuleDefID = Modules.ModuleDefID
+        INNER JOIN TabModules ON Modules.ModuleID = TabModules.ModuleID
+        INNER JOIN Tabs ON TabModules.TabID = Tabs.TabID
+        INNER JOIN ModuleSettings ON Modules.ModuleID = ModuleSettings.ModuleID
+        WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
+        ORDER BY ModuleSettings.SettingValue, Tabs.PortalID";
 
     var portalFilter = "";
-
     if (Model.Settings != null && Model.Settings.ThisPortal)
     {
         portalFilter = " AND Tabs.PortalID = @PortalId";
@@ -68,31 +68,40 @@
         }
     }
 
+    // Normalize template path if needed
+    Func<string, string> NormalizeTemplate = (tpl) =>
+    {
+        if (Model.Settings != null && Model.Settings.ShortPath != null && Model.Settings.ShortPath)
+        {
+            string[] items = tpl.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
+            return string.Join("/", items.Skip(4));
+        }
+        return tpl;
+    };
+
+    // Pre-count modules per template
+    var moduleCounts = rows
+        .GroupBy(r => NormalizeTemplate(r.Template.ToString()))
+        .ToDictionary(g => g.Key, g => g.Count());
+
     var tableBuilder = new StringBuilder();
     string lastTemplate = "";
     int tables = 0;
 
     foreach (var row in rows)
     {
-        string template = row.Template.ToString();
-
-        if (Model.Settings != null && Model.Settings.ShortPath != null && Model.Settings.ShortPath)
-        {
-            string[] items = template.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
-            template = string.Join("/", items.Skip(4));
-        }
+        string template = NormalizeTemplate(row.Template.ToString());
 
         // Close the previous wrapper and start a new one if the template changes
         if (lastTemplate != template)
         {
             if (tables > 0)
             {
-                tableBuilder.Append("</table></div></div>"); // Close the previous table and wrapper
+                tableBuilder.Append("</table></div></div>");
             }
 
-            // Start a new wrapper
             tableBuilder.Append(string.Format(
-                "<div class='oc-template-wrapper'>" + // Wrapper starts here
+                "<div class='oc-template-wrapper'>" +
                 "<header class='oc-template-header'>" +
                 "<div class='oc-template-title'>" +
                 "<h5 class='oc-title'>Template:<span class='oc-template-name'>{0}</span></h5>" +
@@ -101,7 +110,7 @@
                 "<span class='btn oc-accordion-trigger oc-open' data-selector='#content-{1}' id='section-{1}'>" +
                 "<span class='oc-show-text'>Show </span>" +
                 "<span class='oc-hide-text'>Hide </span>" +
-                "Pages" +
+                "{2} Modules" +
                 "</span>" +
                 "</div>" +
                 "</header>" +
@@ -112,7 +121,8 @@
                 "<th class='col-page'>Page Name</th>" +
                 "<th class='col-path'>Path</th>" +
                 "</tr>",
-                template, tables));
+                template, tables, moduleCounts[template]));
+
             tables++;
         }
 
@@ -132,10 +142,9 @@
         lastTemplate = template;
     }
 
-    // Close the last wrapper
     if (tables > 0)
     {
-        tableBuilder.Append("</table></div>"); // Close the last table and wrapper
+        tableBuilder.Append("</table></div></div>");
     }
 }
 
