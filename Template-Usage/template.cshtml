@@ -120,6 +120,7 @@
                 "<th class='col-portal'>PortalId</th>" +
                 "<th class='col-page'>Page Name</th>" +
                 "<th class='col-path'>Path</th>" +
+                "<th class='col-template'>Change</th>" +
                 "</tr>",
                 template, tables, moduleCounts[template]));
 
@@ -130,11 +131,12 @@
         tableBuilder.Append(string.Format(
             "<tr>" +
             "<td>{0}</td>" +
-            "<td><a href='/default.aspx?tabid={1}#{2}' target='_blank'>{3}</a> &raquo;</td>" +
+            "<td><a href='{1}#{2}' target='_blank'>{3}</a> &raquo;</td>" +
             "<td>{4}</td>" +
+            "<td><a href='{1}/ctl/editinit/mid/{2}' target='_blank' title='Change template'><img src='/images/eip_edit.png' /></a></td>" +
             "</tr>",
             row.PortalID,
-            row.TabID,
+            DotNetNuke.Common.Globals.NavigateURL(row.TabID),
             row.ModuleID,
             row.TabName,
             row.Path.ToString().Replace("//", "/")));
