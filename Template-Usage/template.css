@@ -78,7 +78,8 @@
     font-weight: bold;
 }
 
-.oc-template-list .col-portal {
+.oc-template-list .col-portal,
+.oc-template-list .col-change {
     width: 4em;
 }
 
