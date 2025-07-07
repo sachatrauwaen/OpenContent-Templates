@@ -92,16 +92,28 @@
     {
         string template = NormalizeTemplate(row.Template.ToString());
 
-        // Close the previous wrapper and start a new one if the template changes
+        // Only check if the folder exists when the template changes
+        bool folderExists = false;
         if (lastTemplate != template)
         {
+            // Compute the full path for the template folder
+            string templatePath = row.Template.ToString().Replace("/", "\\");
+            string templateFolderPath = Server.MapPath("~/" + templatePath);
+
+            // If it's a file, check for file existence:
+            folderExists = System.IO.File.Exists(templateFolderPath);
+
+            // If you want to check for the folder containing the file:
+            string folderPath = System.IO.Path.GetDirectoryName(templateFolderPath);
+            folderExists = System.IO.Directory.Exists(folderPath);
+
             if (tables > 0)
             {
                 tableBuilder.Append("</table></div></div>");
             }
 
             tableBuilder.Append(string.Format(
-                "<div class='oc-template-wrapper'>" +
+                "<div class='oc-template-wrapper folder-exists-{3}'>" +
                 "<header class='oc-template-header'>" +
                 "<div class='oc-template-title'>" +
                 "<h5 class='oc-title'>Template:<span class='oc-template-name'>{0}</span></h5>" +
@@ -122,7 +134,7 @@
                 "<th class='col-path'>Path</th>" +
                 "<th class='col-change'>Change</th>" +
                 "</tr>",
-                template, tables, moduleCounts[template]));
+                template, tables, moduleCounts[template], folderExists.ToString().ToLower()));
 
             tables++;
         }

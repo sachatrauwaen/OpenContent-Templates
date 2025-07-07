@@ -5,6 +5,9 @@
     --color-title: #888;
     --color-text: black;
 
+    --color-error: #d00;
+    --error-message: "--- Folder / template not Found! ---";
+
     --padding-cell: 0.5rem;
     --padding-buttons: 0.5em;
     --padding-accordion: 1em;
@@ -36,6 +39,16 @@
 /* Wrapper styles */
 .oc-template-list .oc-template-wrapper {
     margin: 2em 0 3em;
+}
+
+
+
+.oc-template-list .folder-exists-false .oc-template-name:after{
+    content: var(--error-message);
+    padding-top: 0.5em;
+    display:block;
+    width: 100%;
+    color: var(--color-error);
 }
 
 /* Header styles */
