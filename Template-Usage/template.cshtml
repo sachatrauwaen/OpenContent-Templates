@@ -130,9 +130,11 @@
                 "<table>" +
                 "<tr>" +
                 "<th class='col-portal'>PortalId</th>" +
+                "<th class='col-portal'>TabId</th>" +
+                "<th class='col-portal'>ModuleId</th>" +
                 "<th class='col-page'>Page Name</th>" +
                 "<th class='col-path'>Path</th>" +
-                "<th class='col-change'>Change</th>" +
+                "<th class='col-change'>Switch Template</th>" +
                 "</tr>",
                 template, tables, moduleCounts[template], folderExists.ToString().ToLower()));
 
@@ -143,14 +145,17 @@
         tableBuilder.Append(string.Format(
             "<tr>" +
             "<td>{0}</td>" +
-            "<td><a href='{1}#{2}' target='_blank'>{3}</a> &raquo;</td>" +
-            "<td>{4}</td>" +
-            "<td><a href='{1}/ctl/editinit/mid/{2}' target='_blank' title='Change template'><img src='/images/eip_edit.png' /></a></td>" +
+            "<td>{1}</td>" +
+            "<td>{3}</td>" +
+            "<td><a href='{4}#{3}' target='_blank'>{2}</a> &raquo;</td>" +
+            "<td>{5}</td>" +
+            "<td><a href='{4}/ctl/editinit/mid/{3}' target='_blank' title='Change template'><img src='/images/eip_edit.png' /></a></td>" +
             "</tr>",
             row.PortalID,
-            DotNetNuke.Common.Globals.NavigateURL(row.TabID),
-            row.ModuleID,
+            row.TabID,
             row.TabName,
+            row.ModuleID,
+            DotNetNuke.Common.Globals.NavigateURL(row.TabID),
             row.Path.ToString().Replace("//", "/")));
 
         lastTemplate = template;
