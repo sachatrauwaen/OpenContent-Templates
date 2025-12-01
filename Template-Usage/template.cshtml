@@ -10,6 +10,8 @@
     var intPortalId = Dnn.Portal.PortalId;
     var strPortalAlias = Dnn.Portal.PortalAlias;
 
+    var iconPath = Model.Context.TemplatePath + "/icons/";
+
     string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["SiteSqlServer"].ConnectionString;
 
     string txtSql = @"
@@ -17,10 +19,12 @@
             Tabs.TabID, 
             Tabs.PortalID, 
             Tabs.TabName,
+			Tabs.IsDeleted as TabDeleted,
             Tabs.TabPath as Path,
             Modules.ModuleID,
             ModuleDefinitions.FriendlyName, 
             ModuleSettings.SettingName, 
+			TabModules.IsDeleted as ModDeleted,
             ModuleSettings.SettingValue as Template
         FROM ModuleDefinitions
         INNER JOIN Modules ON ModuleDefinitions.ModuleDefID = Modules.ModuleDefID
@@ -30,13 +34,28 @@
         WHERE ModuleDefinitions.FriendlyName = 'OpenContent' AND ModuleSettings.SettingName = 'template' {0}
         ORDER BY ModuleSettings.SettingValue, Tabs.PortalID";
 
-    var portalFilter = "";
+    var sqlFilter = "";
+
+    var portalFilter = false;
     if (Model.Settings != null && Model.Settings.ThisPortal)
     {
-        portalFilter = " AND Tabs.PortalID = @PortalId";
+        sqlFilter += " AND Tabs.PortalID = @PortalId";
+        portalFilter = true;
     }
 
-    txtSql = string.Format(txtSql, portalFilter);
+    if (Model.Settings != null && Model.Settings.HideDeletedTab)
+    {
+        sqlFilter += " AND Tabs.IsDeleted = 0";
+    }
+
+    if (Model.Settings != null && Model.Settings.HideDeletedTab)
+    {
+        sqlFilter += " AND TabModules.IsDeleted = 0";
+    }
+
+
+
+    txtSql = string.Format(txtSql, sqlFilter);
 
     var rows = new List<dynamic>();
 
@@ -45,7 +64,7 @@
         connection.Open();
         using (var command = new SqlCommand(txtSql, connection))
         {
-            if (!string.IsNullOrEmpty(portalFilter))
+            if (portalFilter == true)
             {
                 command.Parameters.AddWithValue("@PortalId", intPortalId);
             }
@@ -59,7 +78,9 @@
                         TabID = reader["TabID"],
                         PortalID = reader["PortalID"],
                         TabName = reader["TabName"],
+                        TabDel = (reader["TabDeleted"] != DBNull.Value && Convert.ToBoolean(reader["TabDeleted"])) ? "1" : "0",
                         Path = reader["Path"],
+                        ModDel = (reader["ModDeleted"] != DBNull.Value && Convert.ToBoolean(reader["ModDeleted"])) ? "1" : "0",
                         ModuleID = reader["ModuleID"],
                         Template = reader["Template"]
                     });
@@ -129,11 +150,13 @@
                 "<div class='oc-accordion-content oc-open' id='content-{1}'>" +
                 "<table>" +
                 "<tr>" +
-                "<th class='col-portal'>PortalId</th>" +
-                "<th class='col-portal'>TabId</th>" +
-                "<th class='col-portal'>ModuleId</th>" +
-                "<th class='col-page'>Page Name</th>" +
-                "<th class='col-path'>Path</th>" +
+                "<th class='col-p-id'>PortalId</th>" +
+                "<th class='col-t-id'>TabId</th>" +
+                "<th class='col-m-id'>ModuleId</th>" +
+                "<th class='col-t-name'>Page Name</th>" +
+                "<th class='col-t-del'>Page Deleted</th>" +
+                "<th class='col-m-del'>Module Deleted</th>" +
+                "<th class='col-p-path'>Page Path</th>" +
                 "<th class='col-change'>Switch Template</th>" +
                 "</tr>",
                 template, tables, moduleCounts[template], folderExists.ToString().ToLower()));
@@ -149,14 +172,22 @@
             "<td>{3}</td>" +
             "<td><a href='{4}#{3}' target='_blank'>{2}</a> &raquo;</td>" +
             "<td>{5}</td>" +
-            "<td><a href='{4}/ctl/editinit/mid/{3}' target='_blank' title='Change template'><img src='/images/eip_edit.png' /></a></td>" +
+            "<td>{6}</td>" +
+            "<td>{7}</td>" +
+            "<td><a href='{4}/ctl/editinit/mid/{3}' target='_blank' title='Change template'>{8}</a></td>" +
             "</tr>",
             row.PortalID,
             row.TabID,
             row.TabName,
             row.ModuleID,
             DotNetNuke.Common.Globals.NavigateURL(row.TabID),
-            row.Path.ToString().Replace("//", "/")));
+             row.TabDel,
+             row.ModDel,
+            row.Path.ToString().Replace("//", "/"),
+            "<img class='oc-icon' src='" + iconPath + "/settings.svg' />"
+           
+            
+            ));
 
         lastTemplate = template;
     }
