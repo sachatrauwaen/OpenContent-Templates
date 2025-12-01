@@ -72,15 +72,25 @@
             using (var reader = command.ExecuteReader())
             {
                 while (reader.Read())
+
                 {
+
+                    // Calculate values up front
+                    bool tabDeleted = reader["TabDeleted"] != DBNull.Value && Convert.ToBoolean(reader["TabDeleted"]);
+                    bool modDeleted = reader["ModDeleted"] != DBNull.Value && Convert.ToBoolean(reader["ModDeleted"]);
+
+                    string tabDelValue = tabDeleted ? "1" : "0";
+                    string modDelValue = modDeleted ? "1" : "0";
+
                     rows.Add(new
                     {
                         TabID = reader["TabID"],
                         PortalID = reader["PortalID"],
+                        IsDeleted = tabDeleted || modDeleted,
                         TabName = reader["TabName"],
-                        TabDel = (reader["TabDeleted"] != DBNull.Value && Convert.ToBoolean(reader["TabDeleted"])) ? "1" : "0",
+                        TabDel = tabDelValue,
                         Path = reader["Path"],
-                        ModDel = (reader["ModDeleted"] != DBNull.Value && Convert.ToBoolean(reader["ModDeleted"])) ? "1" : "0",
+                        ModDel = modDelValue,
                         ModuleID = reader["ModuleID"],
                         Template = reader["Template"]
                     });
@@ -166,23 +176,24 @@
 
         // Add a row to the current table
         tableBuilder.Append(string.Format(
-            "<tr>" +
+            "<tr class='row-deleted-{7}'>" +
             "<td>{0}</td>" +
             "<td>{1}</td>" +
             "<td>{3}</td>" +
             "<td><a href='{4}#{3}' target='_blank'>{2}</a> &raquo;</td>" +
             "<td>{5}</td>" +
             "<td>{6}</td>" +
-            "<td>{7}</td>" +
-            "<td><a href='{4}/ctl/editinit/mid/{3}' target='_blank' title='Change template'>{8}</a></td>" +
+            "<td>{8}</td>" +
+            "<td><a href='{4}/ctl/editinit/mid/{3}' target='_blank' title='Change template'>{9}</a></td>" +
             "</tr>",
             row.PortalID,
             row.TabID,
             row.TabName,
             row.ModuleID,
             DotNetNuke.Common.Globals.NavigateURL(row.TabID),
-             row.TabDel,
-             row.ModDel,
+            row.TabDel,
+            row.ModDel,
+            row.IsDeleted.ToString().ToLower(),
             row.Path.ToString().Replace("//", "/"),
             "<img class='oc-icon' src='" + iconPath + "/settings.svg' />"
            

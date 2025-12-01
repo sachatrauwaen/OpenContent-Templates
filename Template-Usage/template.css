@@ -91,6 +91,15 @@
     font-weight: bold;
 }
 
+
+.row-deleted-true{
+    text-decoration: line-through;
+    text-decoration-color: #000000dd;
+}
+
+.row-deleted-true:hover{
+    text-decoration-color: #00000044;
+}
 .oc-template-list .col-p-id,
 .oc-template-list .col-t-id,
 .oc-template-list .col-m-id,
