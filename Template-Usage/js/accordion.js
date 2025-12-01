@@ -6,10 +6,13 @@
     const closedClass = 'oc-closed';
     const cookieName = 'ff-oc-accordionState';
 
+    // Global shared state
+    let accordionState = {};
+
     // === COOKIE HANDLING ===
     function setCookie(name, value, days = 90) {
         const expires = new Date(Date.now() + days * 864e5).toUTCString();
-        document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+        document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
     }
 
     function getCookie(name) {
@@ -19,17 +22,16 @@
         }, '');
     }
 
-    function saveState(states) {
-        setCookie(cookieName, JSON.stringify(states));
-    }
+    function saveState() {
+        setCookie(cookieName, JSON.stringify(accordionState));
+    } // ← FIXED MISSING BRACE
 
     function loadState() {
         try {
             const cookieValue = getCookie(cookieName);
-            console.log('Loaded cookie:', cookieValue); // Debugging: Check cookie content
-            return JSON.parse(cookieValue) || {};
+            return JSON.parse(cookieValue || '{}');
         } catch (e) {
-            console.error('Error parsing cookie:', e);
+            console.error('Error parsing accordion cookie:', e);
             return {};
         }
     }
@@ -37,7 +39,6 @@
     // === OPEN ALL / CLOSE ALL FUNCTIONS ===
     function toggleAllAccordions(open) {
         const triggers = document.querySelectorAll(`.${triggerClass}`);
-        const state = {};
 
         triggers.forEach(trigger => {
             const selector = trigger.getAttribute('data-selector');
@@ -53,7 +54,7 @@
                 content.classList.remove(closedClass);
                 content.style.maxHeight = content.scrollHeight + 'px';
                 content.style.overflow = 'hidden';
-                state[id] = 'open';
+                accordionState[id] = 'open';
             } else {
                 trigger.classList.add(closedClass);
                 trigger.classList.remove(openClass);
@@ -61,18 +62,19 @@
                 content.classList.remove(openClass);
                 content.style.maxHeight = '0px';
                 content.style.overflow = 'hidden';
-                state[id] = 'closed';
+                accordionState[id] = 'closed';
             }
         });
 
-        // Save the updated state to the cookie
-        saveState(state);
+        saveState();
     }
 
     // === INIT FUNCTION ===
     function initAccordion() {
         const triggers = document.querySelectorAll(`.${triggerClass}`);
-        const state = loadState();
+
+        // Load cookie into global state
+        accordionState = loadState();
 
         triggers.forEach((trigger, index) => {
             const selector = trigger.getAttribute('data-selector');
@@ -82,8 +84,8 @@
             const id = trigger.id || `accordion-${index}`;
             trigger.id = id;
 
-            // Restore saved state or use existing HTML classes
-            const saved = state[id];
+            // Restore saved state if available
+            const saved = accordionState[id];
             if (saved === 'open' || saved === 'closed') {
                 trigger.classList.remove(openClass, closedClass);
                 content.classList.remove(openClass, closedClass);
@@ -92,21 +94,20 @@
                     trigger.classList.add(openClass);
                     content.classList.add(openClass);
                     content.style.maxHeight = content.scrollHeight + 'px';
-                    content.style.overflow = 'hidden';
                 } else {
                     trigger.classList.add(closedClass);
                     content.classList.add(closedClass);
                     content.style.maxHeight = '0px';
-                    content.style.overflow = 'hidden';
                 }
+                content.style.overflow = 'hidden';
             }
 
-            // Click handler
-            trigger.addEventListener('click', function () {
+            // Individual click handler
+            trigger.addEventListener('click', () => {
                 const isOpen = content.classList.contains(openClass);
 
                 if (isOpen) {
-                    content.style.maxHeight = content.scrollHeight + 'px'; // ensure it's set before collapsing
+                    content.style.maxHeight = content.scrollHeight + 'px';
                     requestAnimationFrame(() => {
                         content.style.maxHeight = '0px';
                     });
@@ -114,32 +115,26 @@
                     content.style.maxHeight = content.scrollHeight + 'px';
                 }
 
-                // Toggle classes
                 trigger.classList.toggle(openClass, !isOpen);
                 trigger.classList.toggle(closedClass, isOpen);
                 content.classList.toggle(openClass, !isOpen);
                 content.classList.toggle(closedClass, isOpen);
 
-                // Save new state
-                state[id] = isOpen ? 'closed' : 'open';
-                saveState(state);
+                accordionState[id] = isOpen ? 'closed' : 'open';
+                saveState();
             });
         });
 
-        // Add event listeners for "Open All" and "Close All" buttons
+        // Add Open All / Close All handlers
         const openAllButton = document.getElementById('oc-open-all');
         const closeAllButton = document.getElementById('oc-close-all');
 
         if (openAllButton) {
-            openAllButton.addEventListener('click', function () {
-                toggleAllAccordions(true);
-            });
+            openAllButton.addEventListener('click', () => toggleAllAccordions(true));
         }
 
         if (closeAllButton) {
-            closeAllButton.addEventListener('click', function () {
-                toggleAllAccordions(false);
-            });
+            closeAllButton.addEventListener('click', () => toggleAllAccordions(false));
         }
     }
 
