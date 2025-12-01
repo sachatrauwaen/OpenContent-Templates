@@ -91,15 +91,24 @@
     font-weight: bold;
 }
 
-.oc-template-list .col-portal,
+.oc-template-list .col-p-id,
+.oc-template-list .col-t-id,
+.oc-template-list .col-m-id,
+.oc-template-list .col-t-del,
+.oc-template-list .col-m-del,
 .oc-template-list .col-change {
     width: 4em;
 }
 
-.oc-template-list .col-page {
+.oc-template-list .col-t-name {
     width: 50%;
 }
 
+
+#Body .oc-icon{
+    max-width: 1.5em;
+    border: none;
+}
 /* Accordion trigger styles */
 .oc-template-list .oc-accordion-trigger.oc-open .oc-show-text {
     display: none;

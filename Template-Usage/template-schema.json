@@ -4,11 +4,18 @@
 		"ThisPortal": {
 			"type": "boolean",
 			"title": "Show only current Portal"
-			},
-			"ShortPath": {
+		},
+		"HideDeletedTab": {
+			"type": "boolean",
+			"title": "Hide Deleted Pages"
+		},
+		"HideDeletedMod": {
+			"type": "boolean",
+			"title": "Hide Deleted Modules"
+		},
+		"ShortPath": {
 			"type": "boolean",
 			"title": "Show Short Template Path"
-			}
-		
+		}
 	}
 }
