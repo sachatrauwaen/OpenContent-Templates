@@ -5,7 +5,7 @@
                 "items": {
                     "fields": {
                         "Description": {
-                            "type": "wysihtml"
+                            "type": "ckeditor"
                         },
                         "Image": {
                             "type": "image",

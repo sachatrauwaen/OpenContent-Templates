@@ -3,12 +3,12 @@
   	{
   <div class="col-md-@(12 / Model.Settings.Columns) col-sm-@(24 / Model.Settings.Columns)">
         <div class="thumbnail">
-            @if (!string.IsNullOrEmpty(col.Image))
+            @if (!string.IsNullOrEmpty(Convert.ToString(col.Image)))
           	{          
-            <img src="@col.Image" alt="@col.Title}}">
+            <img src="@col.Image" alt="@col.Title">
             }          	
             <div class="caption">
-                @if (!string.IsNullOrEmpty(col.Title))
+                @if (!string.IsNullOrEmpty(Convert.ToString(col.Title)))
               	{
                 <h3>@col.Title</h3>
                 }

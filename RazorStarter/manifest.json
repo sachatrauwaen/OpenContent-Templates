@@ -1,0 +1,13 @@
+{
+    "builderVersion": 2,
+    "templates": {
+        "template": {
+            "type": "single", 
+            "title": "",
+            "clientSideData": false,
+            "main": {
+                "template": "template.cshtml"
+            }
+        }
+    }
+}

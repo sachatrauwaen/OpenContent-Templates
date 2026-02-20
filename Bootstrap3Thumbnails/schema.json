@@ -2,56 +2,42 @@
   "type": "object",
   "properties": {
     "ModuleTitle": {
-      "type": "string",
-      "title": "Module Title"
+      "title": "Module Title",
+      "type": "string"
     },
     "Columns": {
       "type": "array",
       "items": {
+        "title": "",
         "type": "object",
         "properties": {
+          "Title": {
+            "title": "Title",
+            "type": "string"
+          },
           "Image": {
-            "type": "string",
-            "title": "Image"
+            "title": "Image",
+            "type": "string"
           },
           "Caption": {
-            "type": "boolean",
-            "title": "Caption ?"
-          },
-          "Title": {
-            "type": "string",
-            "title": "Title",
-            "dependencies": [
-              "Caption"
-            ]
+            "title": "Caption ?",
+            "type": "boolean"
           },
           "Description": {
-            "type": "string",
             "title": "Description",
-            "dependencies": [
-              "Caption"
-            ]
+            "type": "string"
           },
           "LinkText": {
-            "type": "string",
             "title": "Link Text",
-            "dependencies": [
-              "Caption"
-            ]
+            "type": "string"
           },
           "LinkUrl": {
-            "type": "string",
             "title": "Link Url",
-            "dependencies": [
-              "Caption"
-            ]
+            "type": "string"
           },
           "LinkNewWindow": {
-            "type": "boolean",
             "title": "Open Link in new window",
-            "dependencies": [
-              "Caption"
-            ]
+            "type": "boolean"
           }
         }
       }

@@ -1,0 +1,29 @@
+{
+    "builderVersion": 2,
+    "templates": {
+        "template": {
+            "type": "single", 
+            "title": "base",
+            "clientSideData": false,
+            "main": {
+                "template": "template.hbs"
+            }
+        },
+		"news": {
+            "type": "single", 
+            "title": "news",
+            "clientSideData": false,
+            "main": {
+                "template": "NewsCarousel.hbs"
+            }
+        },
+		"thumbnail": {
+            "type": "single", 
+            "title": "thumbnail",
+            "clientSideData": false,
+            "main": {
+                "template": "ThumbnailNavigation.hbs"
+            }
+        }
+    }
+}

@@ -4,10 +4,10 @@
 			"type":"text"
         },
       	"Summary": {
-			"type":"wysihtml"
+			"type":"ckeditor"
         },
         "Description": {
-			"type":"wysihtml"
+			"type":"ckeditor"
         },
         "Image": {
             "type": "image",

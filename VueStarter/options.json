@@ -4,7 +4,7 @@
 			"type":"text"
         },
         "Description": {
-			"type":"wysihtml"
+			"type":"ckeditor"
         }
     }
 }

@@ -1,32 +1,37 @@
 {
   "fields": {
     "ModuleTitle": {
+      "dependencies": {},
       "type": "text"
     },
     "Columns": {
-      "type": "array",
       "items": {
         "fields": {
+          "Title": {
+            "dependencies": {},
+            "type": "text"
+          },
           "Image": {
+            "dependencies": {},
             "type": "image"
           },
           "Caption": {
-            "type": "checkbox"
-          },
-          "Title": {
-            "type": "text"
+            "dependencies": {}
           },
           "Description": {
+            "dependencies": {},
             "type": "ckeditor"
           },
           "LinkText": {
+            "dependencies": {},
             "type": "text"
           },
           "LinkUrl": {
+            "dependencies": {},
             "type": "url"
           },
           "LinkNewWindow": {
-            "type": "checkbox"
+            "dependencies": {}
           }
         }
       }

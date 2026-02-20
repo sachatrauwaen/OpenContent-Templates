@@ -1,5 +1,6 @@
 {
-    "editWitoutPostback": true,
+    "builderVersion": 2,
+	"editWitoutPostback": true,
     "editRole": "",
     "Index": false,
 	"Advanced": true,

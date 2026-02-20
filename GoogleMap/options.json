@@ -11,7 +11,7 @@
             "type": "text"
           },
           "Description": {
-            "type": "wysihtml"
+            "type": "ckeditor"
           },
           "Address": {
             "type": "address"

@@ -1,4 +1,5 @@
 {
+	"builderVersion": 2,
   	"title": "Classifieds",
     "editWitoutPostback": true,
     "editRole": "OpenContentEditor",

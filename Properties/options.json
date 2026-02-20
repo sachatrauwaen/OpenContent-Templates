@@ -1,7 +1,7 @@
 {
   "fields": {
     "Category": {
-      "type": "select2",
+      "type": "relation",
       "dataService": {
         "action": "LookupData",
         "data": {

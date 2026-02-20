@@ -1,7 +1,7 @@
 {
   "fields": {
     "Category": {
-      "type": "select2",
+      "type": "relation",
       "dataService": {
         "action": "LookupData",
         "data": {
@@ -15,10 +15,10 @@
       "type": "text"
     },
     "Summary": {
-      "type": "wysihtml"
+      "type": "ckeditor"
     },
     "Description": {
-      "type": "wysihtml"
+      "type": "ckeditor"
     },
     "Image": {
       "type": "image",
@@ -45,7 +45,7 @@
       }
     },
     "Tags": {
-      "type": "select2",
+      "type": "relation",
       "dataService": {
         "action": "LookupData",
         "data": {

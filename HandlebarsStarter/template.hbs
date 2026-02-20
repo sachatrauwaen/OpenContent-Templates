@@ -1,5 +1,5 @@
 <div class="row">  
-  {{#each Columns}}
+  {{#each Items}}
   <div class="col-md-{{divide 12 ../Settings.Columns}} col-sm-{{divide 24 ../Settings.Columns}}">
     <div class="thumbnail">
       {{#if Image}}        
@@ -9,6 +9,11 @@
         {{#if Title}}
         <h3>{{Title}}</h3>
         {{/if}}
+		
+		{{#if Image.url}}
+		<img style="max-width: 100%; height: auot !important" src="{{Image.url}}" alt="{{Title}}" />
+		
+		{{/if}}
         {{Description}}            
       </div>          	
     </div>

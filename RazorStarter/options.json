@@ -1,16 +1,18 @@
 {
   "fields": {
     "Columns": {
-      "type": "array",
       "items": {
         "fields": {
-          "Image": {
+          "Title": {
+            "dependencies": {},
             "type": "text"
           },
-          "Title": {
-            "type": "text"
+          "Image": {
+            "dependencies": {},
+            "type": "imagebrowser"
           },
           "Description": {
+            "dependencies": {},
             "type": "textarea"
           }
         }

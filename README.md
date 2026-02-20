@@ -5,5 +5,8 @@ OpenContent is a structured Content module for [#dnncms](https://dnncommunity.or
 Please note that some of these templates are examples and are not meant to be used "as is" in production.
 If you find any issues or have other feedback, please [create an issue](https://github.com/sachatrauwaen/OpenContent-Templates/issues).
 
-* A newer version of this repository (for Open Content 5+) can be found here: https://github.com/sachatrauwaen/OpenContent-Templates2 *
+These templates can be used with OpenContent version 5+
+
+* The repository (for Open Content 5+): https://github.com/sachatrauwaen/OpenContent-Templates2 * 
+Will be merged with this repositiry in the near future.
 

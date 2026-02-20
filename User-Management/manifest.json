@@ -1,4 +1,5 @@
 {
+  "BuilderVersion": 2,
   "DataSource": "Satrabel.DnnUsers",
   "editWitoutPostback": true,
   "index": false,
